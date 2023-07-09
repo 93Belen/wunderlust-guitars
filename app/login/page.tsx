@@ -1,12 +1,27 @@
 "use client"
-import { Magic } from "magic-sdk"
+import { Magic, RPCError, RPCErrorCode } from 'magic-sdk';
 
 export default function Login(){
 
     const onSubmit = async() => {
-        const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string)
-        const didToken = await magic.auth.loginWithMagicLink({email: 'belengm@live.com'})
-        console.log(didToken)
+        try{
+            const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string)
+            const didToken = await magic.auth.loginWithMagicLink({email: 'belengm@live.com'})
+            console.log(didToken)
+        }
+        catch(err){
+            if (err instanceof RPCError) {
+                switch (err.code) {
+                  case RPCErrorCode.MagicLinkFailedVerification:
+                  case RPCErrorCode.MagicLinkExpired:
+                  case RPCErrorCode.MagicLinkRateLimited:
+                  case RPCErrorCode.UserAlreadyLoggedIn:
+                    // Handle errors accordingly :)
+                    break;
+                }
+              }
+        }
+        
     }
 
     return (
