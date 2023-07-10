@@ -9,6 +9,7 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
 model Account {
   id                 String  @id @default(cuid())
   userId             String
@@ -53,3 +54,4 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
