@@ -9,7 +9,8 @@ export default function Login(){
         try{
             const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string)
             const didToken = await magic.auth.loginWithMagicLink({email: email})
-            console.log(didToken)
+            const data = await magic.user.getMetadata()
+            console.log(data)
         }
         catch(err){
             if (err instanceof RPCError) {
@@ -30,6 +31,8 @@ export default function Login(){
         const email = e.target.value;
         setEmail(email)
     }
+    
+
 
     return (
         <div className="p-10">

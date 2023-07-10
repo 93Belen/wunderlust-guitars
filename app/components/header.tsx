@@ -3,7 +3,6 @@ import { Magic } from 'magic-sdk';
 
 export default function Header(){
     const m = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string);
-
     const logout = async() => {
         try {
         if(await m.user.isLoggedIn()){
