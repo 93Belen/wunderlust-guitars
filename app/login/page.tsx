@@ -10,6 +10,23 @@ export default function Login(){
             const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string)
             const didToken = await magic.auth.loginWithMagicLink({email: email})
             if(didToken){
+                const exist = await fetch('api/user/finduser', {
+                            method: 'POST',
+                            body: JSON.stringify({email})
+                          })
+                if(exist){
+                    const res = await fetch('api/user/updateuserdate', {
+                        method: 'POST',
+                        body: JSON.stringify({email})
+                      })
+                }
+                else {
+                    const res = await fetch('api/user/addnewuser', {
+                        method: 'POST',
+                        body: JSON.stringify({email})
+                      })
+                }
+
                 // try{
                 //     const res = await fetch('api/user/finduser', {
                 //         method: 'POST',
@@ -18,11 +35,7 @@ export default function Login(){
                 //       return res.json()
                 // }
                 // catch(e){
-                    const res = await fetch('api/user/addnewuser', {
-                        method: 'POST',
-                        body: JSON.stringify({email})
-                      })
-                      return res.json()
+                   
                 }
             // }
         }

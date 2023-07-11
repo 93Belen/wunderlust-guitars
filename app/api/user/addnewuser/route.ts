@@ -5,7 +5,6 @@ export async function POST(req: Request) {
 
     const { email } = await req.json();
     
-    
     const responseFromPrisma = await prisma.user.create({
         data: {
             email: email
