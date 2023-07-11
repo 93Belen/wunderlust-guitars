@@ -6,12 +6,9 @@ export async function POST(req: Request) {
     const { email } = await req.json();
     
     
-    const responseFromPrisma = await prisma.user.update({
+    const responseFromPrisma = await prisma.user.findUnique({
         where: {
             email: email
-        },
-        data: {
-            last_logged: new Date()
         }
     })
 
