@@ -10,8 +10,8 @@ CREATE TABLE `Guitar` (
 CREATE TABLE `User` (
     `id` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NULL,
-    `created` DATETIME(3) NOT NULL,
-    `last_logged` DATETIME(3) NOT NULL,
+    `created` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `last_logged` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     UNIQUE INDEX `User_email_key`(`email`),
     PRIMARY KEY (`id`)

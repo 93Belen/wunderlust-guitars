@@ -19,7 +19,7 @@ model Guitar {
 model User {
   id          String   @id @default(cuid())
   email       String?  @unique
-  created     DateTime
-  last_logged DateTime
+  created     DateTime @default(now())
+  last_logged DateTime @default(now())
   favorites   Guitar[]
 }
