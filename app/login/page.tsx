@@ -14,30 +14,22 @@ export default function Login(){
                             method: 'POST',
                             body: JSON.stringify({email})
                           })
-                if(exist){
+
+                const userExists = await exist.json(); // Parse the response as JSON
+                if(userExists){
                     const res = await fetch('api/user/updateuserdate', {
                         method: 'POST',
                         body: JSON.stringify({email})
                       })
                 }
                 else {
-                    const res = await fetch('api/user/addnewuser', {
+                    const addUser = await fetch('api/user/addnewuser', {
                         method: 'POST',
                         body: JSON.stringify({email})
                       })
                 }
-
-                // try{
-                //     const res = await fetch('api/user/finduser', {
-                //         method: 'POST',
-                //         body: JSON.stringify({email})
-                //       })
-                //       return res.json()
-                // }
-                // catch(e){
                    
                 }
-            // }
         }
         catch(err){
             if (err instanceof RPCError) {
