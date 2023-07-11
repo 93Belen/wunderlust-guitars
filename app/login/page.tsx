@@ -10,7 +10,22 @@ export default function Login(){
             const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string)
             const didToken = await magic.auth.loginWithMagicLink({email: email})
             const data = await magic.user.getMetadata()
-            console.log(data)
+            if(didToken){
+                try{
+                    const res = await fetch('api/user/updateuserdate', {
+                        method: 'POST',
+                        body: JSON.stringify({email})
+                      })
+                      return res.json()
+                }
+                catch(e){
+                    const res = await fetch('api/user/addnewuser', {
+                        method: 'POST',
+                        body: JSON.stringify({email})
+                      })
+                      return res.json()
+                }
+            }
         }
         catch(err){
             if (err instanceof RPCError) {
