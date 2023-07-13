@@ -1,22 +1,50 @@
 "use client"
+import { useEffect, useState } from 'react';
 import { Magic } from 'magic-sdk';
+import {RiAccountCircleLine} from 'react-icons/ri'
+import Link from 'next/link';
 
-export default function Header(){
+export default function Header() {
     const m = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string);
-    const logout = async() => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        checkLoginStatus();
+    }, []);
+
+    const checkLoginStatus = async () => {
         try {
-        if(await m.user.isLoggedIn()){
-            await m.user.logout();
-            console.log(await m.user.isLoggedIn()); // => `false`
+            const loggedIn = await m.user.isLoggedIn();
+            setIsLoggedIn(loggedIn);
+        } catch (error) {
+            console.log(error);
         }
-        } catch(e) {
-            console.log(e)
+    };
+
+    const logout = async () => {
+        try {
+            if (isLoggedIn) {
+                await m.user.logout();
+                setIsLoggedIn(false);
+                console.log(await m.user.isLoggedIn()); // => `false`
+            }
+        } catch (error) {
+            console.log(error);
         }
-    }
+    };
 
     return (
         <div className="p-10">
-            <button onClick={logout}>Log out</button>
+            <div className="has-tooltip">
+                <RiAccountCircleLine />
+                <span className="tooltip">
+                {isLoggedIn ? (
+                    <button onClick={logout}>Log out</button>
+                 ) : (
+                        <Link href="/login">Log in</Link>
+                 )}
+                </span>
+            </div>
         </div>
-    )
+    );
 }
