@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from 'react';
 import { Magic } from 'magic-sdk';
+import {RiAccountCircleLine} from 'react-icons/ri'
 
 export default function Header() {
     const m = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string);
@@ -33,11 +34,16 @@ export default function Header() {
 
     return (
         <div className="p-10">
-            {isLoggedIn ? (
-                <button onClick={logout}>Log out</button>
-            ) : (
-                <button>Log in</button>
-            )}
+            <div className="has-tooltip">
+                <RiAccountCircleLine />
+                <span className="tooltip">
+                {isLoggedIn ? (
+                    <button onClick={logout}>Log out</button>
+                 ) : (
+                        <button>Log in</button>
+                 )}
+                </span>
+            </div>
         </div>
     );
 }
