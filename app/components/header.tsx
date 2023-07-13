@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Magic } from 'magic-sdk';
 import {RiAccountCircleLine} from 'react-icons/ri'
+import Link from 'next/link';
 
 export default function Header() {
     const m = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string);
@@ -40,7 +41,7 @@ export default function Header() {
                 {isLoggedIn ? (
                     <button onClick={logout}>Log out</button>
                  ) : (
-                        <button>Log in</button>
+                        <Link href="/login">Log in</Link>
                  )}
                 </span>
             </div>
