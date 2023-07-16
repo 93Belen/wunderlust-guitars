@@ -1,15 +1,20 @@
 "use client"
-import { Magic, RPCError, RPCErrorCode } from 'magic-sdk';
+import { initializeMagic } from 'components/magic/initializeMagic';
+import { RPCError, RPCErrorCode } from 'magic-sdk';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 
 export default function Login(){
     const [email, setEmail] = useState("")
+    const { push } = useRouter();
 
     const onSubmit = async() => {
         try{
-            const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string)
-            const didToken = await magic.auth.loginWithMagicLink({email: email, redirectURI: "http://localhost:3000"})
+            const magic = initializeMagic
+            const didToken = await magic.auth.loginWithMagicLink({email: email})
             if(didToken){
+                push("/")
                 const exist = await fetch('api/user/finduser', {
                             method: 'POST',
                             body: JSON.stringify({email})

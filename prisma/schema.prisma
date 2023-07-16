@@ -10,11 +10,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Need likes column to keep track of most popular
 model Guitar {
   id     String  @id @default(cuid())
+  likes  Int
   User   User?   @relation(fields: [userId], references: [id])
   userId String?
 }
+
 
 model User {
   id          String   @id @default(cuid())

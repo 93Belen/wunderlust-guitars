@@ -1,11 +1,11 @@
 "use client"
 import { useEffect, useState } from 'react';
-import { Magic } from 'magic-sdk';
 import {RiAccountCircleLine} from 'react-icons/ri'
 import Link from 'next/link';
+import { initializeMagic } from 'components/magic/initializeMagic';
 
 export default function Header() {
-    const m = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string);
+    const m = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
