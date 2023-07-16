@@ -8,7 +8,7 @@ export default function Login(){
     const onSubmit = async() => {
         try{
             const magic = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string)
-            const didToken = await magic.auth.loginWithMagicLink({email: email})
+            const didToken = await magic.auth.loginWithMagicLink({email: email, redirectURI: "http://localhost:3000"})
             if(didToken){
                 const exist = await fetch('api/user/finduser', {
                             method: 'POST',
