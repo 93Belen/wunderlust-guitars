@@ -9,6 +9,9 @@ export default function Header(): JSX.Element {
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
+    // check that user is logged in
+    // If user is logged in it will display the log-out button
+    // If user is not logged in, it will display the link to the log-in page
     useEffect(() => {
         checkLoginStatus();
     }, []);
