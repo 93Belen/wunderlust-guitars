@@ -1,27 +1,31 @@
 "use client"
 import { useEffect, useState } from 'react';
-import { Magic } from 'magic-sdk';
 import {RiAccountCircleLine} from 'react-icons/ri'
 import Link from 'next/link';
+import { initializeMagic } from 'components/magic/initializeMagic';
+import { Magic } from 'magic-sdk';
 
-export default function Header() {
-    const m = new Magic(process.env.NEXT_PUBLIC_MAGIC_PUBLISHABLE_KEY as string);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+export default function Header(): JSX.Element {
+    const m: Magic = initializeMagic
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
+    // check that user is logged in
+    // If user is logged in it will display the log-out button
+    // If user is not logged in, it will display the link to the log-in page
     useEffect(() => {
         checkLoginStatus();
     }, []);
 
-    const checkLoginStatus = async () => {
+    const checkLoginStatus = async (): Promise<void> => {
         try {
-            const loggedIn = await m.user.isLoggedIn();
+            const loggedIn: boolean = await m.user.isLoggedIn();
             setIsLoggedIn(loggedIn);
         } catch (error) {
             console.log(error);
         }
     };
 
-    const logout = async () => {
+    const logout = async (): Promise<void> => {
         try {
             if (isLoggedIn) {
                 await m.user.logout();
