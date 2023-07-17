@@ -1,9 +1,9 @@
 import { prisma } from "components/prisma/seed";
 
 
-export async function POST(req: Request) {
+export async function POST(req: Request): Promise<Response> {
 
-    const { email } = await req.json();
+    const { email }: {email: string} = await req.json();
     
     
     const responseFromPrisma = await prisma.user.findUnique({
