@@ -7,7 +7,8 @@ export async function POST(req: Request): Promise<Response>  {
     
     const responseFromPrisma = await prisma.guitar.create({
         data: {
-            id: id
+            id: id,
+            likes: 0
         }
     })
   
