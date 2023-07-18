@@ -11,14 +11,16 @@ type CartItem = {
 
 type WebStore = {
     cart: CartItem[],
-    allGuitars: CartItem[]
+    allGuitars: CartItem[],
+    addAllGuitars: (payload: CartItem[]) => void
 }
 
 export const useWebStore = create<WebStore>()(
     persist(
         (set) => ({
             cart: [],
-            allGuitars: []
+            allGuitars: [],
+            addAllGuitars: (payload) => set(() => ({allGuitars: payload}))
         }),
         { name: "web-store" }
     )
