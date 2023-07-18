@@ -12,10 +12,9 @@ datasource db {
 
 // Need likes column to keep track of most popular
 model Guitar {
-  id     String  @id @default(cuid())
+  id     String  @id
   likes  Int @default(0)
-  user   User[] 
-
+  user   User[]
 }
 
 model User {
