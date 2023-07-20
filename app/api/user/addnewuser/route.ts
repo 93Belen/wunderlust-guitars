@@ -9,7 +9,7 @@ export async function POST(req: Request): Promise<Response>  {
         data: {
             email: email,
             favorites: {
-                create: []
+                create: [{id:'lala', likes: 0}]
             }
         }
     })

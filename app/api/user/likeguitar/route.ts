@@ -33,18 +33,17 @@ export async function POST(req: Request): Promise<Response> {
     const newFavorite = await prisma.guitar.findUnique({
         where: {
             id: favoriteId
-        },
-        
+        }  
     })
 
     // Check if the newFavorite is null (not found)
     if (!newFavorite) {
         return new Response(JSON.stringify({ error: "Guitar not found" }), { status: 404 });
-        }
+    }
 
 
     // Add the new favorite to the existing favorites array
-    const updatedFavorites = [...existingFavorites, newFavorite];
+    const updatedFavorites = [...existingFavorites,  { id: newFavorite.id, likes: newFavorite.likes }];
 
     // Update the user with the new favorites array
     const updatedUser = await prisma.user.update({
