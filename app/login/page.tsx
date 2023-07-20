@@ -8,6 +8,30 @@ import { useRouter } from 'next/navigation';
 export default function Login(): JSX.Element{
     const [email, setEmail] = useState<string>("")
     const { push } = useRouter();
+    const x = async() =>{
+      try {
+        const res = await fetch('api/guitar/add', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ id: "lalala123" })
+        });
+      
+        console.log(res);
+      
+        if (res.ok) {
+          const jsonRes = await res.json();
+          console.log(jsonRes);
+        } else {
+          console.log('Request failed:', res.status, res.statusText);
+        }
+      } catch (error) {
+        console.error('Error occurred:', error);
+      }
+      
+    }
+    x();
 
     const onSubmit = async(): Promise<void> => {
         try{
