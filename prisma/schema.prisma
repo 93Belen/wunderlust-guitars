@@ -12,17 +12,20 @@ datasource db {
 
 // Need likes column to keep track of most popular
 model Guitar {
-  id     String  @id @default(cuid())
-  likes  Int
-  User   User?   @relation(fields: [userId], references: [id])
-  userId String?
+  id     String  @id
+  likes  Int @default(0)
 }
-
 
 model User {
   id          String   @id @default(cuid())
   email       String?  @unique
   created     DateTime @default(now())
   last_logged DateTime @default(now())
-  favorites   Guitar[]
+}
+
+model UserFavorites {
+  userId   String
+  guitarId String
+
+  @@id([userId, guitarId], name: "userandguitar")
 }

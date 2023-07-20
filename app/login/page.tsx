@@ -36,6 +36,8 @@ export default function Login(): JSX.Element{
                         method: 'POST',
                         body: JSON.stringify({email})
                       })
+                      const json = await addUser.json()
+                      console.log(json)
                 }
                    
                 }
@@ -69,8 +71,6 @@ export default function Login(): JSX.Element{
         const email = e.target.value;
         setEmail(email)
     }
-    
-
 
     return (
         <div className="p-10">
