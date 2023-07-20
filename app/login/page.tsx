@@ -72,15 +72,6 @@ export default function Login(): JSX.Element{
         setEmail(email)
     }
     
-    const test = async()=> {
-      const exist = await fetch('api/user/likeguitar', {
-        method: 'POST',
-        body: JSON.stringify({userId: "testuser", guitarId: "testguitar"})
-      })
-      const res = await exist.json()
-      console.log(res)
-    }
-test()
 
     return (
         <div className="p-10">
