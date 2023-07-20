@@ -1,19 +1,4 @@
 import { prisma } from "components/prisma/seed";
-
-interface Favorite {
-    id: string;
-    likes: number;
-    user: User[];
-  }
-  
-  interface User {
-    id: string;
-    email: string;
-    created: Date;
-    last_logged: Date;
-    favorites: Favorite[];
-  }
-  
   
 
 export async function POST(req: Request): Promise<Response> {
@@ -28,20 +13,16 @@ export async function POST(req: Request): Promise<Response> {
       // Include the favorites field in the select to ensure it is returned in the result
       select: {
         id: true,
-        email: true,
-        created: true,
-        last_logged: true,
         favorites: true, // Include the favorites field in the select
       },
     });
-    
     if (!user) {
       // Handle the case when the user with the given ID is not found
       return new Response(JSON.stringify({ error: "User not found" }), { status: 404 });
     }
 
     // Get the existing favorites array or initialize it to an empty array if it's null
-    const existingFavorites: Favorite[] = user.favorites || [];
+    const existingFavorites = user.favorites;
 
     // Check if the favoriteId already exists in the favorites array
     if (existingFavorites.some((favorite) => favorite.id === favoriteId)) {
@@ -49,13 +30,21 @@ export async function POST(req: Request): Promise<Response> {
     }
 
     // Create a new favorite object with the given favoriteId and default likes
-    const newFavorite: Favorite = {
-      id: favoriteId,
-      likes: 0, // You can set the default value for likes here
-    };
+    const newFavorite = await prisma.guitar.findUnique({
+        where: {
+            id: favoriteId
+        },
+        
+    })
+
+    // Check if the newFavorite is null (not found)
+    if (!newFavorite) {
+        return new Response(JSON.stringify({ error: "Guitar not found" }), { status: 404 });
+        }
+
 
     // Add the new favorite to the existing favorites array
-    const updatedFavorites: Favorite[] = [...existingFavorites, newFavorite];
+    const updatedFavorites = [...existingFavorites, newFavorite];
 
     // Update the user with the new favorites array
     const updatedUser = await prisma.user.update({
@@ -63,7 +52,9 @@ export async function POST(req: Request): Promise<Response> {
         id: userId,
       },
       data: {
-        favorites: updatedFavorites,
+        favorites: {
+            set: updatedFavorites
+        }
       },
     });
 
