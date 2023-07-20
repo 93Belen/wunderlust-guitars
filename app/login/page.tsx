@@ -75,7 +75,7 @@ export default function Login(): JSX.Element{
     const test = async()=> {
       const exist = await fetch('api/user/likeguitar', {
         method: 'POST',
-        body: JSON.stringify({userId: "clkbam358000134ibx6n23zeu", favoriteId: "lala"})
+        body: JSON.stringify({userId: "testuser", guitarId: "testguitar"})
       })
       const res = await exist.json()
       console.log(res)

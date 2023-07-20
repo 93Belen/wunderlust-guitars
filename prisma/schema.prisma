@@ -14,7 +14,6 @@ datasource db {
 model Guitar {
   id     String  @id
   likes  Int @default(0)
-  user   User[]
 }
 
 model User {
@@ -22,6 +21,11 @@ model User {
   email       String?  @unique
   created     DateTime @default(now())
   last_logged DateTime @default(now())
-  favorites   Guitar[]
 }
 
+model UserFavorites {
+  userId   String
+  guitarId String
+
+  @@id([userId, guitarId])
+}

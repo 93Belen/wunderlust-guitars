@@ -7,10 +7,7 @@ export async function POST(req: Request): Promise<Response>  {
     
     const responseFromPrisma = await prisma.user.create({
         data: {
-            email: email,
-            favorites: {
-                create: [{id:'lala', likes: 0}]
-            }
+            email: email
         }
     })
   
