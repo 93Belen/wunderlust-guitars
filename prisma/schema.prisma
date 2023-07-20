@@ -22,5 +22,5 @@ model User {
   email       String?  @unique
   created     DateTime @default(now())
   last_logged DateTime @default(now())
-  favorites   Guitar[]
+  favorites   Guitar[] 
 }
