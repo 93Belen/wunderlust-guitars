@@ -71,7 +71,16 @@ export default function Login(): JSX.Element{
         const email = e.target.value;
         setEmail(email)
     }
+    const test = async() => {
+      const res = await fetch('api/guitar/remove', {
+        method: "POST",
+        body: JSON.stringify({id: "123testid"})
+      })
 
+      const json = await res.json()
+      console.log(json)
+    }
+    test()
 
     return (
         <div className="p-10">
