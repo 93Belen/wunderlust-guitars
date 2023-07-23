@@ -1,19 +1,6 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
-
-type CartItem = {
-    name: string,
-    id: string,
-    images?: string[],
-    decription?: string,
-    unit_amount: number
-}
-
-type WebStore = {
-    cart: CartItem[],
-    allGuitars: CartItem[],
-    addAllGuitars: (payload: CartItem[]) => void
-}
+import { WebStore } from './types/storeTypes'
 
 export const useWebStore = create<WebStore>()(
     persist(
