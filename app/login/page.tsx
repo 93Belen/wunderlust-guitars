@@ -16,30 +16,14 @@ export default function Login(): JSX.Element{
             // if log-in goes thru, I receive a didToken
             if(didToken){
                 push("/")
-                // Check if user already exists
-                const exist = await fetch('api/user/finduser', {
-                            method: 'POST',
-                            body: JSON.stringify({email})
-                          })
-
-                const userExists = await exist.json() as boolean;
-                if(userExists){
-                    // if user exists, update last logged time to current date
-                    const res = await fetch('api/user/updateuserdate', {
-                        method: 'POST',
-                        body: JSON.stringify({email})
-                      })
-                }
-                else {
-                    // if it doesnt exist, register user in db
+                // If user exists, update last_logged
+                // If user doesn't exists, create user
                     const addUser = await fetch('api/user/addnewuser', {
                         method: 'POST',
                         body: JSON.stringify({email})
                       })
                       const json = await addUser.json()
                       console.log(json)
-                }
-                   
                 }
         }
         catch(err){
