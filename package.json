@@ -11,6 +11,7 @@
   "dependencies": {
     "@magic-ext/oauth": "^12.4.1",
     "@next-auth/prisma-adapter": "^1.0.7",
+    "@next/font": "^13.4.12",
     "@prisma/client": "^4.16.2",
     "@stripe/stripe-js": "^1.46.0",
     "@types/node": "20.3.3",
