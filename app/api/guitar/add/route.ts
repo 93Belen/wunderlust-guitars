@@ -1,18 +1,23 @@
 import { prisma } from "components/prisma/seed";
 
-
+// Add a guitar to database
 export async function POST(req: Request): Promise<Response>  {
+    try{
+        const { id }: { id: string } = await req.json();
+        console.log(id)
+        const responseFromPrisma = await prisma.guitar.create({
+            data: {
+                id: id,
+                likes: 0
+            }
+        })
+        console.log(responseFromPrisma)
+    
+        return new Response(JSON.stringify(responseFromPrisma));
+    }
+    catch (error) {
+        return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
+      }
 
-    const { id }: { id: string } = await req.json();
-    console.log(id)
-    const responseFromPrisma = await prisma.guitar.create({
-        data: {
-            id: id,
-            likes: 0
-        }
-    })
-    console.log(responseFromPrisma)
-  
-    return new Response(JSON.stringify(responseFromPrisma));
   }
   
