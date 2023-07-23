@@ -1,4 +1,3 @@
-import { getProduct } from 'components/stripe/getProduct'
 import Header from './components/header'
 import Hydrate from './components/Hydrate'
 import './globals.css'
