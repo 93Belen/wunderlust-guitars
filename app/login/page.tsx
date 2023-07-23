@@ -74,8 +74,8 @@ export default function Login(): JSX.Element{
 
     return (
         <div className="p-10">
-            <input onChange={onChange} className='bg-slate-300 m-5' type="email" name="" id="" />
-            <button onClick={onSubmit} type='submit' className='bg-lime-500 p-2 rounded-md'>Log in</button>
+            <input onChange={onChange} className='m-5 bg-gray text-white' type="email" name="" id="" />
+            <button onClick={onSubmit} type='submit' className='bg-pink p-2 rounded-md font-mono text-white'>Log in</button>
         </div>
     )
 }

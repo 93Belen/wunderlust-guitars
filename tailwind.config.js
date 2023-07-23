@@ -20,7 +20,11 @@ module.exports = {
     extend: {
       colors: {
         'darkgray': '#333334'
-      }
+      },
+      fontFamily: {
+        sans: ['var(--font-goldman)'],
+        mono: ['var(--font-play)'],
+      },
     },
   },
   plugins: [],
