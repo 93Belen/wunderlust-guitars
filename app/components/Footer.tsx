@@ -4,7 +4,7 @@ import Logo from "./Logo"
 
 export default function Footer(){
     return (
-        <div className='h-[19.5rem] grid grid-cols-5 grid-rows-2 font-mono text-white text-[0.9375rem] font-normal p-12'>
+        <div className='h-[20%] grid grid-cols-5 grid-rows-2 font-mono text-white text-[0.9375rem] font-normal p-12 w-screen gap-y-0'>
             <div> 
                 <Logo/>
             </div>
