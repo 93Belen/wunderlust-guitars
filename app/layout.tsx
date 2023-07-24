@@ -1,7 +1,8 @@
-import Header from './components/header'
+import Header from './components/Header'
 import Hydrate from './components/Hydrate'
 import './globals.css'
 import { Goldman, Play } from "@next/font/google"
+import Footer from './components/Footer'
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +12,7 @@ export const metadata = {
 const goldman = Goldman({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['700'],
+  weight: ['400', '700'],
   variable: '--font-goldman'
 })
 
@@ -36,10 +37,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${play.variable}`}>
-      <body className={`${goldman.variable}`}>
+      <body className={`${goldman.variable} min-h-screen h-fit bg-black w-[100vw] box-border flex flex-col justify-between overflow-x-hidden`}>
         <Hydrate>
         <Header />
+        <div className='h-[70%]'>
         {children}
+        </div>
+        <Footer />
         </Hydrate>
         </body>
     </html>
