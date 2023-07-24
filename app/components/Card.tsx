@@ -3,6 +3,7 @@
 import AddToFavorites from "./AddFavorite";
 import Image from "next/image";
 
+// Size needs to be determined by prop comming from page where is rendered, or be 100% and determine size in page where rendered div
 export default function Card() {
   return (
     <div className="bg-darkgray flex flex-col p-[1.25rem] justify-center items-center rounded-lg w-fit h-fit box-border gap-[1rem]">
