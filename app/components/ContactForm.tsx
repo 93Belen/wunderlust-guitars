@@ -12,7 +12,12 @@ export default function ContactForm(){
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>EMAIL</label>
                 <input type="text" className='h-[2.5rem] border-[1px] border-white bg-black' />
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>REASON FOR CONTACT</label>
-                <input type="text" className='h-[2.5rem] border-[1px] border-white bg-black' />
+                <select className='h-[2.5rem] border-[1px] border-white bg-black appearance-none text-white font-mono p-2'>
+                    <option value="">Option 1</option>
+                    <option value="">Option 2</option>
+                    <option value="">Option 3</option>
+                    <option value="">Option 4</option>
+                </select>
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>MESSAGE</label>
                 <textarea cols={10} rows={10} className='border-[1px] max-w-[49rem] border-white bg-black' />
             </form>
