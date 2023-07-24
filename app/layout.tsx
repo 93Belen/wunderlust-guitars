@@ -1,4 +1,4 @@
-import Header from './components/header'
+import Header from './components/Header'
 import Hydrate from './components/Hydrate'
 import './globals.css'
 import { Goldman, Play } from "@next/font/google"
