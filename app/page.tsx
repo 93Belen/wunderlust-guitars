@@ -3,6 +3,7 @@ import AddToFavorites from "./components/AddFavorite";
 import AddToCart from "./components/AddToCart";
 import Card from "./components/Card";
 import Checkout from "./components/Checkout";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -10,7 +11,8 @@ export default function Home() {
      <AddToFavorites /><br />
      <AddToCart /><br />
      <Card /><br />
-     <Checkout />
+     <Checkout /><br />
+     <ContactForm />
     </main>
   )
 }
