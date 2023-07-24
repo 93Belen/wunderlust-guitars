@@ -10,6 +10,7 @@ import {BsBag} from 'react-icons/bs'
 export default function Header(): JSX.Element {
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     // check that user is logged in
     // If user is logged in it will display the log-out button
@@ -18,6 +19,9 @@ export default function Header(): JSX.Element {
         checkLoginStatus();
     }, []);
 
+    const toggleMenu = () => {
+        setIsOpen((state) => !state)
+    }
     const checkLoginStatus = async (): Promise<void> => {
         try {
             const loggedIn: boolean = await m.user.isLoggedIn();
@@ -40,15 +44,16 @@ export default function Header(): JSX.Element {
     };
 
     return (
-        <div className="flex -[10%] w-[100%] p-8 justify-between">
+        <div className="flex h-[10%] w-[100%] p-8 justify-between items-center">
             <Logo />
-            <div className='flex gap-[2rem]'>
-                <Link className='text-white font-sans text-[1.125rem] font-normal' href='/'>Services</Link>
-                <Link className='text-white font-sans text-[1.125rem] font-normal' href='/'>All Guitars</Link>
-                <Link className='text-white font-sans text-[1.125rem] font-normal' href='/'>About Us</Link>
+            {/* DESKTOP NAV */}
+            <div className='md:flex gap-[2rem] hidden text-white font-sans text-[1.125rem] font-normal'>
+                <Link href='/'>Services</Link>
+                <Link href='/'>All Guitars</Link>
+                <Link href='/'>About Us</Link>
             </div>
-            <div className='flex gap-4'>
-                <div className='w-[30px] h-[30px]'>
+            <div className='md:flex gap-4 hidden'>
+                <div className='w-[22px] h-[22px]'>
                     <svg width="100%" height="100%" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <mask id="path-1-inside-1_13596_7880" fill="white">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M2.22652 2.02975C0.444561 3.92259 0.444561 6.99148 2.22652 8.88431L8.87405 15.9455C9.24893 16.3437 9.85446 16.3475 10.2338 15.9571C10.3348 15.9076 10.4294 15.8386 10.5126 15.7502L17.1601 8.68906C18.9421 6.79623 18.9421 3.72734 17.1601 1.8345C15.3782 -0.0583292 12.489 -0.0583275 10.7071 1.83451L9.60141 3.00897L8.67955 2.02975C6.89759 0.136921 4.00847 0.136921 2.22652 2.02975Z"/>
@@ -68,7 +73,26 @@ export default function Header(): JSX.Element {
                     </span>
                 </div>
             </div>
-            
+            {/* MOBILE NAV */}
+            <div className='md:hidden' onClick={toggleMenu}>
+                <svg width="1.10775rem" height="1.25rem" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.9184 0H0.805637C0.361641 0 0 0.477541 0 1.06383C0 1.65012 0.361641 2.12766 0.805637 2.12766H16.9184C17.3624 2.12766 17.724 1.65012 17.724 1.06383C17.724 0.477541 17.3624 0 16.9184 0Z" fill="white"/>
+                    <path d="M16.9184 8.9375H0.805637C0.361641 8.9375 0 9.41504 0 10.0013C0 10.5876 0.361641 11.0652 0.805637 11.0652H16.9184C17.3624 11.0652 17.724 10.5876 17.724 10.0013C17.724 9.41504 17.3624 8.9375 16.9184 8.9375Z" fill="white"/>
+                    <path d="M16.9167 17.8711H8.86032C8.41633 17.8711 8.05469 18.3486 8.05469 18.9349C8.05469 19.5212 8.41633 19.9988 8.86032 19.9988H16.9167C17.3607 19.9988 17.7223 19.5212 17.7223 18.9349C17.7223 18.3486 17.3607 17.8711 16.9167 17.8711Z" fill="white"/>
+                </svg>
+            </div>
+            {isOpen && (
+                <div className='absolute left-0 text-white text-[1.5rem] font-sans font-normal z-30 w-screen top-[10%] bg-black bg-opacity-70 h-screen backdrop-blur-md'>
+                   <div className='flex flex-col items-start gap-[2.25rem] p-14'>
+                    <Link href='/'>Services</Link>
+                    <Link href='/'>All Guitars</Link>
+                    <Link href='/'>About Us</Link>
+                    <Link href='/'>Favorites</Link>
+                    <Link href='/'>My Cart</Link>
+                    <Link href='/'>Account</Link>
+                   </div>
+                </div>
+            )}
         </div>
     );
 }

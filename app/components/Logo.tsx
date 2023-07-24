@@ -1,6 +1,6 @@
 export default function Logo(){
     return (
-      <svg width="80" height="80" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      <svg width="3.125rem" height="3.125rem" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
 <g clip-path="url(#clip0_13596_6380)">
 <path d="M55 -5H-5V55H55V-5Z" fill="white"/>
 <path d="M55 -5H-5V55H55V-5Z" fill="white"/>
