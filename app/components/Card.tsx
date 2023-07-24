@@ -5,9 +5,11 @@ import Image from "next/image";
 
 export default function Card() {
   return (
-    <div className="bg-darkgray flex flex-col p-[1.25rem] justify-center items-center rounded-lg w-fit h-fit box-border">
+    <div className="bg-darkgray flex flex-col p-[1.25rem] justify-center items-center rounded-lg w-fit h-fit box-border gap-[1rem]">
       <div className="w-[14.75rem] h-[15.625rem] bg-gray relative rounded-lg">
-        <AddToFavorites />
+          <div className='absolute left-[12.875rem] top-2'>
+            <AddToFavorites />
+          </div>
         <Image
           src="/placeholderpic.jpg"
           height={500}
