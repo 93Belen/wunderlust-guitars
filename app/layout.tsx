@@ -37,7 +37,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${play.variable}`}>
-      <body className={`${goldman.variable} min-h-screen h-fit bg-black w-[100vw] box-border flex flex-col justify-between`}>
+      <body className={`${goldman.variable} min-h-screen h-fit bg-black w-[100vw] box-border flex flex-col justify-between overflow-x-hidden`}>
         <Hydrate>
         <Header />
         <div className='h-[70%]'>

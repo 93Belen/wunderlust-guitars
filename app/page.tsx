@@ -10,7 +10,6 @@ import Logo from "./components/Logo";
 export default function Home() {
   return (
     <main className='h-fit min-h-screen p-8'>
-      <CardFav />
     </main>
   )
 }
