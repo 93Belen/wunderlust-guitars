@@ -52,7 +52,7 @@ export default function Header(): JSX.Element {
             <div className='md:flex gap-[2rem] hidden text-white font-sans text-[1.125rem] font-normal'>
                 <Link className='hover:text-pink active:text-pink' href='/'>Services</Link>
                 <Link className='hover:text-pink active:text-pink' href='/'>All Guitars</Link>
-                <Link className='hover:text-pink active:text-pink' href='/'>About Us</Link>
+                <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
             </div>
             <div className='md:flex gap-4 hidden pr-3'>
                 <div className='w-[22px] h-[22px]'>
@@ -88,7 +88,7 @@ export default function Header(): JSX.Element {
                    <div className='flex flex-col items-start gap-[2.25rem] p-14'>
                     <Link className='hover:text-pink active:text-pink' href='/'>Services</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>All Guitars</Link>
-                    <Link className='hover:text-pink active:text-pink' href='/'>About Us</Link>
+                    <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>Favorites</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>My Cart</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>Login</Link>
