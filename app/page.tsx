@@ -19,8 +19,8 @@ export default function Home() {
         <div className='md:ml-[-3rem]'>
           <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] md:leading-[6rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[10rem]'>Most Popular</h3>
           <h4 className='text-white font-mono text-[1.7rem] font-[700] mt-[-1.8rem] pl-5 leading-[3.35625rem] md:leading-[-5rem] md:ml-[7.5%] tracking-[-0.10rem] md:tracking-[-0.05rem] md:text-[3rem]'>Search our most viewed</h4>
+          <Link href='' className='text-pink font-mono text-[1.125rem] p-2 md:py-0 md:mt-[-1%] md:text-[1.5rem] md:ml-[8%]'>Shop now</Link>
         </div>
-        <Link href='' className='text-pink font-mono text-[1.125rem] p-2 md:py-0 md:mt-[-1%] md:text-[1.5rem] md:ml-[8%]'>Shop now</Link>
         <div className='m-auto pt-4 md:mt-8 grid md:grid-cols-4 md:w-fit md:max-w-[1500px] w-[100%] gap-[1rem] justify-center'>
           <div>
             <Card />
