@@ -44,7 +44,7 @@ export default function Header(): JSX.Element {
     };
 
     return (
-        <div className="flex h-[10%] w-[99%] py-4 px-4 justify-between items-center">
+        <div className="h-[10%] w-[99%] py-4 px-4 justify-between items-center flex relative z-99">
             <Link href='/'>
                 <Logo />
             </Link>
@@ -76,7 +76,7 @@ export default function Header(): JSX.Element {
                 <BsBag className='text-white text-[22px]' />
             </div>
             {/* MOBILE NAV */}
-            <div className='md:hidden' onClick={toggleMenu}>
+            <div className='md:hidden relative z-70' onClick={toggleMenu}>
                 <svg width="1.10775rem" height="1.25rem" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.9184 0H0.805637C0.361641 0 0 0.477541 0 1.06383C0 1.65012 0.361641 2.12766 0.805637 2.12766H16.9184C17.3624 2.12766 17.724 1.65012 17.724 1.06383C17.724 0.477541 17.3624 0 16.9184 0Z" fill="white"/>
                     <path d="M16.9184 8.9375H0.805637C0.361641 8.9375 0 9.41504 0 10.0013C0 10.5876 0.361641 11.0652 0.805637 11.0652H16.9184C17.3624 11.0652 17.724 10.5876 17.724 10.0013C17.724 9.41504 17.3624 8.9375 16.9184 8.9375Z" fill="white"/>
@@ -84,7 +84,7 @@ export default function Header(): JSX.Element {
                 </svg>
             </div>
             {isOpen && (
-                <div className='absolute left-0 text-white text-[1.5rem] font-sans font-normal z-60 w-screen top-[13%] bg-black bg-opacity-70 h-screen backdrop-blur-md'>
+                <div className='absolute left-0 top-[10vh] text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black bg-opacity-70 h-screen backdrop-blur-md'>
                    <div className='flex flex-col items-start gap-[2.25rem] p-14'>
                     <Link className='hover:text-pink active:text-pink' href='/'>Services</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>All Guitars</Link>
