@@ -32,6 +32,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-goldman)'],
         mono: ['var(--font-play)'],
+        serif: ['var(--font-gruppo)']
       },
     },
   },
