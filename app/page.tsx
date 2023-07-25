@@ -36,20 +36,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='pt-28 mb-28 md:mb-80 flex flex-col md:grid md:grid-cols-[30%_70%] md:grid-rows-2 md:pt-60 h-fit'>
-        <div className='col-start-2 flex md:mr-[-1.5rem] h-fit md:justify-end'>
+      <section className='pt-28 mb-28 md:mb-80 flex flex-col md:grid md:grid-cols-[30vw_70vw] lg:grid-cols-[40vw_60vw] md:grid-rows-2 md:pt-60 h-fit'>
+        <div className='col-start-2 flex h-fit md:justify-end md:w-[60vw]'>
             <div>
-              <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] md:leading-[6rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[10rem]'>About Us</h3>
+              <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] md:leading-[6rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[10rem] md:mr-10'>About Us</h3>
               <h4 className='text-white font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-2 leading-[2.35625rem] md:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] md:text-[3rem]'>The story behind Wunderlust</h4>
             </div>
         </div>
-          <div className='w-[100%] h-auto row-span-2 row-start-1 flex mt-10'>
+          <div className='lg:w-[40vw] md:w-[30vw] h-auto row-span-2 row-start-1 flex mt-10 md:mt-0 lg:ml-[20%]'>
             <Image
           src='/homepageabout.png'
           width={2500}
           height={2500}
           alt='about'
-          className='w-[27.875rem] min-w-[300px]'
+          className='w-[90%] md:w-[70%] lg:w-[90%] min-w-[300px] self-center'
           />
           </div>
         <div className='h-fit flex mx-[2%] flex-col w-full'>
