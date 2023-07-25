@@ -36,20 +36,20 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='pt-28 mb-28 md:mb-80 flex flex-col md:grid md:grid-cols-[20vw_80vw] lg:grid-cols-[40vw_60vw] md:grid-rows-2 md:pt-60 h-fit'>
+      <section className='pt-28 mb-28 md:mb-80 flex flex-col md:grid md:grid-cols-[35vw_65vw] lg:grid-cols-[40vw_60vw] md:grid-rows-2 md:pt-60 h-fit md:gap-x-6 lg:mt-12'>
         <div className='col-start-2 flex h-fit md:justify-end md:w-[60vw]'>
-            <div>
-              <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] md:leading-[6rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[10rem] md:mr-10'>About Us</h3>
-              <h4 className='text-white font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-2 leading-[2.35625rem] md:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] md:text-[3rem]'>The story behind Wunderlust</h4>
+            <div className='md:ml-5'>
+              <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[6rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>About Us</h3>
+              <h4 className='text-white font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-2 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>The story behind Wunderlust</h4>
             </div>
         </div>
-          <div className='lg:w-[40vw] md:w-[20vw] w-full h-auto row-span-2 row-start-1 flex mt-10 md:mt-0 ml-0 lg:ml-[10vw]'>
+          <div className='lg:w-[40vw] md:w-[35vw] lg:h-[400px] w-full row-span-2 row-start-1 flex mt-10 md:mt-0 ml-0 lg:ml-[10vw] md:ml-0'>
             <Image
           src='/homepageabout.png'
           width={2500}
           height={2500}
           alt='about'
-          className='w-[90%] md:w-[100%] lg:w-[70%] self-center md:hidden lg:block'
+          className='w-[90%] md:w-[100%] lg:w-[70%] self-center'
           />
           </div>
         <div className='h-fit flex mx-[2%] flex-col w-full'>
