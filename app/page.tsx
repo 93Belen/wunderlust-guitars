@@ -43,7 +43,7 @@ export default function Home() {
               <h4 className='text-white font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-2 leading-[2.35625rem] md:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] md:text-[3rem]'>The story behind Wunderlust</h4>
             </div>
         </div>
-          <div className='w-[100%] h-auto row-span-2 row-start-1 flex justify-end mt-10'>
+          <div className='w-[100%] h-auto row-span-2 row-start-1 flex mt-10'>
             <Image
           src='/homepageabout.png'
           width={2500}
