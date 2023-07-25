@@ -44,7 +44,7 @@ export default function Header(): JSX.Element {
     };
 
     return (
-        <div className="h-[10%] w-[99%] py-4 px-4 justify-between items-center flex relative z-99">
+        <div className="h-fit w-[99%] py-4 pb-1 px-4 justify-between items-center flex bg-black">
             <Link href='/'>
                 <Logo />
             </Link>
@@ -84,7 +84,7 @@ export default function Header(): JSX.Element {
                 </svg>
             </div>
             {isOpen && (
-                <div className='absolute left-0 top-[10vh] text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black bg-opacity-70 h-screen backdrop-blur-md'>
+                <div className='absolute top-[4rem] left-0 text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black bg-opacity-70 h-screen backdrop-blur-md'>
                    <div className='flex flex-col items-start gap-[2.25rem] p-14'>
                     <Link className='hover:text-pink active:text-pink' href='/'>Services</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>All Guitars</Link>
