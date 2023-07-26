@@ -11,13 +11,6 @@ export default function Card() {
           <div className='w-full flex justify-end pr-2 pt-2 top-1'>
             <AddToFavorites />
           </div>
-        {/* <Image
-          src="/placeholderpic.jpg"
-          height={500}
-          width={500}
-          alt="guitar"
-          className="rounded-lg h-[100%] w-[100%] md:w-[14.75rem]"
-        /> */}
       </div>
       <div className='w-full h-fit text-white font-mono font-normal'>
         <p className='text-[1rem] md:text-[0.9rem] lg:text-[1.2rem]'>

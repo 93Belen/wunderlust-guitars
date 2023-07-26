@@ -43,13 +43,13 @@ export default function Home() {
               <h4 className='text-white font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-2 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>The story behind Wunderlust</h4>
             </div>
         </div>
-          <div className='lg:w-[40vw] md:w-[35vw] lg:h-[400px] w-full row-span-2 row-start-1 flex mt-10 md:mt-0 ml-0 lg:ml-[10vw] md:ml-0'>
+          <div className='lg:w-[40vw] md:w-[35vw] w-full row-span-2 row-start-1 flex mt-10 md:mt-0 ml-0  bg-[url("/homepageabout.png")] bg-contain bg-no-repeat md:ml-4 md:bg-right' >
             <Image
           src='/homepageabout.png'
           width={2500}
           height={2500}
           alt='about'
-          className='w-[90%] md:w-[100%] lg:w-[70%] self-center'
+          className='w-[90%] md:w-[100%] lg:w-[70%] self-center md:hidden'
           />
           </div>
         <div className='h-fit flex mx-[2%] flex-col w-full'>
