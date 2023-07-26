@@ -22,7 +22,7 @@ export default function Home() {
           <Link href='' className='text-pink font-mono text-[1.125rem] p-2 md:py-0 md:mt-[-1%] md:text-[1.5rem] md:ml-[8%]'>Shop now</Link>
         </div>
         <div className='m-auto pt-4 md:mt-8 grid md:grid-cols-4 md:w-fit md:max-w-[1500px] w-[100%] gap-[1rem] justify-center'>
-          <div>
+          <div className='h-[27rem]'>
             <Card />
           </div>
           <div className='hidden md:block'>
