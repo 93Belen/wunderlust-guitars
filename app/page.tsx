@@ -36,7 +36,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className='pt-28 mb-28 md:mb-80 flex flex-col md:grid md:grid-cols-[35vw_65vw] lg:grid-cols-[40vw_60vw] md:grid-rows-2 md:pt-60 h-fit md:gap-x-6 lg:mt-12'>
+      <section className='pt-28 mb-28 md:mb-80 flex flex-col md:grid md:grid-cols-[35vw_65vw] lg:grid-cols-[40vw_60vw] md:grid-rows-2 md:pt-32 h-fit md:gap-x-6 lg:mt-12'>
         <div className='col-start-2 flex h-fit md:justify-end md:w-[60vw]'>
             <div className='md:ml-5'>
               <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[6rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>About Us</h3>
