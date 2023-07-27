@@ -51,7 +51,7 @@ export default function Header(): JSX.Element {
             {/* DESKTOP NAV */}
             <div className='md:flex gap-[2rem] hidden text-white font-sans text-[1.125rem] font-normal'>
                 <Link className='hover:text-pink active:text-pink' href='/services'>Services</Link>
-                <Link className='hover:text-pink active:text-pink' href='/'>All Guitars</Link>
+                <Link className='hover:text-pink active:text-pink' href='/shop'>All Guitars</Link>
                 <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
             </div>
             <div className='md:flex gap-4 hidden pr-3'>
@@ -91,7 +91,7 @@ export default function Header(): JSX.Element {
                 <div className='absolute top-[4rem] left-0 text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black bg-opacity-70 h-screen backdrop-blur-md'>
                    <div className='flex flex-col items-start gap-[2.25rem] p-14'>
                     <Link className='hover:text-pink active:text-pink' href='/services'>Services</Link>
-                    <Link className='hover:text-pink active:text-pink' href='/'>All Guitars</Link>
+                    <Link className='hover:text-pink active:text-pink' href='/shop'>All Guitars</Link>
                     <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
                     <Link className='hover:text-pink active:text-pink' href='/favorites'>Favorites</Link>
                     <Link className='hover:text-pink active:text-pink' href='/cart'>My Cart</Link>
