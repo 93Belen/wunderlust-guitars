@@ -14,7 +14,7 @@ export default function About(){
                     <h4 className='text-white font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-2 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Ou story</h4>
                 </div>
             </div>
-            <div className='grid h-fit w-full md:grid-cols-2 grid-rows-2 md:grid-rows-1 justify-center'>
+            <div className='grid h-fit w-full md:grid-cols-2 md:grid-rows-1 justify-center'>
                 <div className='w-full md:w-[90%] lg:w-full ms:col-start-1 flex justify-center rounded-lg self-start pt-10' >
                     <Image
                     src='/aboutpic2.jpg'
@@ -53,24 +53,27 @@ export default function About(){
                     <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Street</h4>
                 </div>
             </div>
-            <div className='flex flex-col md:flex-row md:max-h-[200px] w-full md:p-24'>
-                <div className='w-full'>
-                    <p className='text-white font-mono text-[1.5rem] self-center' >But wait, there's more! Ben worked on Denmark Street in London, and if you don't know what that street means, search it!
-                        It's a real music shop heaven, and Ben was right in the thick of it, soaking up all the knowledge and secrets of the trade.</p>
+            <div className='flex flex-col md:flex-row w-full'>
+                <div className='w-full md:max-w-[650px] md:pl-10 md:pt-16'>
+                    <p className='text-white font-mono text-[1.5rem] self-center' >But wait, there's more! 
+                    Ben worked on Denmark Street in London, and if you don't know what that street means, 
+                    search it!
+                    It's a real music shop heaven, and Ben was right in the thick of it, 
+                    soaking up all the knowledge and secrets of the trade.</p>
                 </div>
-                <div className='flex justify-center flex-col w-full md:w-[50%]'>
+                <div className='flex justify-center flex-col w-full md:w-[50%] md:pl-10 md:mt-[-5rem]'>
                     <Image
                     src="/ben.png"
                     width={2500}
                     height={2500}
                     alt='ben'
-                    className='w-auto h-auto md:pt-18'
+                    className='w-auto h-auto md:max-w-[400px]'
                      />
                 </div>
             </div>
 
             </section>
-            <section className='h-fit md:grid md:grid-cols-2 md:p-10 md:mt-52 md:mb-40'>
+            <section className='h-fit md:grid md:grid-cols-2 md:p-10 md:mt-52 mb-40'>
                 <div className='md:col-start-2'>
                     <p className='text-white font-mono text-[1.5rem]'>
                     And if you thought that was the end of his story, think again. 
@@ -81,7 +84,7 @@ export default function About(){
                     So, my friends, buckle up, because this ride is about to get crazy. Welcome to Wunderlust guitars.
                     </p>
                 </div>
-                <div className='col-start-1 w-[80%] row-start-1'>
+                <div className='col-start-1 md:w-[80%] row-start-1 w-full flex justify-center'>
                 <Image
                     src="/benandbelen.jpg"
                     width={2500}
