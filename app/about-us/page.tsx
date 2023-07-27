@@ -49,7 +49,7 @@ export default function About(){
             <section className='h-fit md:h-fit lg:pl-52'>
             <div className='w-full flex h-fit md:w-screen justify-left'>
                 <div className='md:ml-5'>
-                    <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>Denmark</h3>
+                    <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>Denmark</h3>
                     <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Street</h4>
                 </div>
             </div>
@@ -70,8 +70,26 @@ export default function About(){
             </div>
 
             </section>
-            <section className='h-fit md:h-[500px]'>
-                
+            <section className='h-fit md:grid md:grid-cols-2 md:p-10 md:mt-52 md:mb-40'>
+                <div className='md:col-start-2'>
+                    <p className='text-white font-mono text-[1.5rem]'>
+                    And if you thought that was the end of his story, think again. 
+                    When he was 37, Ben married Belen, who shares his love for traveling the world. 
+                    That means if you're wondering whether that guitar you've been dreaming about is 
+                    sitting in some dude's house in Madrid, or locked away in a music shop in Berlin, 
+                    you bet that Ben knows about it. <span className='text-pink'>He's been there, and played that.</span> 
+                    So, my friends, buckle up, because this ride is about to get crazy. Welcome to Wunderlust guitars.
+                    </p>
+                </div>
+                <div className='col-start-1 w-[80%] row-start-1'>
+                <Image
+                    src="/benandbelen.jpg"
+                    width={2500}
+                    height={2500}
+                    alt='ben'
+                    className='w-auto h-auto md:pt-18 rounded-lg'
+                     />
+                </div>
             </section>
         </main>
     )
