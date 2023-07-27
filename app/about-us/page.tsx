@@ -46,7 +46,7 @@ export default function About(){
                 </p>
                 
             </section>
-            <section className='h-fit md:h-fit lg:pl-52'>
+            <section className='h-fit md:h-fit lg:pl-52 md:mt-28'>
             <div className='w-full flex h-fit md:w-screen justify-left'>
                 <div className='md:ml-5'>
                     <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>Denmark</h3>
@@ -73,7 +73,7 @@ export default function About(){
             </div>
 
             </section>
-            <section className='h-fit md:grid md:grid-cols-2 md:p-10 md:mt-52 mb-40'>
+            <section className='h-fit md:grid md:grid-cols-2 md:p-10 md:mt-28 mb-40'>
                 <div className='md:col-start-2'>
                     <p className='text-white font-mono text-[1.5rem]'>
                     And if you thought that was the end of his story, think again. 
