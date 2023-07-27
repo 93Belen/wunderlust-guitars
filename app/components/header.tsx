@@ -75,7 +75,9 @@ export default function Header(): JSX.Element {
                     )}
                     </span>
                 </div>
-                <BsBag className='text-white text-[22px]' />
+                <Link className='' href="/cart">
+                    <BsBag className='text-white text-[22px]' />
+                </Link>
             </div>
             {/* MOBILE NAV */}
             <div className='md:hidden relative z-70' onClick={toggleMenu}>
@@ -92,7 +94,7 @@ export default function Header(): JSX.Element {
                     <Link className='hover:text-pink active:text-pink' href='/'>All Guitars</Link>
                     <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
                     <Link className='hover:text-pink active:text-pink' href='/favorites'>Favorites</Link>
-                    <Link className='hover:text-pink active:text-pink' href='/'>My Cart</Link>
+                    <Link className='hover:text-pink active:text-pink' href='/cart'>My Cart</Link>
                     {isLoggedIn ? (
                         <button className='hover:text-pink active:text-pink' onClick={logout}>Log out</button>
                     ) : (
