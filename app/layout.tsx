@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import Hydrate from './components/Hydrate'
 import './globals.css'
-import { Goldman, Play } from "@next/font/google"
+import { Goldman, Play, Gruppo } from "@next/font/google"
 import Footer from './components/Footer'
 
 export const metadata = {
@@ -23,6 +23,13 @@ const play = Play({
   variable: '--font-play'
 })
 
+const gruppo = Gruppo({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400'],
+  variable: '--font-gruppo'
+})
+
 
 
 
@@ -40,7 +47,7 @@ export default async function RootLayout({
       <body className={`${goldman.variable} min-h-screen h-fit bg-black w-[100vw] box-border flex flex-col justify-between overflow-x-hidden`}>
         <Hydrate>
         <Header />
-        <div className='h-[70%]'>
+        <div className={`h-[70%] ${gruppo.variable}`}>
         {children}
         </div>
         <Footer />
