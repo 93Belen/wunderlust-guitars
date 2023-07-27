@@ -7,7 +7,7 @@ export default function About(){
                 <h1 className="">We are <br />
                 Wunderlust Guitars</h1>
             </section>
-            <section className='h-fit mt-6 w-full flex flex-col gap-y-10'>
+            <section className='h-fit mt-6 w-full flex flex-col gap-y-10 md:mb-20'>
             <div className='w-full flex h-fit md:justify-end md:w-screen justify-left'>
                 <div className='md:ml-5'>
                     <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>About Us</h3>
@@ -76,8 +76,8 @@ export default function About(){
             </section>
             <section className='h-fit bg-[url("/skypic.jpg")] bg-no-repeat bg-cover w-screen ml-[-1rem] md:ml-[-2rem] bg-bottom' >
                 <div className='h-fit mb-40 md:grid md:grid-cols-2 md:p-10 md:mt-32 p-4' >
-                <div className='md:col-start-2'>
-                    <p className='text-white font-mono text-[1.5rem] px-1'>
+                <div className='md:col-start-2 flex items-center'>
+                    <p className='text-white font-mono text-[1.5rem] px-1 md:max-w-[38rem]'>
                     And if you thought that was the end of his story, think again. 
                     When he was 37, Ben married Belen, who shares his love for traveling the world. 
                     That means if you're wondering whether that guitar you've been dreaming about is 
