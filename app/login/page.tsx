@@ -57,9 +57,17 @@ export default function Login(): JSX.Element{
     }
 
     return (
-        <div className="p-10">
-            <input onChange={onChange} className='m-5 bg-gray text-white' type="email" name="" id="" />
-            <button onClick={onSubmit} type='submit' className='bg-pink p-2 rounded-md font-mono text-white'>Log in</button>
+      <main className='flex justify-center h-full'>
+        <div className="p-10 flex flex-col justify-center text-center gap-y-5 w-[90%] max-w-[500px]">
+          <h1 className='font-mono text-[1.375rem] font-[700] text-white'>SIGN IN | CREATE ACCOUNT</h1>
+          <p className='font-mono text-[1.25rem] text-white font-normal'>Enter your email to get started.</p>
+          <form action="" className='text-left flex flex-col justify-center gap-y-4'>
+            <label className='text-white text-[0.875rem] font-mono gap-2 w-full' htmlFor="">EMAIL</label>
+            <input onChange={onChange} className='text-white border-white border-2 rounded-lg bg-black w-full h-[2.5rem] px-4 font-mono text-[1rem]' type="email" name="" id="" />
+            <p className='text-white font-mono text-[0.875rem] w-[90%]'>By tapping Next, you agree to our Privacy Policy and Terms & Conditions.</p>
+            <button onClick={onSubmit} type='submit' className='bg-pink p-2 rounded-md font-mono text-white w-full m-auto'>Log in</button>
+          </form>
         </div>
+      </main>
     )
 }

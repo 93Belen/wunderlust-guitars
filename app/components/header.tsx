@@ -91,7 +91,13 @@ export default function Header(): JSX.Element {
                     <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>Favorites</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>My Cart</Link>
-                    <Link className='hover:text-pink active:text-pink' href='/'>Login</Link>
+                    {isLoggedIn ? (
+                        <button className='hover:text-pink active:text-pink' onClick={logout}>Log out</button>
+                    ) : (
+                        <Link className='hover:text-pink active:text-pink' href='/login'>Login</Link>
+                    )
+
+                    }
                    </div>
                 </div>
             )}
