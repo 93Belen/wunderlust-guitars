@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image"
 import { useWebStore } from "components/store"
 import FavoritesSvg from "../components/favoritesSVG"
 import CardCart from "../components/CardCart"
