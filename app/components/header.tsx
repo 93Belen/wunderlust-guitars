@@ -50,7 +50,7 @@ export default function Header(): JSX.Element {
             </Link>
             {/* DESKTOP NAV */}
             <div className='md:flex gap-[2rem] hidden text-white font-sans text-[1.125rem] font-normal'>
-                <Link className='hover:text-pink active:text-pink' href='/'>Services</Link>
+                <Link className='hover:text-pink active:text-pink' href='/services'>Services</Link>
                 <Link className='hover:text-pink active:text-pink' href='/'>All Guitars</Link>
                 <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
             </div>
@@ -86,7 +86,7 @@ export default function Header(): JSX.Element {
             {isOpen && (
                 <div className='absolute top-[4rem] left-0 text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black bg-opacity-70 h-screen backdrop-blur-md'>
                    <div className='flex flex-col items-start gap-[2.25rem] p-14'>
-                    <Link className='hover:text-pink active:text-pink' href='/'>Services</Link>
+                    <Link className='hover:text-pink active:text-pink' href='/services'>Services</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>All Guitars</Link>
                     <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
                     <Link className='hover:text-pink active:text-pink' href='/'>Favorites</Link>
