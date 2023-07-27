@@ -1,11 +1,13 @@
+import Link from "next/link";
+
 export default function Services(){
     return (
-        <main className='h-fit min-h-screen px-4 md:px-8 w-screen overflow-x-hidden box-border flex flex-col gap-y-10 md:gap-y-0'>
+        <main className='h-fit min-h-screen px-4 md:px-8 w-screen overflow-x-hidden box-border flex flex-col gap-y-10 md:gap-y-20'>
             <section  className='text-white font-sans text-[2.25rem] md:text-[4.5rem] font-[700] bg-[url("/servicesmobile.jpg")]  md:bg-[url("/services.png")] w-screen h-[25rem] p-2 md:pl-16 pr-0 md:ml-[-2rem] ml-[-1rem] bg-no-repeat bg-center bg-cover flex items-end'>
                 <h1 className="">Wunderlust<br />
                 Services</h1>
             </section>
-            <section className='h-fit mt-6 w-full flex flex-col gap-y-10 md:mb-20'>
+            <section className='h-fit mt-6 w-full flex flex-col gap-y-10 md:mb-5'>
             <div className='w-full flex h-fit md:justify-end md:w-screen justify-left'>
                 <div className='md:ml-5'>
                     <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>Services</h3>
@@ -13,7 +15,7 @@ export default function Services(){
                 </div>
             </div>
         </section>
-        <section className='grid grid-cols-2 grid-rows-2 md:flex p-5 gap-6 gap-x-8 md:px-10 md:gap-x-20'>
+        <section className='grid grid-cols-2 grid-rows-2 md:flex p-5 gap-6 gap-x-8 md:px-10 lg:gap-x-20 border-b-white border-b-2 pb-20'>
             <div className=''>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52" fill="none">
@@ -71,6 +73,62 @@ export default function Services(){
                     or boat, not matter how, your guitar will remain next to me.
                     </p>
                 </div>
+            </div>
+        </section>
+        <section className='flex flex-col gap-y-16 border-b-white border-b-2 pb-20'>
+            <div className='md:ml-5'>
+                    <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>Personal</h3>
+                    <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Shopper</h4>
+                    <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>I have a lot of guitars, but I have seen more, and I can hunt down what you are looking for. </h5>
+                    <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
+                    Over the years I have met many guitar enthusiasts and people in the industry, so I've got a network of contacts all over the world. Let me know what guitar you are looking for and I will find it for you. 
+                    Hey! Don’t worry, you don’t pay anything until I find it. And once I do, you pay for the guitar, no extra fee.
+                    But listen, if for some reason your guitar has disappeared off the face of the Earth, let me come out with some ideas, I could have something else that might interest you.
+                    </p>
+                    <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
+                    Pay just for the guitar after I find it and If you are still interested on it. Not payment upfront, not contract signed. Settle your decision after I get what you need.
+                    </p>
+                    <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
+            </div>
+        </section>
+        <section className='flex flex-col gap-y-16 border-b-white border-b-2 pb-20'>
+            <div className='md:ml-5'>
+                    <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>Collection</h3>
+                    <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Curator</h4>
+                    <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>Listen, guitar enthusiasts usually know what they want.</h5>
+                    <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
+                    Although… maybe life is going well and you have some money to spend 
+                    but aren’t sure what your next acquisition can be… Or you are not a guitar enthusiast, 
+                    but your partner is, and you don’t know what to buy for your guitar’s maniac’s birthday. 
+                    Talk to me, and together we will see what makes sense for you to buy, we might have something here for you.
+                    </p>
+                    <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
+                    Pay jus for what you buy, and if you decide to buy it somewhere else... hey! no hard feelings
+                    </p>
+                    <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
+            </div>
+        </section>
+        <section className='flex flex-col gap-y-16 border-b-white border-b-2 pb-20'>
+            <div className='md:ml-5'>
+                    <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>Appraissals</h3>
+                    <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>Today you are not here to buy, you are here to sell and make some money</h5>
+                    <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
+                    If you are not sure how much your guitar is worth… Let me have a look, I will give you a free estimate. Then you can sell it on your own.
+                    Of course, you already know, if your guitar catches my eye, I will make you an offer.
+                    </p>
+                    <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
+            </div>
+        </section>
+        <section className='flex flex-col gap-y-16 border-b-white border-b-2 pb-20'>
+            <div className='md:ml-5'>
+                    <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[9rem] lg:text-[10rem] lg:mr-10'>Hand</h3>
+                    <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Delivery</h4>
+                    <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>From my private collection to your door.</h5>
+                    <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
+                    You just bought a really expensive guitar, and you want to get it hand delivered and intact, no carrier service, no third party involved.
+                    Traveling by plane, car, or boat, not matter how, your guitar will remain next to me. Believe, I won’t lose sight of your precious new acquisition. 
+                    </p>
+                    <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
             </div>
         </section>
         </main>
