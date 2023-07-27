@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About(){
     return (
-        <main className='h-fit min-h-screen px-4 md:px-8 w-screen overflow-x-hidden box-border flex flex-col gap-y-20'>
+        <main className='h-fit min-h-screen px-4 md:px-8 w-screen overflow-x-hidden box-border flex flex-col gap-y-20 md:gap-y-0'>
             <section  className='text-white font-sans text-[2.25rem] md:text-[4.5rem] font-[700] bg-[url("/aboutmobile.jpg")]  md:bg-[url("/aboutpic.jpg")] w-screen h-[25rem] p-2 md:pl-16 pr-0 md:ml-[-2rem] ml-[-1rem] bg-no-repeat bg-center bg-cover flex items-end'>
                 <h1 className="">We are <br />
                 Wunderlust Guitars</h1>
@@ -25,7 +25,7 @@ export default function About(){
                     />
                 </div>
                 <div className='h-fit w-screen mr-[-1rem] row-start-1 justify-center mt-5 md:col-start-2 p-5'>
-                    <p className='text-white font-mono text-[1.5rem] md:mr-[15%] self-center md:w-[40%] w-[90%] md:p-x-10 p-x-2'>
+                    <p className='text-white font-mono text-[1.5rem] md:mr-[15%] self-center md:w-[40%] w-[90%] md:p-x-10 px-1'>
                     <span className='text-pink'>Alright, prepare yourselves</span> because we're about to plunge headfirst into the story of Ben 
                     and his obsession with chasing down the best and most unique guitars.
                     Let's rewind the clock and take a trip back to Ben's roots. 
@@ -55,7 +55,8 @@ export default function About(){
             </div>
             <div className='flex flex-col md:flex-row w-full'>
                 <div className='w-full md:max-w-[650px] md:pl-10 md:pt-16'>
-                    <p className='text-white font-mono text-[1.5rem] self-center' >But wait, there's more! 
+                    <p className='text-white font-mono text-[1.5rem] self-center px-1' >
+                    But wait, there's more! 
                     Ben worked on Denmark Street in London, and if you don't know what that street means, 
                     search it!
                     It's a real music shop heaven, and Ben was right in the thick of it, 
@@ -73,9 +74,10 @@ export default function About(){
             </div>
 
             </section>
-            <section className='h-fit md:grid md:grid-cols-2 md:p-10 md:mt-28 mb-40'>
+            <section className='h-fit bg-[url("/skypic.jpg")] bg-no-repeat bg-cover w-screen ml-[-1rem] md:ml-[-2rem] bg-bottom' >
+                <div className='h-fit mb-40 md:grid md:grid-cols-2 md:p-10 md:mt-32 p-4' >
                 <div className='md:col-start-2'>
-                    <p className='text-white font-mono text-[1.5rem]'>
+                    <p className='text-white font-mono text-[1.5rem] px-1'>
                     And if you thought that was the end of his story, think again. 
                     When he was 37, Ben married Belen, who shares his love for traveling the world. 
                     That means if you're wondering whether that guitar you've been dreaming about is 
@@ -90,8 +92,9 @@ export default function About(){
                     width={2500}
                     height={2500}
                     alt='ben'
-                    className='w-auto h-auto md:pt-18 rounded-lg'
+                    className='w-auto h-auto md:pt-18 rounded-lg mt-2'
                      />
+                </div>
                 </div>
             </section>
         </main>
