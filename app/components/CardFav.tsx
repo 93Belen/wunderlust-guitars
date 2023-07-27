@@ -4,7 +4,7 @@ import AddToCart from "./AddToCart"
 
 export default function CardFav(){
     return (
-        <div className='flex justify-between w-[99%]'>
+        <div className='flex justify-between w-[99%] max-w-[900px]'>
             <div className='flex gap-x-4 h-[8.375rem]'>
                 <Image
                 src="/placeholderpic.jpg"
