@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Product(){
     return (
         <main className='w-full p-2 md:p-28 md:grid grid-cols-2 flex flex-col gap-x-10 box-border'>
-            <section className='hidden md:flex flex-col h-fit gap-y-10'>
+            <section className='hidden md:flex flex-col h-fit gap-y-10 max-w-[600px]'>
                 <div className='rounded-lg h-fit'>
                     <Image
                     src='/placeholderpic.jpg'
