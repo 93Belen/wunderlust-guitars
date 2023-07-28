@@ -57,7 +57,7 @@ export default function Login(): JSX.Element{
     }
 
     return (
-      <main className='flex justify-center h-full'>
+      <main className='flex justify-center'>
         <div className="p-10 flex flex-col justify-center text-center gap-y-5 w-[90%] max-w-[500px]">
           <h1 className='font-mono text-[1.375rem] font-[700] text-white'>SIGN IN | CREATE ACCOUNT</h1>
           <p className='font-mono text-[1.25rem] text-white font-normal'>Enter your email to get started.</p>
