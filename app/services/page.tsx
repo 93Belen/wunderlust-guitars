@@ -17,7 +17,7 @@ export default function Services(){
             </div>
         </section>
         <section className='grid grid-cols-2 grid-rows-2 md:flex p-5 gap-6 gap-x-8 md:px-10 lg:gap-x-20 border-b-white border-b-2 pb-20'>
-            <div className=''>
+            <Link href='#personal-shopper'>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="53" height="52" viewBox="0 0 53 52" fill="none">
                         <path d="M31.0481 10.0474H29.9334C29.4912 4.31631 24.2096 0.0859375 18.1522 0.0859375C12.0966 0.0859375 6.815 4.31631 6.37275 10.0474H4.94812C3.6358 10.0474 2.37723 10.5688 1.44927 11.4967C0.521319 12.4247 0 13.6832 0 14.9956V44.9199C0 46.2323 0.521319 47.4908 1.44927 48.4188C2.37723 49.3467 3.6358 49.8681 4.94812 49.8681H25.491C25.7991 50.9556 26.796 51.7422 27.9669 51.7422H50.0431C51.4569 51.7422 52.6169 50.5967 52.6169 49.1793V25.325C52.6169 23.8877 51.4569 22.7422 50.0431 22.7422H35.9963V14.9956C35.9963 14.3458 35.8683 13.7023 35.6196 13.102C35.3709 12.5017 35.0065 11.9562 34.547 11.4967C34.0875 11.0372 33.542 10.6728 32.9417 10.4241C32.3414 10.1754 31.6979 10.0474 31.0481 10.0474ZM4.94812 13.6724H6.34375V16.3984C6.34375 16.8791 6.53471 17.3402 6.87462 17.6801C7.21453 18.02 7.67555 18.2109 8.15625 18.2109C8.63696 18.2109 9.09797 18.02 9.43788 17.6801C9.77779 17.3402 9.96875 16.8791 9.96875 16.3984V13.6724H26.3374V16.3984C26.3374 16.8791 26.5284 17.3402 26.8683 17.6801C27.2082 18.02 27.6692 18.2109 28.1499 18.2109C28.6306 18.2109 29.0917 18.02 29.4316 17.6801C29.7715 17.3402 29.9624 16.8791 29.9624 16.3984V13.6724H31.0481C31.2219 13.6724 31.3939 13.7067 31.5545 13.7732C31.715 13.8396 31.8609 13.9371 31.9837 14.06C32.1066 14.1828 32.204 14.3287 32.2705 14.4892C32.337 14.6498 32.3713 14.8218 32.3713 14.9956V23.9946H3.625V14.9956C3.625 14.8218 3.65922 14.6498 3.72572 14.4892C3.79221 14.3287 3.88967 14.1828 4.01253 14.06C4.1354 13.9371 4.28126 13.8396 4.44179 13.7732C4.60232 13.7067 4.77437 13.6724 4.94812 13.6724ZM18.154 3.71094C22.5457 3.71094 25.8481 6.62544 26.2885 10.0474H10.0195C10.4581 6.62544 13.7605 3.71094 18.154 3.71094ZM35.9963 38.5816C36.9806 38.9174 38.0139 39.087 39.0539 39.0837C43.6813 39.0837 47.1812 35.8846 47.1812 32.1944V27.3278C47.1812 27.0875 47.2767 26.857 47.4466 26.687C47.6166 26.517 47.8471 26.4216 48.0874 26.4216C48.3278 26.4216 48.5583 26.517 48.7283 26.687C48.8982 26.857 48.9937 27.0875 48.9937 27.3278V32.1926C48.9937 37.1244 44.4226 40.8926 39.0539 40.8926C38.0201 40.8935 36.9911 40.7514 35.9963 40.4702V38.5816ZM3.625 28.2159H32.3713V32.1309H3.625V28.2159ZM3.625 40.2673V36.3523H32.3713V40.2673H3.625ZM3.625 44.4922H32.3713V44.9381C32.3713 45.6522 31.7931 46.2431 31.0481 46.2431H4.94812C4.59721 46.2431 4.26067 46.1037 4.01253 45.8555C3.7644 45.6074 3.625 45.2709 3.625 44.9199V44.4922Z" fill="white"/>
@@ -29,8 +29,8 @@ export default function Services(){
                         but I have seen more, 
                         and I can hunt down what you are looking for.</p>
                 </div>
-            </div>
-            <div>
+            </Link>
+            <Link href='#collection-curator'>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="59" height="58" viewBox="0 0 59 58" fill="none">
                         <path d="M15.8352 52.9165C16.7581 52.9165 17.5063 52.1683 17.5063 51.2453C17.5063 50.3224 16.7581 49.5742 15.8352 49.5742C14.9123 49.5742 14.1641 50.3224 14.1641 51.2453C14.1641 52.1683 14.9123 52.9165 15.8352 52.9165Z" fill="black"/>
@@ -45,8 +45,8 @@ export default function Services(){
                     we might have something here for you.
                     </p>
                 </div>
-            </div>
-            <div>
+            </Link>
+            <Link href='#appraisals'>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="48" viewBox="0 0 50 48" fill="none">
                         <path d="M0.550782 5.15079C0.550782 3.99709 1.00908 2.89066 1.82487 2.07487C2.64065 1.25909 3.74709 0.800786 4.90078 0.800786H42.6008C43.6281 0.799256 44.6228 1.16135 45.4087 1.82292C46.1946 2.4845 46.721 3.40287 46.8946 4.41538C47.0683 5.42789 46.878 6.46919 46.3575 7.35485C45.837 8.24052 45.0199 8.91339 44.0508 9.25429V26.9008H41.1508V9.50079H6.35078V38.5008H9.25078V28.3508C9.25078 27.9662 9.40355 27.5974 9.67548 27.3255C9.9474 27.0536 10.3162 26.9008 10.7008 26.9008H22.3008C22.5799 26.9006 22.8531 26.9809 23.0877 27.1321C23.3223 27.2834 23.5082 27.4991 23.6232 27.7534C22.776 28.2715 22.0761 28.9986 21.5907 29.8649C21.1052 30.7312 20.8504 31.7077 20.8508 32.7008V29.8008H12.1508V38.5008H20.8508V41.4008H4.90078C4.51622 41.4008 4.1474 41.248 3.87548 40.9761C3.60355 40.7042 3.45078 40.3354 3.45078 39.9508V9.25429C2.60231 8.9543 1.86775 8.39855 1.34836 7.66361C0.828972 6.92867 0.55031 6.05073 0.550782 5.15079ZM4.90078 3.70079C4.51622 3.70079 4.1474 3.85355 3.87548 4.12548C3.60355 4.39741 3.45078 4.76622 3.45078 5.15079C3.45078 5.53535 3.60355 5.90416 3.87548 6.17609C4.1474 6.44802 4.51622 6.60079 4.90078 6.60079H42.6008C42.9853 6.60079 43.3542 6.44802 43.6261 6.17609C43.898 5.90416 44.0508 5.53535 44.0508 5.15079C44.0508 4.76622 43.898 4.39741 43.6261 4.12548C43.3542 3.85355 42.9853 3.70079 42.6008 3.70079H4.90078ZM10.7008 12.4008C10.3162 12.4008 9.9474 12.5536 9.67548 12.8255C9.40355 13.0974 9.25078 13.4662 9.25078 13.8508V22.5508C9.25078 22.9354 9.40355 23.3042 9.67548 23.5761C9.9474 23.848 10.3162 24.0008 10.7008 24.0008H36.8008C37.1853 24.0008 37.5542 23.848 37.8261 23.5761C38.098 23.3042 38.2508 22.9354 38.2508 22.5508V13.8508C38.2508 13.4662 38.098 13.0974 37.8261 12.8255C37.5542 12.5536 37.1853 12.4008 36.8008 12.4008H10.7008ZM12.1508 21.1008V15.3008H35.3508V21.1008H12.1508ZM49.8508 34.1508V42.8508C49.8508 44.0045 49.3925 45.1109 48.5767 45.9267C47.7609 46.7425 46.6545 47.2008 45.5008 47.2008H28.1008C26.9471 47.2008 25.8406 46.7425 25.0249 45.9267C24.2091 45.1109 23.7508 44.0045 23.7508 42.8508V34.1508C23.7508 32.9971 24.2091 31.8907 25.0249 31.0749C25.8406 30.2591 26.9471 29.8008 28.1008 29.8008H45.5008C46.6545 29.8008 47.7609 30.2591 48.5767 31.0749C49.3925 31.8907 49.8508 32.9971 49.8508 34.1508ZM45.5008 44.3008C45.5008 43.9162 45.6535 43.5474 45.9255 43.2755C46.1974 43.0036 46.5662 42.8508 46.9508 42.8508V39.9508C45.7971 39.9508 44.6907 40.4091 43.8749 41.2249C43.0591 42.0407 42.6008 43.1471 42.6008 44.3008H45.5008ZM46.9508 34.1508C46.5662 34.1508 46.1974 33.998 45.9255 33.7261C45.6535 33.4542 45.5008 33.0854 45.5008 32.7008H42.6008C42.6008 33.8545 43.0591 34.9609 43.8749 35.7767C44.6907 36.5925 45.7971 37.0508 46.9508 37.0508V34.1508ZM28.1008 32.7008C28.1008 33.0854 27.948 33.4542 27.6761 33.7261C27.4042 33.998 27.0353 34.1508 26.6508 34.1508V37.0508C27.8045 37.0508 28.9109 36.5925 29.7267 35.7767C30.5425 34.9609 31.0008 33.8545 31.0008 32.7008H28.1008ZM26.6508 42.8508C27.0353 42.8508 27.4042 43.0036 27.6761 43.2755C27.948 43.5474 28.1008 43.9162 28.1008 44.3008H31.0008C31.0008 43.1471 30.5425 42.0407 29.7267 41.2249C28.9109 40.4091 27.8045 39.9508 26.6508 39.9508V42.8508ZM36.8008 34.1508C35.6471 34.1508 34.5406 34.6091 33.7249 35.4249C32.9091 36.2407 32.4508 37.3471 32.4508 38.5008C32.4508 39.6545 32.9091 40.7609 33.7249 41.5767C34.5406 42.3925 35.6471 42.8508 36.8008 42.8508C37.9545 42.8508 39.0609 42.3925 39.8767 41.5767C40.6925 40.7609 41.1508 39.6545 41.1508 38.5008C41.1508 37.3471 40.6925 36.2407 39.8767 35.4249C39.0609 34.6091 37.9545 34.1508 36.8008 34.1508Z" fill="white"/>
@@ -59,8 +59,8 @@ export default function Services(){
                     Let me have a look, I will give you a free estimate.
                     </p>
                 </div>
-            </div>
-            <div>
+            </Link>
+            <Link href='#hand-delivery'>
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="59" height="49" viewBox="0 0 59 49" fill="none">
                         <path d="M7.47578 24.2809H29.1976V27.2534H7.47578V24.2809ZM3.85547 16.8496H21.957V19.8221H3.85547V16.8496Z" fill="white"/>
@@ -74,12 +74,12 @@ export default function Services(){
                     or boat, not matter how, your guitar will remain next to me.
                     </p>
                 </div>
-            </div>
+            </Link>
         </section>
-        <section className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
+        <section id='personal-shopper' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
             <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Personal</h3>
-                    <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Shopper</h4>
+            <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Shopper</h4>
             </div>
                 <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>I have a lot of guitars, but I have seen more, and I can hunt down what you are looking for. </h5>
                 <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
@@ -92,7 +92,7 @@ export default function Services(){
                 </p>
                 <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
         </section>
-        <section className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
+        <section id='collection-curator' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
                 <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Collection</h3>
                 <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Curator</h4>
@@ -110,7 +110,7 @@ export default function Services(){
                 <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
 
         </section>
-        <section className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
+        <section id='appraisals' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
                 <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Appraissals</h3>
                 <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>Today you are not here to buy, you are here to sell and make some money</h5>
@@ -121,7 +121,7 @@ export default function Services(){
                 </p>
                 <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
         </section>
-        <section className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
+        <section id='hand-delivery' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
                 <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Hand</h3>
                 <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Delivery</h4>
@@ -133,7 +133,7 @@ export default function Services(){
                 </p>
                 <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
         </section>
-        <section className='flex justify-center pb-20'>
+        <section id='contact-form' className='flex justify-center pb-20'>
             <ContactForm />
         </section>
         </main>
