@@ -23,6 +23,6 @@
       "components/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Logo.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Logo.tsx", "app/shop/[id]"],
   "exclude": ["node_modules"]
 }
