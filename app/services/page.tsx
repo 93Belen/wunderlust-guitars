@@ -76,10 +76,10 @@ export default function Services(){
                 </div>
             </div>
         </section>
-        <section className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
+        <section id='personal-shopper' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
             <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Personal</h3>
-                    <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Shopper</h4>
+            <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Shopper</h4>
             </div>
                 <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>I have a lot of guitars, but I have seen more, and I can hunt down what you are looking for. </h5>
                 <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
@@ -92,7 +92,7 @@ export default function Services(){
                 </p>
                 <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
         </section>
-        <section className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
+        <section id='collection-curator' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
                 <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Collection</h3>
                 <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Curator</h4>
@@ -110,7 +110,7 @@ export default function Services(){
                 <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
 
         </section>
-        <section className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
+        <section id='appraisals' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
                 <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Appraissals</h3>
                 <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>Today you are not here to buy, you are here to sell and make some money</h5>
@@ -121,7 +121,7 @@ export default function Services(){
                 </p>
                 <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
         </section>
-        <section className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
+        <section id='hand-delivery' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
                 <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Hand</h3>
                 <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Delivery</h4>
@@ -133,7 +133,7 @@ export default function Services(){
                 </p>
                 <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
         </section>
-        <section className='flex justify-center pb-20'>
+        <section id='contact-form' className='flex justify-center pb-20'>
             <ContactForm />
         </section>
         </main>

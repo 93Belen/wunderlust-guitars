@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 
 import Logo from "./Logo"
 
@@ -9,26 +10,26 @@ export default function Footer(){
                 <Logo/>
             </div>
             <div className='flex flex-col gap-6'>
-                <p>Popular</p>
-                <p>Electric</p>
-                <p>Acoustic</p>
+                <Link href='/shop'>Popular</Link>
+                <Link href='/shop/electric'>Electric</Link>
+                <Link href='/shop/acoustic'>Acoustic</Link>
             </div>
             <div className='flex flex-col gap-6'>
-                <p>Shop</p>
-                <p>Services</p>
-                <p>About Us</p>
-                <p>Contact</p>
+                <Link href='/shop'>Shop</Link>
+                <Link href='/services'>Services</Link>
+                <Link href='/about-us'>About Us</Link>
+                <Link href='/services/#contact-form'>Contact</Link>
             </div>
             <div className='md:flex flex-col gap-6 hidden'>
-                <p>Personal Shopper</p>
-                <p>Hand Delivery</p>
-                <p>Appraisals</p>
-                <p>Curator</p>              
+                <Link href='/services/#personal-shopper'>Personal Shopper</Link>
+                <Link href='/services/#hand-delivery'>Hand Delivery</Link>
+                <Link href='/services/#appraisals'>Appraisals</Link>
+                <Link href='/services/#collection-curator'>Curator</Link>           
             </div>
             <div className='md:flex flex-col gap-6 hidden'>
-                <p>Sign in</p>
-                <p>Favorites</p>
-                <p>Cart</p>
+                <Link href='/login'>Sign In</Link>
+                <Link href='/favorites'>Favorites</Link>
+                <Link href='/cart'>Cart</Link>
                 
             </div>
             <div className='col-span-5 flex items-end justify-self-end'>
