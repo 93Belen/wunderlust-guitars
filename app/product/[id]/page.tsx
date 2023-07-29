@@ -69,7 +69,7 @@ export default function Product(){
 
                 </div>
                 <h2 className='text-[1.5rem]'>Similar Styles</h2>
-                <div className='grid grid-cols-2 md:flex gap-2'>
+                <div className='grid grid-cols-2 md:flex gap-2 max-w-[500px] m-auto md:max-w-none md:m-0'>
                 <div>
                     <Image
                         src='/placeholderpic.jpg'
