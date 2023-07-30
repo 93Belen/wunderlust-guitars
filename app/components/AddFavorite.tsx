@@ -4,7 +4,7 @@ import { initializeMagic } from "components/magic/initializeMagic";
 
 
 
-export default function AddToFavorites({id}) {
+export default function AddToFavorites({id}: { id: string}) {
     const m: Magic = initializeMagic
     // const guitarId = props.guitarId;
     const guitarId = id;

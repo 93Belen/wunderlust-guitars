@@ -7,8 +7,9 @@ import { Magic } from 'magic-sdk';
 import Logo from './Logo';
 import {BsBag} from 'react-icons/bs'
 import { useWebStore } from 'components/store';
+import { Product } from 'components/types/storeTypes';
 
-export default function Header({allGuitars}): JSX.Element {
+export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Element {
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
