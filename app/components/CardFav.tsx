@@ -1,6 +1,5 @@
 "use client"
 import { initializeMagic } from "components/magic/initializeMagic";
-import { Product } from "components/types/storeTypes"
 import { Magic } from "magic-sdk";
 import Image from "next/image"
 import AddToCart from "./AddToCart"
@@ -8,7 +7,7 @@ import AddToCart from "./AddToCart"
 export default function CardFav({guitarId}: {guitarId: string}){
     const m : Magic = initializeMagic;
 
-    console.log(guitarId)
+
 
     const removeFromFav = async (): Promise<void> => {
         try {

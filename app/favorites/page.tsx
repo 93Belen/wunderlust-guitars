@@ -1,8 +1,10 @@
 "use client"
 
 import { initializeMagic } from "components/magic/initializeMagic";
+import { getOneProduct } from "components/stripe/getOneProduct";
 import { Magic } from "magic-sdk";
 import { useEffect, useState } from "react";
+import Stripe from "stripe";
 import CardFav from "../components/CardFav";
 import FavoritesSvg from "../components/favoritesSVG";
 
@@ -36,6 +38,9 @@ export default function Favorites(){
                   })
         
                 const myfavorites = await getfavs.json();
+                myfavorites.forEach(async(fav: {userId: string, guitarId: string})=> {
+                    const guitarFromStripe = await getOneProduct(fav.guitarId)
+                });
                 setFavorites(myfavorites)
                 
               } catch {
