@@ -1,6 +1,45 @@
 "use client"
+import { Magic } from "magic-sdk";
+import { initializeMagic } from "components/magic/initializeMagic";
+
+
 
 export default function AddToFavorites() {
+    const m: Magic = initializeMagic
+    // const guitarId = props.guitarId;
+    const guitarId = ""
+
+    const addToFavorites = async (): Promise<void> => {
+        try {
+            const loggedIn: boolean = await m.user.isLoggedIn();
+            if(loggedIn){
+                const info = await m.user.getMetadata()
+                const email = info.email
+                const user = await fetch("/api/user/finduser", {
+                    method: "POST",
+                    body: JSON.stringify({email})
+                })
+
+                const jsonUser = await user.json()
+                const userId = jsonUser.id
+                // console.log(jsonUser)
+                // console.log(userId)
+
+
+                const response = await fetch("/api/user/likeguitar", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        userId: userId,
+                        guitarId: guitarId
+                    })
+                })
+            }
+            
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <div className='w-[25px] h-auto'>
             <svg width="100%" height="100%" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
