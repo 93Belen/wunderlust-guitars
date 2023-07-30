@@ -25,17 +25,39 @@ export default function AddToFavorites({id}) {
                 // console.log(jsonUser)
                 // console.log(userId)
 
-
-                const response = await fetch("/api/user/likeguitar", {
+                // see if guitar is liked already 
+                const getlikedGuitars = await fetch("/api/user/checkguitarinfavorites", {
                     method: "POST",
                     body: JSON.stringify({
                         userId: userId,
                         guitarId: guitarId
                     })
                 })
+                const likedGuitars = await getlikedGuitars.json()
+
+               
+                
+                if(likedGuitars.length > 0){
+                    const response = await fetch("/api/user/unlikeguitar", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        userId: userId,
+                        guitarId: guitarId
+                    })
+                })
+                }
+                else {
+                    const response = await fetch("/api/user/likeguitar", {
+                        method: "POST",
+                        body: JSON.stringify({
+                            userId: userId,
+                            guitarId: guitarId
+                        })
+                    })
+                }
             }
-            
-        } catch (error) {
+            }
+            catch (error) {
             console.log(error);
         }
     };
