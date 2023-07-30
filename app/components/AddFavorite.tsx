@@ -41,7 +41,7 @@ export default function AddToFavorites() {
     };
 
     return (
-        <div className='w-[25px] h-auto'>
+        <div onClick={addToFavorites} className='w-[25px] h-auto'>
             <svg width="100%" height="100%" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="path-1-inside-1_13596_7880" fill="white">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M2.22652 2.02975C0.444561 3.92259 0.444561 6.99148 2.22652 8.88431L8.87405 15.9455C9.24893 16.3437 9.85446 16.3475 10.2338 15.9571C10.3348 15.9076 10.4294 15.8386 10.5126 15.7502L17.1601 8.68906C18.9421 6.79623 18.9421 3.72734 17.1601 1.8345C15.3782 -0.0583292 12.489 -0.0583275 10.7071 1.83451L9.60141 3.00897L8.67955 2.02975C6.89759 0.136921 4.00847 0.136921 2.22652 2.02975Z"/>
