@@ -3,6 +3,7 @@ import Hydrate from './components/Hydrate'
 import './globals.css'
 import { Goldman, Play, Gruppo } from "@next/font/google"
 import Footer from './components/Footer'
+import { getProduct } from 'components/stripe/getProduct'
 
 export const metadata = {
   title: 'Create Next App',
@@ -39,6 +40,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+ 
+  const response = await getProduct();
+  const allGuitars = response.data
 
 
 
@@ -46,7 +50,7 @@ export default async function RootLayout({
     <html lang="en" className={`${play.variable}`}>
       <body className={`${goldman.variable} min-h-screen h-fit bg-black w-[100vw] box-border flex flex-col justify-between overflow-x-hidden`}>
         <Hydrate>
-        <Header />
+        <Header allGuitars={allGuitars} />
         <div className={`h-[70%] ${gruppo.variable}`}>
         {children}
         </div>

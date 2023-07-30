@@ -6,17 +6,22 @@ import { initializeMagic } from 'components/magic/initializeMagic';
 import { Magic } from 'magic-sdk';
 import Logo from './Logo';
 import {BsBag} from 'react-icons/bs'
+import { useWebStore } from 'components/store';
 
-export default function Header(): JSX.Element {
+export default function Header({allGuitars}): JSX.Element {
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const store = useWebStore()
+    console.log(allGuitars)
 
     // check that user is logged in
     // If user is logged in it will display the log-out button
     // If user is not logged in, it will display the link to the log-in page
     useEffect(() => {
         checkLoginStatus();
+        store.addAllGuitars(allGuitars)
     }, []);
 
     const toggleMenu = () => {
