@@ -3,19 +3,13 @@ import { prisma } from "components/prisma/seed";
 
 export async function POST(req: Request): Promise<Response> {
 
-    const { userId, guitarId }: {userId: string, guitarId: string } = await req.json();
+    const { userId }: {userId: string} = await req.json();
 
     try{
         const responseFromPrisma = await prisma.userFavorites.findMany({
             where: {
-                userId: userId,
-                guitarId: guitarId
-            },
-            select: {
-                guitarId: true,
-                userId: false
+                userId: userId
             }
-
         })
     
         return new Response(JSON.stringify(responseFromPrisma));
