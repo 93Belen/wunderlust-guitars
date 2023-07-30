@@ -4,7 +4,7 @@ import AddToFavorites from "./AddFavorite";
 import Link from "next/link";
 
 // Size needs to be determined by prop comming from page where is rendered, or be 100% and determine size in page where rendered div
-export default function Card() {
+export default function Card({data}) {
   const id = "1"
   return (
     <Link href={`/product/${id}`} className={`bg-darkgray flex flex-col p-[0.5rem] justify-center items-center rounded-lg w-[100%] h-[100%] box-border gap-[1rem] max-w-[300px] md:p-3 lg:p-[1.25rem]`}>
