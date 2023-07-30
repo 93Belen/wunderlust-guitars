@@ -4,10 +4,10 @@ import { initializeMagic } from "components/magic/initializeMagic";
 
 
 
-export default function AddToFavorites() {
+export default function AddToFavorites({id}) {
     const m: Magic = initializeMagic
     // const guitarId = props.guitarId;
-    const guitarId = ""
+    const guitarId = id;
 
     const addToFavorites = async (): Promise<void> => {
         try {
