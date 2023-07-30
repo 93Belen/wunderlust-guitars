@@ -9,6 +9,7 @@ import FavoritesSvg from "../components/favoritesSVG";
 
 export default function Favorites(){
   const [favorites, setFavorites] = useState([])
+  console.log(favorites)
 
     const m: Magic = initializeMagic
 
@@ -37,7 +38,6 @@ export default function Favorites(){
         
                 const myfavorites = await getfavs.json();
                 setFavorites(myfavorites)
-                console.log(myfavorites)
                 
               } catch {
                 // Handle errors if required!
@@ -86,9 +86,9 @@ export default function Favorites(){
             <FavoritesSvg />
           </div>
           </section>
-          {favorites.map(() => (
+          {favorites.map((guitar: {userId: string, guitarId: string}) => (
             <section className='p-5 md:px-12 flex justify-center'>
-                <CardFav />
+                <CardFav guitarId={guitar.guitarId} />
             </section>
           ))}
         </main>

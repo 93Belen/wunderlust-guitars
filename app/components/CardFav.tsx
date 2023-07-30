@@ -1,8 +1,45 @@
 "use client"
+import { initializeMagic } from "components/magic/initializeMagic";
+import { Product } from "components/types/storeTypes"
+import { Magic } from "magic-sdk";
 import Image from "next/image"
 import AddToCart from "./AddToCart"
 
-export default function CardFav(){
+export default function CardFav({guitarId}: {guitarId: string}){
+    const m : Magic = initializeMagic;
+
+    console.log(guitarId)
+
+    const removeFromFav = async (): Promise<void> => {
+        try {
+            const loggedIn: boolean = await m.user.isLoggedIn();
+            if(loggedIn){
+                const info = await m.user.getMetadata()
+                const email = info.email
+                const user = await fetch("/api/user/finduser", {
+                    method: "POST",
+                    body: JSON.stringify({email})
+                })
+
+                const jsonUser = await user.json()
+                const userId = jsonUser.id
+                // console.log(jsonUser)
+                // console.log(userId)
+                const response = await fetch("/api/user/unlikeguitar", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        userId: userId,
+                        guitarId: guitarId
+                    })
+                })
+               
+            }
+            }
+            catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         <div className='flex justify-between w-[99%] max-w-[900px]'>
             <div className='flex gap-x-4 h-[8.375rem] rounded-lg'>
@@ -23,13 +60,13 @@ export default function CardFav(){
                         <div className='self-end row-span-2'>
                             <AddToCart />
                         </div>
-                        <p>Remove</p>
+                        <button onClick={removeFromFav} className='cursor-pointer'>Remove</button>
                     </div>
                 </div>
             </div>
             <p className='text-white font-mono hidden md:block'>IN STOCK</p>
             <div className='text-white font-mono md:flex flex-col justify-between hidden'>
-                <p>Remove</p>
+                <button onClick={removeFromFav} className='cursor-pointer'>Remove</button>
                 <AddToCart />
             </div>
         </div>
