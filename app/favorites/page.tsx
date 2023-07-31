@@ -1,14 +1,58 @@
 "use client"
 
 import { initializeMagic } from "components/magic/initializeMagic";
-import { useEffect } from "react";
+import { getOneProduct } from "components/stripe/getOneProduct";
+import { Magic } from "magic-sdk";
+import { useEffect, useState } from "react";
+import Stripe from "stripe";
 import CardFav from "../components/CardFav";
 import FavoritesSvg from "../components/favoritesSVG";
 
 
 export default function Favorites(){
+  const [favorites, setFavorites] = useState([])
+  console.log(favorites)
 
-    const magic = initializeMagic
+    const m: Magic = initializeMagic
+
+
+    const getFavorites = async (): Promise<void> => {
+      try {
+          const loggedIn: boolean = await m.user.isLoggedIn();
+          if(loggedIn){
+              const info = await m.user.getMetadata()
+              const email = info.email
+              const user = await fetch("/api/user/finduser", {
+                  method: "POST",
+                  body: JSON.stringify({email})
+              })
+
+              const jsonUser = await user.json()
+              const userId = jsonUser.id
+              // //console.logjsonUser)
+              // //console.loguserId)
+
+              try {
+                const getfavs = await fetch('api/user/getlikedguitars', {
+                    method: 'POST',
+                    body: JSON.stringify({userId})
+                  })
+        
+                const myfavorites = await getfavs.json();
+                console.log(myfavorites)
+                setFavorites(myfavorites)
+                
+              } catch {
+                // Handle errors if required!
+              }
+
+             
+          }
+          }
+          catch (error) {
+          //console.logerror);
+      }
+  };
 
 
     const createGuitar = async() => {
@@ -19,31 +63,13 @@ export default function Favorites(){
               })
     
             const response = await res.json();
-            console.log(response)
+            //console.logresponse)
             
           } catch {
             // Handle errors if required!
           }
         }
 
-
-
-
-    const getFavorites = async() => {
-    try {
-        const { email } = await magic.user.getInfo();
-        const getfavs = await fetch('api/favorites/getmyfavorites', {
-            method: 'POST',
-            body: JSON.stringify({email})
-          })
-
-        const myfavorites = await getfavs.json();
-        console.log(myfavorites)
-        
-      } catch {
-        // Handle errors if required!
-      }
-    }
     useEffect(() => {
         getFavorites()
         createGuitar()
@@ -63,9 +89,11 @@ export default function Favorites(){
             <FavoritesSvg />
           </div>
           </section>
-          <section className='p-5 md:px-12 flex justify-center'>
-              <CardFav />
-          </section>
+          {favorites.map((guitar) => (
+            <section onClick={getFavorites} className='p-5 md:px-12 flex justify-center'>
+                <CardFav guitar={guitar} />
+            </section>
+          ))}
         </main>
     )
 }

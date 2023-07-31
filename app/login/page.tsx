@@ -23,7 +23,7 @@ export default function Login(): JSX.Element{
                         body: JSON.stringify({email})
                       })
                       const json = await addUser.json()
-                      console.log(json)
+                      //console.logjson)
                 }
         }
         catch(err){

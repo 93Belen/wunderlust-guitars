@@ -6,17 +6,23 @@ import { initializeMagic } from 'components/magic/initializeMagic';
 import { Magic } from 'magic-sdk';
 import Logo from './Logo';
 import {BsBag} from 'react-icons/bs'
+import { useWebStore } from 'components/store';
+import { Product } from 'components/types/storeTypes';
 
-export default function Header(): JSX.Element {
+export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Element {
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
+
+    const store = useWebStore()
+    //console.logallGuitars)
 
     // check that user is logged in
     // If user is logged in it will display the log-out button
     // If user is not logged in, it will display the link to the log-in page
     useEffect(() => {
         checkLoginStatus();
+        store.addAllGuitars(allGuitars)
     }, []);
 
     const toggleMenu = () => {
@@ -27,7 +33,7 @@ export default function Header(): JSX.Element {
             const loggedIn: boolean = await m.user.isLoggedIn();
             setIsLoggedIn(loggedIn);
         } catch (error) {
-            console.log(error);
+            //console.logerror);
         }
     };
 
@@ -36,10 +42,10 @@ export default function Header(): JSX.Element {
             if (isLoggedIn) {
                 await m.user.logout();
                 setIsLoggedIn(false);
-                console.log(await m.user.isLoggedIn()); // => `false`
+                //console.logawait m.user.isLoggedIn()); // => `false`
             }
         } catch (error) {
-            console.log(error);
+            //console.logerror);
         }
     };
 

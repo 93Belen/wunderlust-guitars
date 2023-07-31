@@ -63,7 +63,7 @@ export default function Product(){
                 </div>
                 <div className='flex gap-5'>
                     <AddToCart />
-                    <AddToFavorites />
+                    <AddToFavorites id={""} />
                 </div>
                 <div>
 

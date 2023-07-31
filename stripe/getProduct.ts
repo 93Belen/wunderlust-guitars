@@ -7,3 +7,4 @@ export const getProduct = async() => {
     const product = await stripe.products.list()
     return product
 }
+
