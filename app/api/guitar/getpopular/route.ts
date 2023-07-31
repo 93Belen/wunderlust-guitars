@@ -1,8 +1,6 @@
 import { prisma } from "components/prisma/seed";
 import { getOneProduct } from "components/stripe/getOneProduct";
 
-// Find user in db with email
-// Im not using this endpoint right now
 export async function GET(): Promise<Response> {
     try{
         const responseFromPrisma = await prisma.guitar.findMany({
@@ -29,7 +27,7 @@ export async function GET(): Promise<Response> {
           })
         );
 
-        return new Response(JSON.stringify(onlyInStock));
+        return new Response(JSON.stringify([onlyInStock[0], onlyInStock[1], onlyInStock[2], onlyInStock[3]]));
 
     }
     catch (error) {
