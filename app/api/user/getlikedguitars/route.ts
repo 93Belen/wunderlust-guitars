@@ -26,6 +26,7 @@ export async function POST(req: Request): Promise<Response> {
                 await prisma.userFavorites.deleteMany({
                   where: {
                     guitarId: guitar.guitarId,
+                    userId: guitar.userId
                   },
                 });
               }
