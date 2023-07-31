@@ -1,9 +1,25 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Card from "./components/Card";
 import SoundWave from "./components/SoundWave";
 
 export default function Home() {
+  const [popular, setPopular] = useState([])
+
+  const getPopularGuitars = async() => {
+    const popular = await fetch("/api/guitar/getpopular");
+    const popularJson = await popular.json();
+    setPopular(popularJson)
+    console.log(popularJson)
+  }
+  useEffect(()=> {
+    getPopularGuitars()
+  },[])
+
+  
   return (
     <main className='h-fit min-h-screen px-4 md:px-8 w-screen overflow-x-hidden'>
       <section className='w-[54rem] md:w-[100vw] m-0 p-0 md:ml-[-2rem] ml-[-7rem]'>
@@ -22,18 +38,11 @@ export default function Home() {
           <Link href='/shop' className='text-pink font-mono text-[1.125rem] p-2 md:py-0 md:mt-[-1%] md:text-[1.5rem] md:ml-[8%]'>Shop now</Link>
         </div>
         <div className='m-auto pt-4 md:mt-8 grid md:grid-cols-3 lg:grid-cols-4 md:w-fit lg:max-w-[1500px] w-[100%] gap-[1rem] justify-center'>
-          <div className='h-[19rem] lg:h-[23rem]'>
-            <Card />
-          </div>
-          <div className='h-[19rem] lg:h-[23rem] hidden md:block'>
-            <Card />
-          </div>
-          <div className='h-[19rem] lg:h-[23rem] hidden md:block'>
-            <Card />
-          </div>
-          <div className='h-[19rem] lg:h-[23rem] hidden lg:block'>
-            <Card />
-          </div>
+        {popular.map((guitar) => (
+                <div className='h-[15rem] lg:h-[22rem]'>
+                <Card data={guitar} />
+            </div>
+            ))}
         </div>
       </section>
       <section className='pt-28 mb-28 md:mb-80 flex flex-col md:grid md:grid-cols-[35vw_65vw] lg:grid-cols-[40vw_60vw] md:grid-rows-2 md:pt-32 h-fit md:gap-x-6 lg:mt-12'>

@@ -12,6 +12,17 @@ export async function POST(req: Request): Promise<Response> {
               guitarId: guitarId,
         }
       });
+
+      const removeLike = await prisma.guitar.update({
+        where: {
+          id: guitarId
+        },
+        data: {
+          likes: {
+            decrement: 1
+          }
+        }      
+      });
     
       return new Response(JSON.stringify(responseFromPrisma));
     }

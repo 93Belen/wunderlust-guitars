@@ -9,7 +9,22 @@ export async function POST(req: Request): Promise<Response> {
         data: {
           userId: userId,
           guitarId: guitarId,
+        }
+      });
+      const addToLikes = await prisma.guitar.upsert({
+        where: {
+          id: guitarId
         },
+        update: {
+          likes: {
+            increment: 1
+          }
+        },
+        create: {
+          id: guitarId,
+          likes: 1
+        }
+        
       });
   
       return new Response(JSON.stringify(responseFromPrisma));
