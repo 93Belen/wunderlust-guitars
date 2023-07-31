@@ -17,11 +17,18 @@ export async function POST(req: Request): Promise<Response> {
 
         // Use Promise.all to concurrently fetch product details from Stripe for all favorites
         await Promise.all(
-          responseFromPrisma.map(async (guitar) => {
+          responseFromPrisma.map(async (guitar : {guitarId: string, userId: string}) => {
             const product = await getOneProduct(guitar.guitarId);
             if (product) {
               onlyInStock.push(product);
-            }
+            } else {
+                // If product is not in stock, delete it from favorites
+                await prisma.userFavorites.deleteMany({
+                  where: {
+                    guitarId: guitar.guitarId,
+                  },
+                });
+              }
           })
         );
 
