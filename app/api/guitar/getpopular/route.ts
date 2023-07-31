@@ -26,8 +26,11 @@ export async function GET(): Promise<Response> {
               }
           })
         );
-
-        return new Response(JSON.stringify([onlyInStock[0], onlyInStock[1], onlyInStock[2], onlyInStock[3]]));
+          if(onlyInStock.length > 4){
+            return new Response(JSON.stringify([onlyInStock[0], onlyInStock[1], onlyInStock[2], onlyInStock[3]]));
+          }
+          return new Response(JSON.stringify(onlyInStock));
+        
 
     }
     catch (error) {
