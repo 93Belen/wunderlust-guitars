@@ -1,6 +1,7 @@
 "use client"
 import { Magic } from "magic-sdk";
 import { initializeMagic } from "components/magic/initializeMagic";
+import { useRouter } from "next/navigation";
 
 
 
@@ -8,6 +9,7 @@ export default function AddToFavorites({id}: { id: string}) {
     const m: Magic = initializeMagic
     // const guitarId = props.guitarId;
     const guitarId = id;
+    const { push } = useRouter();
 
     const addToFavorites = async (): Promise<void> => {
         try {
@@ -55,6 +57,9 @@ export default function AddToFavorites({id}: { id: string}) {
                         })
                     })
                 }
+            }
+            else {
+                push("/login")
             }
             }
             catch (error) {
