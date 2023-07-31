@@ -4,7 +4,7 @@ import { Magic } from "magic-sdk";
 import Image from "next/image"
 import AddToCart from "./AddToCart"
 
-export default function CardFav({guitarId}: {guitarId: string}){
+export default function CardFav({guitar}){
     const m : Magic = initializeMagic;
 
 
@@ -28,7 +28,7 @@ export default function CardFav({guitarId}: {guitarId: string}){
                     method: "POST",
                     body: JSON.stringify({
                         userId: userId,
-                        guitarId: guitarId
+                        guitarId: guitar.id
                     })
                 })
                

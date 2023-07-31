@@ -11,6 +11,7 @@ import FavoritesSvg from "../components/favoritesSVG";
 
 export default function Favorites(){
   const [favorites, setFavorites] = useState([])
+  console.log(favorites)
 
     const m: Magic = initializeMagic
 
@@ -88,9 +89,9 @@ export default function Favorites(){
             <FavoritesSvg />
           </div>
           </section>
-          {favorites.map((guitar: {userId: string, guitarId: string}) => (
+          {favorites.map((guitar) => (
             <section onClick={getFavorites} className='p-5 md:px-12 flex justify-center'>
-                <CardFav guitarId={guitar.guitarId} />
+                <CardFav guitar={guitar} />
             </section>
           ))}
         </main>
