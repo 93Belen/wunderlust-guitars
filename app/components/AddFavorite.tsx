@@ -22,8 +22,8 @@ export default function AddToFavorites({id}: { id: string}) {
 
                 const jsonUser = await user.json()
                 const userId = jsonUser.id
-                // console.log(jsonUser)
-                // console.log(userId)
+                // //console.logjsonUser)
+                // //console.loguserId)
 
                 // see if guitar is liked already 
                 const getlikedGuitars = await fetch("/api/user/checkguitarinfavorites", {
@@ -58,7 +58,7 @@ export default function AddToFavorites({id}: { id: string}) {
             }
             }
             catch (error) {
-            console.log(error);
+            //console.logerror);
         }
     };
 

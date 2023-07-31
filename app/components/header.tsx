@@ -15,7 +15,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const store = useWebStore()
-    console.log(allGuitars)
+    //console.logallGuitars)
 
     // check that user is logged in
     // If user is logged in it will display the log-out button
@@ -33,7 +33,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             const loggedIn: boolean = await m.user.isLoggedIn();
             setIsLoggedIn(loggedIn);
         } catch (error) {
-            console.log(error);
+            //console.logerror);
         }
     };
 
@@ -42,10 +42,10 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             if (isLoggedIn) {
                 await m.user.logout();
                 setIsLoggedIn(false);
-                console.log(await m.user.isLoggedIn()); // => `false`
+                //console.logawait m.user.isLoggedIn()); // => `false`
             }
         } catch (error) {
-            console.log(error);
+            //console.logerror);
         }
     };
 

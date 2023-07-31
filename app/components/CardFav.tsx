@@ -22,8 +22,8 @@ export default function CardFav({guitarId}: {guitarId: string}){
 
                 const jsonUser = await user.json()
                 const userId = jsonUser.id
-                // console.log(jsonUser)
-                // console.log(userId)
+                // //console.logjsonUser)
+                // //console.loguserId)
                 const response = await fetch("/api/user/unlikeguitar", {
                     method: "POST",
                     body: JSON.stringify({
@@ -35,7 +35,7 @@ export default function CardFav({guitarId}: {guitarId: string}){
             }
             }
             catch (error) {
-            console.log(error);
+            //console.logerror);
         }
     };
 

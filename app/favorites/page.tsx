@@ -28,8 +28,8 @@ export default function Favorites(){
 
               const jsonUser = await user.json()
               const userId = jsonUser.id
-              // console.log(jsonUser)
-              // console.log(userId)
+              // //console.logjsonUser)
+              // //console.loguserId)
 
               try {
                 const getfavs = await fetch('api/user/getlikedguitars', {
@@ -38,9 +38,7 @@ export default function Favorites(){
                   })
         
                 const myfavorites = await getfavs.json();
-                myfavorites.forEach(async(fav: {userId: string, guitarId: string})=> {
-                    const guitarFromStripe = await getOneProduct(fav.guitarId)
-                });
+                console.log(myfavorites)
                 setFavorites(myfavorites)
                 
               } catch {
@@ -51,7 +49,7 @@ export default function Favorites(){
           }
           }
           catch (error) {
-          console.log(error);
+          //console.logerror);
       }
   };
 
@@ -64,7 +62,7 @@ export default function Favorites(){
               })
     
             const response = await res.json();
-            console.log(response)
+            //console.logresponse)
             
           } catch {
             // Handle errors if required!

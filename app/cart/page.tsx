@@ -7,7 +7,7 @@ import Checkout from "../components/Checkout"
 
 export default function Cart(){
     const webStore = useWebStore()
-    console.log(webStore.cart)
+    //console.logwebStore.cart)
 
     
     return (
