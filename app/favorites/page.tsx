@@ -1,10 +1,9 @@
 "use client"
 
 import { initializeMagic } from "components/magic/initializeMagic";
-import { getOneProduct } from "components/stripe/getOneProduct";
 import { Magic } from "magic-sdk";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import Stripe from "stripe";
 import CardFav from "../components/CardFav";
 import FavoritesSvg from "../components/favoritesSVG";
 
@@ -12,6 +11,7 @@ import FavoritesSvg from "../components/favoritesSVG";
 export default function Favorites(){
   const [favorites, setFavorites] = useState([])
   console.log(favorites)
+  const { push } = useRouter()
 
     const m: Magic = initializeMagic
 
@@ -47,6 +47,9 @@ export default function Favorites(){
               }
 
              
+          }
+          else {
+              push("/login")
           }
           }
           catch (error) {
