@@ -93,7 +93,7 @@ export default function Product({searchParams}){
                     <AddToFavorites id={""} />
                 </div>
                 <div>
-                <div className='w-full text-white flex justify-around'>
+                <div className='w-full text-white flex justify-between'>
                     <p className='cursor-pointer' onClick={() => {changeTab("description")}}>Description</p>
                     <p className='cursor-pointer' onClick={() => {changeTab("specs")}}>Specs</p>
                     <p className='cursor-pointer' onClick={() => {changeTab("de")}}>Bakground Story</p>
