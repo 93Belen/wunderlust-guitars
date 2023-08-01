@@ -7,7 +7,18 @@ export const getOneProduct = async (id: string) => {
 
   try {
     const product = await stripe.products.retrieve(id);
-    return product;
+
+    const prices = await stripe.prices.list({ product: id, limit: 1 });
+    const productWithPrice = {
+      id: product.id,
+      name: product.name,
+      metadata: product.metadata,
+      unit_amount: prices.data[0].unit_amount,
+      images: product.images,
+      currency: prices.data[0].currency
+    };
+
+    return productWithPrice;
   } catch (error) {
     // Handle the error if product is not found
     if (

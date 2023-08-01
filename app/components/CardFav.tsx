@@ -1,11 +1,11 @@
 "use client"
 import { initializeMagic } from "components/magic/initializeMagic";
-import { Product } from "components/types/storeTypes";
+import formatPrice from "components/util/PriceFormat";
 import { Magic } from "magic-sdk";
 import Image from "next/image"
 import AddToCart from "./AddToCart"
 
-export default function CardFav({guitar}: {guitar: Product}){
+export default function CardFav({guitar}){
     const m : Magic = initializeMagic;
 
 
@@ -54,7 +54,7 @@ export default function CardFav({guitar}: {guitar: Product}){
                     <h2 className='text-[1rem]'>{guitar.name}</h2>
                     <p className='text-[0.75rem]'>Color: {guitar.metadata.color}</p>
                     <p className='text-[0.75rem]'>Weight: {guitar.metadata.weight}</p>
-                    <p className='text-[0.75rem]'>$5,000</p>
+                    <p className='text-[0.75rem]'>{formatPrice(guitar.unit_amount)}</p>
                     <div className='text-white font-mono md:hidden grid grid-cols-2 grid-rows-2 gap-x-0'>
                         <p>IN STOCK</p> 
                         <div className='self-end row-span-2'>

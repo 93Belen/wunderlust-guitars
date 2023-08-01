@@ -58,24 +58,8 @@ export default function Favorites(){
   };
 
 
-    const createGuitar = async() => {
-        try {
-            const res = await fetch('api/guitars/createguitar', {
-                method: 'POST',
-                body: JSON.stringify({id: "123guitaridtest"})
-              })
-    
-            const response = await res.json();
-            //console.logresponse)
-            
-          } catch {
-            // Handle errors if required!
-          }
-        }
-
     useEffect(() => {
         getFavorites()
-        createGuitar()
     }, [])
 
 
