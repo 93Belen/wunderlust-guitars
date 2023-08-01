@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["files.stripe.com"]
+    domains: ["files.stripe.com", "wunderlustguitars.s3.amazonaws.com"]
   }
 }
 

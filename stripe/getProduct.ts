@@ -4,9 +4,9 @@ export const getProduct = async() => {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
         apiVersion: "2022-11-15"
     })
-    const product = await stripe.products.list()
+    const products = await stripe.products.list()
     const productWithPrices = await Promise.all(
-        product.data.map(async (product) => {
+        products.data.map(async (product) => {
             const prices = await stripe.prices.list({product: product.id})
             return {
                 id: product.id,

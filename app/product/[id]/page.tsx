@@ -1,9 +1,16 @@
+"use client"
+
 import AddToFavorites from "components/app/components/AddFavorite";
 import AddToCart from "components/app/components/AddToCart";
 import CarouselElement from "components/app/components/CrouselElement";
+import myImageLoader from "components/util/loader";
+import formatPrice from "components/util/PriceFormat";
 import Image from "next/image";
 
-export default function Product(){
+export default function Product({searchParams}){
+    // Parse the data query parameter back to an object
+  const parsedData = searchParams.data ? JSON.parse(decodeURIComponent(searchParams.data)) : null;
+    console.log("Here", parsedData)
     const images = [
         '/placeholderpic.jpg',
         '/placeholderpic.jpg',
@@ -15,7 +22,7 @@ export default function Product(){
             <section className='hidden md:flex flex-col h-fit gap-y-10'>
                 <div className='rounded-lg h-fit'>
                     <Image
-                    src='/placeholderpic.jpg'
+                    src={parsedData.metadata.imageangle}
                     width={2500}
                     alt="guitar"
                     height={2500}
@@ -24,14 +31,15 @@ export default function Product(){
                 </div>
                 <div className='flex w-full gap-5 max-w-[40vw]'>
                 <Image
-                    src='/placeholderpic.jpg'
+                    src={parsedData.metadata.imageangle}
                     width={2500}
                     alt="guitar"
                     height={2500}
                     className='rounded-lg w-[50%] h-auto'
+                    loader={myImageLoader}
                     />
                     <Image
-                    src='/placeholderpic.jpg'
+                    src={parsedData.metadata.imageclose}
                     width={2500}
                     alt="guitar"
                     height={2500}
@@ -40,7 +48,7 @@ export default function Product(){
                 </div>
                 <div>
                     <Image
-                        src='/placeholderpic.jpg'
+                        src={parsedData.metadata.imagefar}
                         width={2500}
                         alt="guitar"
                         height={2500}
@@ -50,11 +58,11 @@ export default function Product(){
             </section>
             <section className='flex flex-col gap-5'>
                 <div className='text-white font-mono flex flex-col gap-5'>
-                    <h1 className='text-[1.5rem] font-[700]'>Guitar name</h1>
-                    <p>G2215-P90 Steamliner Junior Jet Electric Guitar<br/>
-                        Soapbar single <br />
-                         coil3-way switch </p>
-                    <p>$400</p>
+                    <h1 className='text-[1.5rem] font-[700]'>{searchParams.name}</h1>
+                    <p>{searchParams.description}</p>
+                    <p>
+                        {formatPrice(searchParams.unit_amount)}
+                    </p>
                 </div>
                 <div className='block md:hidden h-fit m-auto'>
                 <div>
