@@ -14,7 +14,8 @@ export const getProduct = async() => {
                 metadata: product.metadata,
                 unit_amount: prices.data[0].unit_amount,
                 images: product.images,
-                currency: prices.data[0].currency
+                currency: prices.data[0].currency,
+                description: product.description
             }
         })
     )

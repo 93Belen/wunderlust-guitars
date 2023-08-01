@@ -42,7 +42,8 @@ export default async function RootLayout({
 }) {
  
   const response = await getProduct();
-  const allGuitars = response.data
+  const allGuitars = response
+  console.log(allGuitars)
 
 
 
