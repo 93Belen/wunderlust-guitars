@@ -4,10 +4,11 @@ import formatPrice from "components/util/PriceFormat";
 import { Magic } from "magic-sdk";
 import Image from "next/image"
 import AddToCart from "./AddToCart"
+import Link from "next/link";
 
 export default function CardFav({guitar}){
     const m : Magic = initializeMagic;
-
+    const queryParams = encodeURIComponent(JSON.stringify(guitar)); // Stringify and encode the data
 
 
     const removeFromFav = async (): Promise<void> => {
@@ -42,7 +43,7 @@ export default function CardFav({guitar}){
 
     return (
         <div className='flex justify-between w-[99%] max-w-[900px]'>
-            <div className='flex gap-x-4 h-[8.375rem] rounded-lg'>
+            <Link href={{pathname: `/product/${guitar.id}`, query: { data: queryParams }}} className='flex gap-x-4 h-[8.375rem] rounded-lg'>
                 <Image
                 src={guitar.images[0]}
                 height={500}
@@ -63,7 +64,7 @@ export default function CardFav({guitar}){
                         <button onClick={removeFromFav} className='cursor-pointer'>Remove</button>
                     </div>
                 </div>
-            </div>
+            </Link>
             <p className='text-white font-mono hidden md:block'>IN STOCK</p>
             <div className='text-white font-mono md:flex flex-col justify-between hidden'>
                 <button onClick={removeFromFav} className='cursor-pointer'>Remove</button>
@@ -72,3 +73,5 @@ export default function CardFav({guitar}){
         </div>
     )
 }
+// const queryParams = encodeURIComponent(JSON.stringify(guitar)); // Stringify and encode the data
+// <Link href={{pathname: `/product/${guitar.id}`, query: { data: queryParams }}}
