@@ -12,9 +12,10 @@ export default function Product({searchParams}){
   const parsedData = searchParams.data ? JSON.parse(decodeURIComponent(searchParams.data)) : null;
     console.log("Here", parsedData)
     const images = [
-        '/placeholderpic.jpg',
-        '/placeholderpic.jpg',
-        '/placeholderpic.jpg',
+        parsedData.images[0],
+        parsedData.metadata.imageangle,
+        parsedData.metadata.imagefar,
+        parsedData.metadata.imageclose
         // Add more image URLs as needed
       ];
     return (
@@ -22,7 +23,7 @@ export default function Product({searchParams}){
             <section className='hidden md:flex flex-col h-fit gap-y-10'>
                 <div className='rounded-lg h-fit'>
                     <Image
-                    src={parsedData.metadata.imageangle}
+                    src={parsedData.images[0]}
                     width={2500}
                     alt="guitar"
                     height={2500}
@@ -58,10 +59,10 @@ export default function Product({searchParams}){
             </section>
             <section className='flex flex-col gap-5'>
                 <div className='text-white font-mono flex flex-col gap-5'>
-                    <h1 className='text-[1.5rem] font-[700]'>{searchParams.name}</h1>
-                    <p>{searchParams.description}</p>
+                    <h1 className='text-[1.5rem] font-[700]'>{parsedData.name}</h1>
+                    <p>{parsedData.description}</p>
                     <p>
-                        {formatPrice(searchParams.unit_amount)}
+                        {formatPrice(parsedData.unit_amount)}
                     </p>
                 </div>
                 <div className='block md:hidden h-fit m-auto'>
