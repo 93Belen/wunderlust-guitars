@@ -3,14 +3,32 @@
 import AddToFavorites from "components/app/components/AddFavorite";
 import AddToCart from "components/app/components/AddToCart";
 import CarouselElement from "components/app/components/CrouselElement";
+import GuitarInfo from "components/app/components/GuitarInfo";
 import myImageLoader from "components/util/loader";
 import formatPrice from "components/util/PriceFormat";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Product({searchParams}){
     // Parse the data query parameter back to an object
   const parsedData = searchParams.data ? JSON.parse(decodeURIComponent(searchParams.data)) : null;
     console.log("Here", parsedData)
+    const [data, setData] = useState(parsedData.description)
+    const changeTab = (tab: string) => {
+        if(tab === 'description'){
+            setData(parsedData.description)
+        }
+        else if(tab === 'specs'){
+            setData(parsedData.metadata.weight)
+        }
+        else if(tab === 'backgroundStory'){
+            setData(parsedData.metadata.description)
+        }
+        else {
+            setData(parsedData.description)
+        }
+
+    }
     const images = [
         parsedData.images[0],
         parsedData.metadata.imageangle,
@@ -75,8 +93,14 @@ export default function Product({searchParams}){
                     <AddToFavorites id={""} />
                 </div>
                 <div>
+                <div className='w-full text-white flex justify-around'>
+                    <p className='cursor-pointer' onClick={() => {changeTab("description")}}>Description</p>
+                    <p className='cursor-pointer' onClick={() => {changeTab("specs")}}>Specs</p>
+                    <p className='cursor-pointer' onClick={() => {changeTab("de")}}>Bakground Story</p>
 
                 </div>
+                <GuitarInfo data={data} />
+                </div>  
                 <h2 className='text-[1.5rem]'>Similar Styles</h2>
                 <div className='grid grid-cols-2 md:flex gap-2 max-w-[500px] m-auto md:max-w-none md:m-0'>
                 <div>
