@@ -1,11 +1,11 @@
 "use client"
 import { initializeMagic } from "components/magic/initializeMagic";
+import { Product } from "components/types/storeTypes";
 import { Magic } from "magic-sdk";
 import Image from "next/image"
-import { getModeForResolutionAtIndex } from "typescript";
 import AddToCart from "./AddToCart"
 
-export default function CardFav({guitar}){
+export default function CardFav({guitar}: {guitar: Product}){
     const m : Magic = initializeMagic;
 
 
@@ -52,8 +52,8 @@ export default function CardFav({guitar}){
                 />
                 <div className='flex flex-col text-white font-mono md:w-[19.9375rem] justify-between'>
                     <h2 className='text-[1rem]'>{guitar.name}</h2>
-                    <p className='text-[0.75rem]'>Color Shell Pink</p>
-                    <p className='text-[0.75rem]'>Weight: 12lb</p>
+                    <p className='text-[0.75rem]'>Color: {guitar.metadata.color}</p>
+                    <p className='text-[0.75rem]'>Weight: {guitar.metadata.weight}</p>
                     <p className='text-[0.75rem]'>$5,000</p>
                     <div className='text-white font-mono md:hidden grid grid-cols-2 grid-rows-2 gap-x-0'>
                         <p>IN STOCK</p> 
