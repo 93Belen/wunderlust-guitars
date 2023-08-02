@@ -22,7 +22,7 @@ export default function Product({searchParams}){
             setData(parsedData.metadata.weight)
         }
         else if(tab === 'backgroundStory'){
-            setData(parsedData.metadata.description)
+            setData(parsedData.metadata.backgroundStory)
         }
         else {
             setData(parsedData.description)
@@ -96,7 +96,7 @@ export default function Product({searchParams}){
                 <div className='w-full text-white flex justify-between'>
                     <p className='cursor-pointer' onClick={() => {changeTab("description")}}>Description</p>
                     <p className='cursor-pointer' onClick={() => {changeTab("specs")}}>Specs</p>
-                    <p className='cursor-pointer' onClick={() => {changeTab("de")}}>Bakground Story</p>
+                    <p className='cursor-pointer' onClick={() => {changeTab("backgroundStory")}}>Bakground Story</p>
 
                 </div>
                 <GuitarInfo data={data} />
