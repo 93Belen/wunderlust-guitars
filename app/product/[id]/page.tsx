@@ -19,7 +19,7 @@ export default function Product({searchParams}){
             setData(parsedData.description)
         }
         else if(tab === 'specs'){
-            setData(parsedData.metadata.weight)
+            setData(parsedData.metadata.specs)
         }
         else if(tab === 'backgroundStory'){
             setData(parsedData.metadata.backgroundStory)
