@@ -33,7 +33,6 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             const loggedIn: boolean = await m.user.isLoggedIn();
             setIsLoggedIn(loggedIn);
         } catch (error) {
-            //console.logerror);
         }
     };
 
@@ -42,10 +41,9 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             if (isLoggedIn) {
                 await m.user.logout();
                 setIsLoggedIn(false);
-                //console.logawait m.user.isLoggedIn()); // => `false`
+                store.removeAllCart()
             }
         } catch (error) {
-            //console.logerror);
         }
     };
 

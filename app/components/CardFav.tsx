@@ -60,7 +60,7 @@ export default function CardFav({guitar}: {guitar: Product}){
                     <div className='text-white font-mono md:hidden grid grid-cols-2 grid-rows-2 gap-x-0'>
                         <p>IN STOCK</p> 
                         <div className='self-end row-span-2'>
-                            <AddToCart />
+                            <AddToCart guitar={guitar} />
                         </div>
                         <button onClick={removeFromFav} className='cursor-pointer'>Remove</button>
                     </div>
@@ -69,7 +69,7 @@ export default function CardFav({guitar}: {guitar: Product}){
             <p className='text-white font-mono hidden md:block'>IN STOCK</p>
             <div className='text-white font-mono md:flex flex-col justify-between hidden'>
                 <button onClick={removeFromFav} className='cursor-pointer'>Remove</button>
-                <AddToCart />
+                <AddToCart guitar={guitar} />
             </div>
         </div>
     )

@@ -1,15 +1,10 @@
-export type CartItem = {
-    name: string,
-    id: string,
-    images?: string[],
-    decription?: string,
-    unit_amount: number
-}
-
 export type WebStore = {
-    cart: CartItem[],
-    allGuitars: Product[],
+    cart: Product[],
+    allGuitars: Product[]
     addAllGuitars: (payload: Product[]) => void
+    addToCart: (payload: Product) => void,
+    removeAllCart: () => void,
+    removeFromCart: (item: Product) => void
 }
 
 // types/storeTypes.ts
