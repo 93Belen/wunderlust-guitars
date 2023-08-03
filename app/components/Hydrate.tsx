@@ -10,7 +10,7 @@ export default function Hydrate({children}: {children: ReactNode}){
     })
     return (
         <>
-        { isHydrated ? <>{children}</> : <div>Loading...</div>}
+        { isHydrated ? <>{children}</> : <div className='text-white font-mono m-auto'>Loading...</div>}
         </>
     )
 }
