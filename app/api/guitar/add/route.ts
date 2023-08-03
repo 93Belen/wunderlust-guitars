@@ -1,6 +1,6 @@
 import { prisma } from "components/prisma/seed";
 
-// Add a guitar to database
+// Add a guitar to database to track likes for most-popular functionality
 export async function POST(req: Request): Promise<Response>  {
     try{
         const { id }: { id: string } = await req.json();
