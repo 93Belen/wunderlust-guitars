@@ -1,5 +1,6 @@
 import { prisma } from "components/prisma/seed";
 import { getOneProduct } from "components/stripe/getOneProduct";
+import { SearchParamsType } from "components/types/searchParamsType";
 
 export async function GET(): Promise<Response> {
     try{
@@ -8,14 +9,14 @@ export async function GET(): Promise<Response> {
                 likes: "asc"
             }
         })
-        const onlyInStock = [];
+        const onlyInStock: SearchParamsType[] = [];
 
         // Use Promise.all to concurrently fetch product details from Stripe for all favorites
         await Promise.all(
           responseFromPrisma.map(async (guitar : {id: string, likes: number}) => {
             const product = await getOneProduct(guitar.id);
             if (product) {
-              onlyInStock.push(product);
+              onlyInStock.push(product as SearchParamsType);
             } else {
                 // If product is not in stock, delete it from favorites
                 await prisma.guitar.deleteMany({
