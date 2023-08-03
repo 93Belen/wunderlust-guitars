@@ -17,5 +17,6 @@ export type Product = {
     };
     name: string;
     unit_amount: number | null;
+    default_price: string
   }
   

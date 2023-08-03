@@ -28,7 +28,7 @@ export default function Cart(){
             </section>
 ))}
           <section className='w-[90%] flex justify-end p-5'>
-              <Checkout />
+              <Checkout lineItems={cart} />
           </section>
         </main>
     )
