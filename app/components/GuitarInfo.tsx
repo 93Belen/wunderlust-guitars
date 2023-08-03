@@ -1,8 +1,3 @@
-"use client"
-
-import { useState } from "react"
-
-
 export default function GuitarInfo({data}: {data: string}){
     
     return (
