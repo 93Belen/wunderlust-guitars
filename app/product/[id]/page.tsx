@@ -60,7 +60,7 @@ export default function Product({searchParams}: ProductProps){
 
     return (
         <main className='w-full p-5 md:p-28 md:grid grid-cols-2 flex flex-col gap-x-10 lg:gap-20 box-border text-white font-mono max-w-[1600px] m-auto xl:gap-36'>
-            <section className='hidden md:flex flex-col h-fit gap-y-10'>
+            <section className='hidden md:flex flex-col h-fit gap-y-10 max-w-[600px]'>
                 <div className='rounded-lg h-fit'>
                     <Image
                     src={parsedData.images[0]}
