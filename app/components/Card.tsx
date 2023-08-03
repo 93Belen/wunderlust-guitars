@@ -3,10 +3,9 @@
 import AddToFavorites from "./AddFavorite";
 import Link from "next/link";
 import { Product } from "components/types/storeTypes";
-import { SearchParamsType } from "components/types/searchParamsType";
 
 // Size needs to be determined by prop comming from page where is rendered, or be 100% and determine size in page where rendered div
-export default function Card({data}: {data: SearchParamsType}) {
+export default function Card({data}: {data: Product}) {
   const queryParams = encodeURIComponent(JSON.stringify(data)); // Stringify and encode the data
   return (
     <div className={`bg-darkgray flex flex-col p-[0.5rem] justify-center items-center rounded-lg w-[100%] h-[100%] box-border gap-[1rem] max-w-[300px] md:p-3 lg:p-[1.25rem]`}>

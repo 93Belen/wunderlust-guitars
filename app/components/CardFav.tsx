@@ -5,9 +5,9 @@ import { Magic } from "magic-sdk";
 import Image from "next/image"
 import AddToCart from "./AddToCart"
 import Link from "next/link";
-import { SearchParamsType } from "components/types/searchParamsType";
+import { Product } from "components/types/storeTypes";
 
-export default function CardFav({guitar}: {guitar: SearchParamsType}){
+export default function CardFav({guitar}: {guitar: Product}){
     const m : Magic = initializeMagic;
     const queryParams = encodeURIComponent(JSON.stringify(guitar)); // Stringify and encode the data
 
@@ -56,7 +56,7 @@ export default function CardFav({guitar}: {guitar: SearchParamsType}){
                     <h2 className='text-[1rem]'>{guitar.name}</h2>
                     <p className='text-[0.75rem]'>Color: {guitar.metadata.color}</p>
                     <p className='text-[0.75rem]'>Weight: {guitar.metadata.weight}</p>
-                    <p className='text-[0.75rem]'>{formatPrice(guitar.unit_amount)}</p>
+                    <p className='text-[0.75rem]'>{formatPrice(guitar.unit_amount as number)}</p>
                     <div className='text-white font-mono md:hidden grid grid-cols-2 grid-rows-2 gap-x-0'>
                         <p>IN STOCK</p> 
                         <div className='self-end row-span-2'>
