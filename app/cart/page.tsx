@@ -6,8 +6,9 @@ import Checkout from "../components/Checkout"
 
 
 export default function Cart(){
-    const webStore = useWebStore()
-    //console.logwebStore.cart)
+    const store = useWebStore()
+    const cart = store.cart
+
 
     
     return (
@@ -21,12 +22,16 @@ export default function Cart(){
             <FavoritesSvg />
           </div>
           </section>
-          <section className='p-5 md:px-12 flex justify-center'>
-              <CardCart />
-          </section>
+          {cart.map((guitar) => (
+            <section className='p-5 md:px-12 flex justify-center'>
+                <CardCart guitar={guitar} />
+            </section>
+))}
           <section className='w-[90%] flex justify-end p-5'>
-              <Checkout />
+              <Checkout lineItems={cart} />
           </section>
         </main>
     )
 }
+
+

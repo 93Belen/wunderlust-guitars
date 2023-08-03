@@ -111,7 +111,7 @@ export default function Product({searchParams}: ProductProps){
                 </div>
                 </div>
                 <div className='flex gap-5'>
-                    <AddToCart />
+                    <AddToCart guitar={parsedData} />
                     <AddToFavorites id={""} />
                 </div>
                 <div>
