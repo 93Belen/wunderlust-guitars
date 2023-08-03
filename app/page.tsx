@@ -8,7 +8,6 @@ import SoundWave from "./components/SoundWave";
 
 export default function Home() {
   const [popular, setPopular] = useState([])
-  console.log(popular)
 
   const getPopularGuitars = async() => {
     const popular = await fetch("/api/guitar/getpopular");
@@ -46,9 +45,9 @@ export default function Home() {
             ))}
         </div>
         <div className='md:hidden m-auto pt-4 md:mt-8 grid w-[100%] justify-center max-w-[250px]'>
-                <div className='h-[20rem]'>
+                {popular.length > 0 && (<div className='h-[20rem]'>
                   <Card data={popular[0]} />
-                </div>
+                </div>)}
         </div>
       </section>
       <section className='pt-28 mb-28 md:mb-80 flex flex-col md:grid md:grid-cols-[35vw_65vw] lg:grid-cols-[40vw_60vw] md:grid-rows-2 md:pt-32 h-fit md:gap-x-6 lg:mt-12'>
