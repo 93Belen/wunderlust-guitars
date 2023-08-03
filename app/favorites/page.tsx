@@ -10,10 +10,8 @@ import FavoritesSvg from "../components/favoritesSVG";
 
 export default function Favorites(){
   const [favorites, setFavorites] = useState([])
-  console.log(favorites)
   const { push } = useRouter()
-
-    const m: Magic = initializeMagic
+  const m: Magic = initializeMagic
 
 
     const getFavorites = async (): Promise<void> => {
@@ -29,8 +27,6 @@ export default function Favorites(){
 
               const jsonUser = await user.json()
               const userId = jsonUser.id
-              // //console.logjsonUser)
-              // //console.loguserId)
 
               try {
                 const getfavs = await fetch('api/user/getlikedguitars', {

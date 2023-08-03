@@ -28,14 +28,14 @@ export default function AddToFavorites({id}: { id: string}) {
                 // //console.loguserId)
 
                 // see if guitar is liked already 
-                const getlikedGuitars = await fetch("/api/user/checkguitarinfavorites", {
+                const getlikedGuitar = await fetch("/api/user/checkguitarinfavorites", {
                     method: "POST",
                     body: JSON.stringify({
                         userId: userId,
                         guitarId: guitarId
                     })
                 })
-                const likedGuitars = await getlikedGuitars.json()
+                const likedGuitars = await getlikedGuitar.json()
 
                
                 

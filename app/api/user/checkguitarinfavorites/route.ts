@@ -1,6 +1,6 @@
 import { prisma } from "components/prisma/seed";
 
-
+// Check if a guitar is already liked by an user. For like/unlike functionality
 export async function POST(req: Request): Promise<Response> {
 
     const { userId, guitarId }: {userId: string, guitarId: string } = await req.json();

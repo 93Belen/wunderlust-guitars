@@ -5,20 +5,23 @@ import AddToCart from "components/app/components/AddToCart";
 import CarouselElement from "components/app/components/CrouselElement";
 import GuitarInfo from "components/app/components/GuitarInfo";
 import { useWebStore } from "components/store";
+import { ProductProps } from "components/types/ProductPropsType";
+import { Product } from "components/types/storeTypes";
 import myImageLoader from "components/util/loader";
 import formatPrice from "components/util/PriceFormat";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Product({searchParams}){
+export default function Product({searchParams}: ProductProps){
     const store = useWebStore()
     const allGuitars = store.allGuitars
     // Parse the data query parameter back to an object
-  const parsedData = searchParams.data ? JSON.parse(decodeURIComponent(searchParams.data)) : null;
+    const parsedData: Product = searchParams.data ? JSON.parse(decodeURIComponent(searchParams.data)) : null;
+    const [data, setData] = useState(parsedData.description)
 
-
-  const similarStyles = allGuitars.filter((guitar) => {
+    // similar styles functionality
+    const similarStyles: Product[] = allGuitars.filter((guitar) => {
       if(guitar.id !== parsedData.id){
         if(guitar.metadata["6 strings"] === parsedData.metadata["6 strings"] && guitar.metadata.acoustic === parsedData.metadata.acoustic){
             return guitar
@@ -30,11 +33,7 @@ export default function Product({searchParams}){
        
     })
 
-console.log("SIMILAR STYLES:", similarStyles)
-
-
-    //console.log("Here", parsedData)
-    const [data, setData] = useState(parsedData.description)
+    //change tab in Guitar info section
     const changeTab = (tab: string) => {
         if(tab === 'description'){
             setData(parsedData.description)
@@ -50,16 +49,18 @@ console.log("SIMILAR STYLES:", similarStyles)
         }
 
     }
+
+    // images for mobile photo-carousel
     const images = [
         parsedData.images[0],
         parsedData.metadata.imageangle,
         parsedData.metadata.imagefar,
         parsedData.metadata.imageclose
-        // Add more image URLs as needed
       ];
+
     return (
         <main className='w-full p-5 md:p-28 md:grid grid-cols-2 flex flex-col gap-x-10 lg:gap-20 box-border text-white font-mono max-w-[1600px] m-auto xl:gap-36'>
-            <section className='hidden md:flex flex-col h-fit gap-y-10'>
+            <section className='hidden md:flex flex-col h-fit gap-y-10 max-w-[600px]'>
                 <div className='rounded-lg h-fit'>
                     <Image
                     src={parsedData.images[0]}
@@ -101,7 +102,7 @@ console.log("SIMILAR STYLES:", similarStyles)
                     <h1 className='text-[1.5rem] font-[700]'>{parsedData.name}</h1>
                     <p>{parsedData.description}</p>
                     <p>
-                        {formatPrice(parsedData.unit_amount)}
+                        {formatPrice(parsedData.unit_amount as number)}
                     </p>
                 </div>
                 <div className='block md:hidden h-fit m-auto'>
@@ -120,7 +121,7 @@ console.log("SIMILAR STYLES:", similarStyles)
                     <p className='cursor-pointer' onClick={() => {changeTab("backgroundStory")}}>Bakground Story</p>
 
                 </div>
-                <GuitarInfo data={data} />
+                <GuitarInfo data={data as string} />
                 </div>  
                 <h2 className='text-[1.5rem]'>Similar Styles</h2>
                 <div className='grid grid-cols-2 md:flex gap-2 max-w-[500px] m-auto md:max-w-none md:m-0'>
