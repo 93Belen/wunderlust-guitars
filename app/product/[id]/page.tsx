@@ -4,15 +4,36 @@ import AddToFavorites from "components/app/components/AddFavorite";
 import AddToCart from "components/app/components/AddToCart";
 import CarouselElement from "components/app/components/CrouselElement";
 import GuitarInfo from "components/app/components/GuitarInfo";
+import { useWebStore } from "components/store";
 import myImageLoader from "components/util/loader";
 import formatPrice from "components/util/PriceFormat";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Product({searchParams}){
+    const store = useWebStore()
+    const allGuitars = store.allGuitars
     // Parse the data query parameter back to an object
   const parsedData = searchParams.data ? JSON.parse(decodeURIComponent(searchParams.data)) : null;
-    console.log("Here", parsedData)
+
+
+  const similarStyles = allGuitars.filter((guitar) => {
+      if(guitar.id !== parsedData.id){
+        if(guitar.metadata["6 strings"] === parsedData.metadata["6 strings"] && guitar.metadata.acoustic === parsedData.metadata.acoustic){
+            return guitar
+    }
+        else if(guitar.metadata.electric === parsedData.metadata.electirc){
+            return guitar
+        }
+        }
+       
+    })
+
+console.log("SIMILAR STYLES:", similarStyles)
+
+
+    //console.log("Here", parsedData)
     const [data, setData] = useState(parsedData.description)
     const changeTab = (tab: string) => {
         if(tab === 'description'){
@@ -103,42 +124,19 @@ export default function Product({searchParams}){
                 </div>  
                 <h2 className='text-[1.5rem]'>Similar Styles</h2>
                 <div className='grid grid-cols-2 md:flex gap-2 max-w-[500px] m-auto md:max-w-none md:m-0'>
-                <div>
+                {similarStyles.map((guitar) => {
+                    const queryParams = encodeURIComponent(JSON.stringify(guitar)); // Stringify and encode the data
+                    return (
+                <Link href={{pathname: `/product/${guitar.id}`, query: { data: queryParams }}}>
                     <Image
-                        src='/placeholderpic.jpg'
+                        src={guitar.images[0]}
                         width={2500}
                         alt="guitar"
                         height={2500}
                         className='rounded-lg w-full h-auto'
                         />
-                </div>
-                <div>
-                    <Image
-                        src='/placeholderpic.jpg'
-                        width={2500}
-                        alt="guitar"
-                        height={2500}
-                        className='rounded-lg w-full h-auto'
-                        />
-                </div>
-                <div>
-                    <Image
-                        src='/placeholderpic.jpg'
-                        width={2500}
-                        alt="guitar"
-                        height={2500}
-                        className='rounded-lg w-full h-auto'
-                        />
-                </div>
-                <div>
-                    <Image
-                        src='/placeholderpic.jpg'
-                        width={2500}
-                        alt="guitar"
-                        height={2500}
-                        className='rounded-lg w-full h-auto'
-                        />
-                </div>
+                </Link>
+                )})}
                 </div>
             </section>
         </main>
