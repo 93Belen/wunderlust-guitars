@@ -5,8 +5,9 @@ import { Magic } from "magic-sdk";
 import Image from "next/image"
 import AddToCart from "./AddToCart"
 import Link from "next/link";
+import { SearchParamsType } from "components/types/searchParamsType";
 
-export default function CardFav({guitar}){
+export default function CardFav({guitar}: {guitar: SearchParamsType}){
     const m : Magic = initializeMagic;
     const queryParams = encodeURIComponent(JSON.stringify(guitar)); // Stringify and encode the data
 

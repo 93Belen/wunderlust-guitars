@@ -1,6 +1,11 @@
 export type SearchParamsType = {
-    name: string
-    price: number | null
-    image: string
-    id: string
+        description: string;
+        id: string;
+        images: string[];
+        metadata: {
+          [key: string]: string;
+        };
+        name: string;
+        unit_amount: number;
+      
 }

@@ -5,20 +5,24 @@ import AddToCart from "components/app/components/AddToCart";
 import CarouselElement from "components/app/components/CrouselElement";
 import GuitarInfo from "components/app/components/GuitarInfo";
 import { useWebStore } from "components/store";
+import { ProductProps } from "components/types/ProductPropsType";
+import { SearchParamsType } from "components/types/searchParamsType";
+import { Product } from "components/types/storeTypes";
 import myImageLoader from "components/util/loader";
 import formatPrice from "components/util/PriceFormat";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Product({searchParams}){
+export default function Product({searchParams}: ProductProps){
+    console.log(searchParams)
     const store = useWebStore()
     const allGuitars = store.allGuitars
     // Parse the data query parameter back to an object
-  const parsedData = searchParams.data ? JSON.parse(decodeURIComponent(searchParams.data)) : null;
+  const parsedData: SearchParamsType = searchParams.data ? JSON.parse(decodeURIComponent(searchParams.data)) : null;
 
 
-  const similarStyles = allGuitars.filter((guitar) => {
+  const similarStyles: Product[] = allGuitars.filter((guitar) => {
       if(guitar.id !== parsedData.id){
         if(guitar.metadata["6 strings"] === parsedData.metadata["6 strings"] && guitar.metadata.acoustic === parsedData.metadata.acoustic){
             return guitar

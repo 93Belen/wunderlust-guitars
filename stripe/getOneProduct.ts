@@ -1,4 +1,6 @@
 import Stripe from "stripe";
+// Define the type for the StripeError
+type StripeErrorVar = import("@stripe/stripe-js").StripeError;
 
 export const getOneProduct = async (id: string) => {
   const stripe = new Stripe(process.env.STRIPE_SECRET_KEY! as string, {

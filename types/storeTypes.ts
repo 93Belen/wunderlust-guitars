@@ -22,7 +22,9 @@ export type Product = {
     description: string;
     images: string[]; // Update this to the appropriate type for images
     livemode: boolean;
-    metadata: {};
+    metadata: {
+        [key: string]: string;
+    };
     name: string;
     package_dimensions: any; // Update this to the appropriate type
     shippable: any; // Update this to the appropriate type
