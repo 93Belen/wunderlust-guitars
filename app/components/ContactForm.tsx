@@ -1,11 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { ChangeEvent, useState } from "react"
 
 export default function ContactForm(){
     const [formType, setFormType] = useState<string>()
 
-    const selectFormType = (e) => {
+    const selectFormType = (e: ChangeEvent<HTMLSelectElement>) => {
         const type = e.target.value;
         setFormType(type)
     }
