@@ -1,6 +1,16 @@
 "use client"
 
+import { useState } from "react"
+
 export default function ContactForm(){
+    const [formType, setFormType] = useState<string>()
+
+    const selectFormType = (e) => {
+        const type = e.target.value;
+        setFormType(type)
+    }
+
+
     return (
         <div className='flex flex-col h-fit gap-3 w-[85vw] lg:w-[49rem]'>
             <h2 className='text-pink font-sans text-[2.625rem] font-[700]'>Contact Us</h2>
@@ -12,11 +22,12 @@ export default function ContactForm(){
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>EMAIL</label>
                 <input type="text" className='h-[2.5rem] border-[1px] border-white bg-black' />
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>REASON FOR CONTACT</label>
-                <select className='h-[2.5rem] border-[1px] border-white bg-black appearance-none text-white font-mono p-2'>
-                    <option value="">Option 1</option>
-                    <option value="">Option 2</option>
-                    <option value="">Option 3</option>
-                    <option value="">Option 4</option>
+                <select onChange={selectFormType} className='h-[2.5rem] border-[1px] border-white bg-black appearance-none text-white font-mono p-2'>
+                    <option value="personal-shopper">Personal Shopper</option>
+                    <option value="collection-curator">Collection Curator</option>
+                    <option value="appraisals">Appraisals</option>
+                    <option value="hand-delivery">Hand Delivery</option>
+                    <option value="other">Other</option>
                 </select>
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>MESSAGE</label>
                 <textarea cols={10} rows={10} className='border-[1px] max-w-[49rem] border-white bg-black' />
