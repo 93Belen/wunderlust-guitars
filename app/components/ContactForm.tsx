@@ -1,6 +1,7 @@
 "use client"
 
 import { ChangeEvent, useState } from "react"
+import { useForm } from '@formspree/react'
 
 export default function ContactForm(){
     const [formType, setFormType] = useState<string>()
@@ -8,6 +9,10 @@ export default function ContactForm(){
     const selectFormType = (e: ChangeEvent<HTMLSelectElement>) => {
         const type = e.target.value;
         setFormType(type)
+    }
+    const [state, handleSubmit] = useForm("xoqojzvl");
+    if (state.succeeded) {
+      return <p className='text-white font-mono'>Thanks for your message!</p>;
     }
 
 
@@ -17,6 +22,7 @@ export default function ContactForm(){
             <p className='text-white font-mono w-fit text-[1.5rem] font-normal'>Lorem ipsum dolor sit amet consectetur. 
                 Enim netus leo diam faucibus porta nullam elementum. </p>
             <form 
+            onSubmit={handleSubmit}
             action="https://formspree.io/f/xoqojzvl"
             method="POST"
             className='flex flex-col h-fit gap-3 w-[85vw] lg:w-[49rem]'>

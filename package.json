@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.0",
     "@magic-ext/oauth": "^12.4.1",
     "@next-auth/prisma-adapter": "^1.0.7",
     "@next/font": "^13.4.12",
