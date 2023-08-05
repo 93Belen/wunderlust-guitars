@@ -90,7 +90,7 @@ export default function Services(){
                 <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
                     Pay just for the guitar after I find it and If you are still interested on it. Not payment upfront, not contract signed. Settle your decision after I get what you need.
                 </p>
-                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
+                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='#contact-form' >Contact me</Link>
         </section>
         <section id='collection-curator' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
@@ -107,7 +107,7 @@ export default function Services(){
                 <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
                     Pay jus for what you buy, and if you decide to buy it somewhere else... hey! no hard feelings
                 </p>
-                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
+                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='#contact-form' >Contact me</Link>
 
         </section>
         <section id='appraisals' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
@@ -119,7 +119,7 @@ export default function Services(){
                     If you are not sure how much your guitar is worth… Let me have a look, I will give you a free estimate. Then you can sell it on your own.
                     Of course, you already know, if your guitar catches my eye, I will make you an offer.
                 </p>
-                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
+                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='#contact-form' >Contact me</Link>
         </section>
         <section id='hand-delivery' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
@@ -131,7 +131,7 @@ export default function Services(){
                     You just bought a really expensive guitar, and you want to get it hand delivered and intact, no carrier service, no third party involved.
                     Traveling by plane, car, or boat, not matter how, your guitar will remain next to me. Believe, I won’t lose sight of your precious new acquisition. 
                 </p>
-                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='' >Contact me</Link>
+                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2' href='#contact-form' >Contact me</Link>
         </section>
         <section id='contact-form' className='flex justify-center pb-20'>
             <ContactForm />
