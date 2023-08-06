@@ -35,7 +35,7 @@ export default function Home() {
         <div className='md:ml-[-3rem]'>
           <h3 className='font-sans text-[4.5rem] font-[700] leading-[3.1875rem] md:leading-[6rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[10rem]'>Most Popular</h3>
           <h4 className='text-white font-mono text-[1.7rem] font-[700] mt-[-1.8rem] pl-5 leading-[3.35625rem] md:leading-[-5rem] md:ml-[7.5%] tracking-[-0.10rem] md:tracking-[-0.05rem] md:text-[3rem]'>Search our most viewed</h4>
-          <Link href='/shop' className='text-pink font-mono text-[1.125rem] p-2 md:py-0 md:mt-[-1%] md:text-[1.5rem] md:ml-[8%]'>Shop now</Link>
+          <Link href='/shop' className='hoverlink text-pink font-mono text-[1.125rem] p-2 md:py-0 md:mt-[-1%] md:text-[1.5rem] md:ml-[8%]'>Shop now</Link>
         </div>
         <div className='hidden md:grid m-auto pt-4 md:mt-8 md:grid-cols-2 lg:grid-cols-4 md:w-fit md:max-w-[500px] lg:max-w-[1400px] w-[100%] gap-[1rem] md:gap-[3rem] justify-center'>
         {popular.map((guitar) => (
@@ -72,7 +72,7 @@ export default function Home() {
           But make no mistake, he ain't no random fool who fell off a Kansas farm truck.
           No, sir!  This guy toured through North America, Europe, and the "God-save-the-Queen" UK.
           <br />
-          <Link href='/about-us' className='text-pink font-mono text-[1.125rem] md:text-[1.5rem] md:max-w-[40rem] self-end md:mr-[10%]'>Read more</Link>
+          <Link href='/about-us' className='hoverlink text-pink font-mono text-[1.125rem] md:text-[1.5rem] md:max-w-[40rem] self-end md:mr-[10%]'>Read more</Link>
           </p>
         </div>
       </section>

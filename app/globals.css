@@ -24,6 +24,18 @@
 .hover:hover {
   --_p: 0%;
 }
+.hoverlink {
+  color: #0000;
+  background: 
+    linear-gradient(90deg,#F1F1F1 50%, #CD6DEA 0) 
+    var(--_p,100%)/200% no-repeat;
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: .4s;
+}
+.hoverlink:hover {
+  --_p: 0%;
+}
 
 /* Add this CSS to your stylesheet or style block */
 #fav-link:hover svg path{
