@@ -85,7 +85,7 @@ export default function ContactForm(){
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>MESSAGE</label>
                 <textarea name='message' cols={10} rows={10} className='border-[1px] max-w-[49rem] border-white bg-black rounded-lg p-2 text-white font-mono' />
                 <div>
-                    <button type='submit' className='py-[0.5rem] px-[1rem] bg-purple font-mono text-white rounded-lg text-[1.125rem] font-normal w-[8rem]'>Send!</button>
+                    <button type='submit' className='py-[0.5rem] px-[1rem] bg-purple font-mono text-white rounded-lg text-[1.125rem] font-normal w-[8rem] active:bg-[#394293]'>Send!</button>
                 </div>
             </form>
         </div>

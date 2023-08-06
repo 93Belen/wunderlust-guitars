@@ -19,7 +19,7 @@ export default function AddToCart({ guitar }: { guitar: Product }) {
   return (
     <button
       onClick={addGuitarToCart}
-      className='py-[0.5rem] px-[1rem] bg-purple font-mono text-white rounded-lg text-[1.125rem] font-normal w-[8rem]'
+      className='py-[0.5rem] px-[1rem] bg-purple font-mono text-white rounded-lg text-[1.125rem] font-normal w-[8rem] active:bg-[#394293]'
     >
       Add to Cart
     </button>
