@@ -112,7 +112,7 @@ export default function Product({searchParams}: ProductProps){
                 </div>
                 <div className='flex gap-5'>
                     <AddToCart guitar={parsedData} />
-                    <AddToFavorites id={""} />
+                    <AddToFavorites id={parsedData.id} />
                 </div>
                 <div>
                 <div className='w-full text-white flex justify-between'>
