@@ -24,3 +24,11 @@
 .hover:hover {
   --_p: 0%;
 }
+
+/* Add this CSS to your stylesheet or style block */
+#fav-link:hover svg path{
+  fill: #ED596E;
+}
+#fav-link:hover svg mask path{
+  fill: #ED596E;
+}
