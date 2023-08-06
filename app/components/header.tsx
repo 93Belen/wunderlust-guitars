@@ -54,9 +54,9 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             </Link>
             {/* DESKTOP NAV */}
             <div className='md:flex gap-[2rem] hidden text-white font-sans text-[1.125rem] font-normal'>
-                <Link className='hover:text-pink active:text-pink' href='/services'>Services</Link>
-                <Link className='hover:text-pink active:text-pink' href='/shop'>All Guitars</Link>
-                <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
+                <Link className='hover' href='/services'>Services</Link>
+                <Link className='hover' href='/shop'>All Guitars</Link>
+                <Link className='hover' href='/about-us'>About Us</Link>
             </div>
             <div className='md:flex gap-4 hidden pr-3'>
                 <Link className='' href="/favorites">
