@@ -10,26 +10,26 @@ export default function Footer(){
                 <Logo/>
             </div>
             <div className='flex flex-col gap-6'>
-                <Link href='/shop'>Popular</Link>
-                <Link href='/shop/electric'>Electric</Link>
-                <Link href='/shop/acoustic'>Acoustic</Link>
+                <Link className='hover' href='/shop'>Popular</Link>
+                <Link className='hover' href='/shop/electric'>Electric</Link>
+                <Link className='hover' href='/shop/acoustic'>Acoustic</Link>
             </div>
             <div className='flex flex-col gap-6'>
-                <Link href='/shop'>Shop</Link>
-                <Link href='/services'>Services</Link>
-                <Link href='/about-us'>About Us</Link>
-                <Link href='/services/#contact-form'>Contact</Link>
+                <Link className='hover' href='/shop'>Shop</Link>
+                <Link className='hover' href='/services'>Services</Link>
+                <Link className='hover' href='/about-us'>About Us</Link>
+                <Link className='hover' href='/services/#contact-form'>Contact</Link>
             </div>
             <div className='md:flex flex-col gap-6 hidden'>
-                <Link href='/services/#personal-shopper'>Personal Shopper</Link>
-                <Link href='/services/#hand-delivery'>Hand Delivery</Link>
-                <Link href='/services/#appraisals'>Appraisals</Link>
-                <Link href='/services/#collection-curator'>Curator</Link>           
+                <Link className='hover' href='/services/#personal-shopper'>Personal Shopper</Link>
+                <Link className='hover' href='/services/#hand-delivery'>Hand Delivery</Link>
+                <Link className='hover' href='/services/#appraisals'>Appraisals</Link>
+                <Link className='hover' href='/services/#collection-curator'>Curator</Link>           
             </div>
             <div className='md:flex flex-col gap-6 hidden'>
-                <Link href='/login'>Sign In</Link>
-                <Link href='/favorites'>Favorites</Link>
-                <Link href='/cart'>Cart</Link>
+                <Link className='hover' href='/login'>Sign In</Link>
+                <Link className='hover' href='/favorites'>Favorites</Link>
+                <Link className='hover' href='/cart'>Cart</Link>
                 
             </div>
             <div className='col-span-5 flex items-end justify-self-end'>

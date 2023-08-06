@@ -24,7 +24,7 @@ export default function Services(){
                     </svg>
                 </div>
                 <div>
-                    <p className='text-pink font-mono'>Personal Shopper</p>
+                    <p className='text-pink font-mono hoverlink'>Personal Shopper</p>
                     <p className='text-white font-mono hidden md:block'>I have a lot of guitars, 
                         but I have seen more, 
                         and I can hunt down what you are looking for.</p>
@@ -39,7 +39,7 @@ export default function Services(){
                     </svg>
                 </div>
                 <div>
-                    <p className='text-pink font-mono'>Collection Curator</p>
+                    <p className='text-pink font-mono hoverlink'>Collection Curator</p>
                     <p className='text-white font-mono hidden md:block'>
                     Talk to me, together we will see what makes sense for you to buy, 
                     we might have something here for you.
@@ -53,7 +53,7 @@ export default function Services(){
                     </svg>
                 </div>
                 <div>
-                    <p className='text-pink font-mono'>Appraissals</p>
+                    <p className='text-pink font-mono hoverlink'>Appraissals</p>
                     <p className='text-white font-mono hidden md:block'>
                     If you are not sure how much your guitar is worth… 
                     Let me have a look, I will give you a free estimate.
@@ -68,7 +68,7 @@ export default function Services(){
                     </svg>
                 </div>
                 <div>
-                    <p className='text-pink font-mono'>Hand Delivery</p>
+                    <p className='text-pink font-mono hoverlink'>Hand Delivery</p>
                     <p className='text-white font-mono hidden md:block'>
                     From my private collection to your door. Traveling by plane, car, 
                     or boat, not matter how, your guitar will remain next to me.
