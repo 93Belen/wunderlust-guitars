@@ -74,11 +74,13 @@ export default function Favorites(){
           </div>
           </section>
           <motion.section layout className='h-fit w-screen box-border flex flex-col gap-y-20 md:gap-y-20 pb-20'>
-          {favorites.map((guitar, index) => (
-            <motion.section key={index} onClick={getFavorites} className='p-5 md:px-12 flex justify-center'>
-                <CardFav key={guitar.name} guitar={guitar} />
-            </motion.section>
-          ))}
+          <AnimatePresence>
+        {favorites.map((guitar) => (
+          <motion.section key={guitar.id} exit={{ opacity: 0 }} onClick={getFavorites} className='p-5 md:px-12 flex justify-center'>
+            <CardFav guitar={guitar} />
+          </motion.section>
+        ))}
+      </AnimatePresence>
           </motion.section>
         </main>
     )

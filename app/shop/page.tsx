@@ -14,7 +14,7 @@ export default function Popular(){
     }
     useEffect(()=> {
       getPopularGuitars()
-    },[])
+    }, [])
   
 
 
