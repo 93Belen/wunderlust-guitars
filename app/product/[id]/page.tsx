@@ -123,8 +123,8 @@ export default function Product({searchParams}: ProductProps){
                 <div>
                 <div className='w-full text-white flex justify-between'>
                     <p className={`cursor-pointer ${tab === 'description' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("description")}}>Description</p>
-                    <p className={`cursor-pointer ${tab === 'specs' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("description")}} onClick={() => {changeTab("specs")}}>Specs</p>
-                    <p className={`cursor-pointer ${tab === 'backgroundStory' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("description")}} onClick={() => {changeTab("backgroundStory")}}>Bakground Story</p>
+                    <p className={`cursor-pointer ${tab === 'specs' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("specs")}}>Specs</p>
+                    <p className={`cursor-pointer ${tab === 'backgroundStory' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("backgroundStory")}}>Bakground Story</p>
 
                 </div>
                 <GuitarInfo data={data as string} />
