@@ -15,6 +15,7 @@ export default function CardCart({guitar}: {guitar: Product}){
     }
     return (
         <motion.div
+        key={guitar.id}
         className='flex justify-between w-[99%] max-w-[900px]'>
             <div className='flex gap-x-4 h-[8.375rem] rounded-lg'>
             <Link href={{pathname: `/product/${guitar.id}`, query: { data: queryParams }}}>

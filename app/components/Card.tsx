@@ -20,7 +20,7 @@ export default function Card({data}: {data: Product}) {
           </div>
       </div>
       <Link href={{pathname: `/product/${data.id}`, query: { data: queryParams }}} className='w-full h-fit text-white font-mono font-normal'>
-        <p className='md:text-[0.79rem] lg:text-[1rem]'>
+        <p className='text-[0.715rem] md:text-[0.79rem] lg:text-[1rem]'>
           {data.description}
         </p>
       </Link>

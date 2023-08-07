@@ -25,16 +25,22 @@ export default function Cart(){
           </section>
           <motion.section layout className='h-fit w-screen box-border flex flex-col gap-y-20 md:gap-y-20'>
           <AnimatePresence>
-        {cart.map((guitar) => (
+        {cart.length > 0 && cart.map((guitar) => (
           <motion.section key={guitar.id} exit={{ opacity: 0 }} className='p-5 md:px-12 flex justify-center'>
             <CardCart guitar={guitar} />
           </motion.section>
         ))}
       </AnimatePresence>
           </motion.section>
-          <section className='w-[90%] flex justify-end p-5 pb-20' >
+          {cart.length > 0 && (
+            <section className='w-[90%] flex justify-end p-5 pb-20' >
               <Checkout lineItems={cart} />
-          </section>
+            </section>
+          )}
+          {cart.length === 0 && (
+            <p className='font-mono text-white mx-auto'>Your Cart is empty...</p>
+          )}
+          
         </main>
     )
 }

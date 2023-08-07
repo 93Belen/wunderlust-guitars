@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Shop(
     {
@@ -14,7 +14,10 @@ export default function Shop(
     const changeLocation = (tab: string) => {
       setCurrentPath(() => tab)
      }
-
+     useEffect(()=> {
+         setCurrentPath(window.location.pathname)
+     }, [])
+     console.log(currentPath)
 
     return (
       <main className='h-fit min-h-screen px-4 md:px-8 w-screen overflow-x-hidden box-border pt-10 md:pt-20 scroll-smooth'>
