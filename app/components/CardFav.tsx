@@ -6,6 +6,7 @@ import Image from "next/image"
 import AddToCart from "./AddToCart"
 import Link from "next/link";
 import { Product } from "components/types/storeTypes";
+import { motion } from "framer-motion"
 
 export default function CardFav({guitar}: {guitar: Product}){
     const m : Magic = initializeMagic;
@@ -43,7 +44,9 @@ export default function CardFav({guitar}: {guitar: Product}){
     };
 
     return (
-        <div className='flex justify-between w-[99%] max-w-[900px]'>
+        <motion.div
+        key={guitar.id}
+        className='flex justify-between w-[99%] max-w-[900px]'>
             <Link href={{pathname: `/product/${guitar.id}`, query: { data: queryParams }}} className='flex gap-x-4 h-[8.375rem] rounded-lg'>
                 <Image
                 src={guitar.images[0]}
@@ -52,26 +55,26 @@ export default function CardFav({guitar}: {guitar: Product}){
                 alt="guitar"
                 className='md:max-w-[8.375rem] max-w-[8.375rem] h-[100%] rounded-lg'
                 />
-                <div className='flex flex-col text-white font-mono md:w-[19.9375rem] justify-between'>
-                    <h2 className='text-[1rem]'>{guitar.name}</h2>
-                    <p className='text-[0.75rem]'>Color: {guitar.metadata.color}</p>
-                    <p className='text-[0.75rem]'>Weight: {guitar.metadata.weight}</p>
-                    <p className='text-[0.75rem]'>{formatPrice(guitar.unit_amount as number)}</p>
-                    <div className='text-white font-mono md:hidden grid grid-cols-2 grid-rows-2 gap-x-0'>
+                <motion.div className='flex flex-col text-white font-mono md:w-[19.9375rem] justify-between'>
+                    <motion.h2 className='text-[1rem]'>{guitar.name}</motion.h2>
+                    <motion.p className='text-[0.75rem]'>Color: {guitar.metadata.color}</motion.p>
+                    <motion.p className='text-[0.75rem]'>Weight: {guitar.metadata.weight}</motion.p>
+                    <motion.p className='text-[0.75rem]'>{formatPrice(guitar.unit_amount as number)}</motion.p>
+                    <motion.div layout className='text-white font-mono md:hidden grid grid-cols-2 grid-rows-2 gap-x-0'>
                         <p>IN STOCK</p> 
                         <div className='self-end row-span-2'>
                             <AddToCart guitar={guitar} />
                         </div>
                         <button onClick={removeFromFav} className='cursor-pointer'>Remove</button>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </Link>
-            <p className='text-white font-mono hidden md:block'>IN STOCK</p>
-            <div className='text-white font-mono md:flex flex-col justify-between hidden'>
-                <button onClick={removeFromFav} className='cursor-pointer'>Remove</button>
-                <AddToCart guitar={guitar} />
-            </div>
-        </div>
+            <motion.p className='text-white font-mono hidden md:block'>IN STOCK</motion.p>
+            <motion.div className='text-white font-mono md:flex flex-col justify-between hidden'>
+                <motion.button onClick={removeFromFav} className='cursor-pointer'>Remove</motion.button>
+                <AddToCart key={guitar.name + guitar.id} guitar={guitar} />
+            </motion.div>
+        </motion.div>
     )
 }
 // const queryParams = encodeURIComponent(JSON.stringify(guitar)); // Stringify and encode the data

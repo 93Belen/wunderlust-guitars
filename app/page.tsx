@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Card from "./components/Card";
 import SoundWave from "./components/SoundWave";
+import { AnimatePresence } from 'framer-motion'
 
 export default function Home() {
   const [popular, setPopular] = useState([])
@@ -38,17 +39,22 @@ export default function Home() {
           <Link href='/shop' className='hoverlink text-pink font-mono text-[1.125rem] p-2 md:py-0 md:mt-[-1%] md:text-[1.5rem] md:ml-[8%]'>Shop now</Link>
         </div>
         <div className='hidden md:grid m-auto pt-4 md:mt-8 md:grid-cols-2 lg:grid-cols-4 md:w-fit md:max-w-[500px] lg:max-w-[1400px] w-[100%] gap-[1rem] md:gap-[3rem] justify-center'>
+        <AnimatePresence>
         {popular.map((guitar) => (
                 <div className='h-[15rem] lg:h-[22rem]'>
                 <Card data={guitar} />
             </div>
             ))}
+        </AnimatePresence>
         </div>
         <div className='md:hidden m-auto pt-4 md:mt-8 grid w-[100%] justify-center max-w-[250px]'>
+                <AnimatePresence>
                 {popular.length > 0 && (<div className='h-[20rem]'>
                   <Card data={popular[0]} />
                 </div>)}
+                </AnimatePresence>
         </div>
+
       </section>
       <section className='pt-28 mb-28 md:mb-80 flex flex-col md:grid md:grid-cols-[35vw_65vw] lg:grid-cols-[40vw_60vw] md:grid-rows-2 md:pt-32 h-fit md:gap-x-6 lg:mt-12'>
         <div className='col-start-2 flex h-fit md:justify-end md:w-[60vw]'>

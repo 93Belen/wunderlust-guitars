@@ -5,6 +5,7 @@ import formatPrice from "components/util/PriceFormat"
 import Image from "next/image"
 import Link from "next/link"
 import AddToFavorites from "./AddFavorite"
+import { motion } from "framer-motion"
 
 export default function CardCart({guitar}: {guitar: Product}){
     const store = useWebStore()
@@ -13,7 +14,8 @@ export default function CardCart({guitar}: {guitar: Product}){
         store.removeFromCart(guitar)
     }
     return (
-        <div className='flex justify-between w-[99%] max-w-[900px]'>
+        <motion.div
+        className='flex justify-between w-[99%] max-w-[900px]'>
             <div className='flex gap-x-4 h-[8.375rem] rounded-lg'>
             <Link href={{pathname: `/product/${guitar.id}`, query: { data: queryParams }}}>
                 <Image
@@ -37,6 +39,6 @@ export default function CardCart({guitar}: {guitar: Product}){
             <div className='text-white font-mono hidden md:block'>
                 <p className='cursor-pointer flex gap-10'><span onClick={removeItemFromCart}>Remove</span> | <AddToFavorites id={guitar.id} /></p>
             </div>
-        </div>
+        </motion.div>
     )
 }
