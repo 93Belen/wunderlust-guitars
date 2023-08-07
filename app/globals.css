@@ -45,3 +45,24 @@
   fill: #ED596E;
 }
 
+
+/* styles.css */
+
+/* For WebKit (Chrome, Safari, Edge) */
+#shop-mobile-nav::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+#shop-mobile-nav::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+/* For Firefox */
+#shop-mobile-nav {
+  scrollbar-width: none;
+}
+
+/* For IE and Edge */
+#shop-mobile-nav {
+  -ms-overflow-style: none;
+}
