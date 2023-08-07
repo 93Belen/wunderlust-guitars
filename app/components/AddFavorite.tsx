@@ -102,7 +102,7 @@ export default function AddToFavorites({ id }: { id: string }) {
     return (
       <div onClick={addToFavorites} className="w-[25px] h-auto cursor-pointer my-auto">
         {isInFav ? (
-          <FaHeart className="text-red text-[23px] hover:text-white duration-[0.4s]" />
+          <FaHeart className="text-red text-[23px] duration-[0.4s]" />
         ) : (
           <FaRegHeart className="text-white text-[23px] hover:text-red duration-[0.4s]" />
         )}
