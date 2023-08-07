@@ -23,7 +23,7 @@ export default function Cart(){
             <FavoritesSvg />
           </div>
           </section>
-          <motion.section layout className='h-fit w-screen box-border flex flex-col gap-y-20 md:gap-y-20 pb-20'>
+          <motion.section layout className='h-fit w-screen box-border flex flex-col gap-y-20 md:gap-y-20'>
           <AnimatePresence>
         {cart.map((guitar) => (
           <motion.section key={guitar.id} exit={{ opacity: 0 }} className='p-5 md:px-12 flex justify-center'>
@@ -32,12 +32,7 @@ export default function Cart(){
         ))}
       </AnimatePresence>
           </motion.section>
-          {/* {cart.map((guitar) => (
-            <section className='p-5 md:px-12 flex justify-center'>
-                <CardCart guitar={guitar} />
-            </section>
-))} */}
-          <section className='w-[90%] flex justify-end p-5'>
+          <section className='w-[90%] flex justify-end p-5 pb-20' >
               <Checkout lineItems={cart} />
           </section>
         </main>
