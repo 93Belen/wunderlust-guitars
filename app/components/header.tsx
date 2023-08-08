@@ -15,6 +15,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [path, setPath] = useState(window.location.pathname)
 
     const store = useWebStore()
     //console.logallGuitars)
@@ -37,6 +38,12 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
         } catch (error) {
         }
     };
+    const closeMenu = () => {
+        if(isOpen) {
+            setIsOpen(false)
+        }
+    }
+
 
     const logout = async (): Promise<void> => {
         try {
@@ -44,11 +51,11 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
                 await m.user.logout();
                 setIsLoggedIn(false);
                 store.removeAllCart()
+                closeMenu()
             }
         } catch (error) {
         }
     };
-   
 
     return (
         <div className="h-fit w-[99%] md:py-4 pb-1 md:px-4 p-2 justify-between items-center flex bg-black">
@@ -111,15 +118,15 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             {isOpen && (
                 <motion.div layout initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} className='absolute top-[4rem] left-0 text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black h-screen backdrop-blur-md'>
                    <div className='flex flex-col items-start gap-[2.25rem] p-14'>
-                    <Link className='hover:text-pink active:text-pink' href='/services'>Services</Link>
-                    <Link className='hover:text-pink active:text-pink' href='/shop'>All Guitars</Link>
-                    <Link className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
-                    <Link className='hover:text-pink active:text-pink' href='/favorites'>Favorites</Link>
-                    <Link className='hover:text-pink active:text-pink' href='/cart'>My Cart</Link>
+                    <Link onTouchEnd={closeMenu} className='hover:text-pink active:text-pink' href='/services'>Services</Link>
+                    <Link onTouchEnd={closeMenu}  className='hover:text-pink active:text-pink' href='/shop'>All Guitars</Link>
+                    <Link onTouchEnd={closeMenu}  className='hover:text-pink active:text-pink' href='/about-us'>About Us</Link>
+                    <Link onTouchEnd={closeMenu}  className='hover:text-pink active:text-pink' href='/favorites'>Favorites</Link>
+                    <Link onTouchEnd={closeMenu}  className='hover:text-pink active:text-pink' href='/cart'>My Cart</Link>
                     {isLoggedIn ? (
                         <button className='hover:text-pink active:text-pink' onClick={logout}>Log out</button>
                     ) : (
-                        <Link className='hover:text-pink active:text-pink' href='/login'>Login</Link>
+                        <Link onTouchEnd={closeMenu} className='hover:text-pink active:text-pink' href='/login'>Login</Link>
                     )
 
                     }
