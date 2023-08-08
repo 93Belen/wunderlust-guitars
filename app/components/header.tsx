@@ -82,7 +82,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             {/* MOBILE NAV */}
             <div className='md:hidden' onClick={toggleMenu}>
                 <AnimatePresence>
-                     <motion.svg layout data-isOpen={isOpen}  className="parent" width="1.10775rem" height="1.25rem" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <motion.svg layout data-isOpen={isOpen} style={{padding: '5px'}}  className="parent" width="2rem" height="auto" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         {/* First line with conditional animation */}
                         <motion.path
                             data-isOpen={isOpen}
