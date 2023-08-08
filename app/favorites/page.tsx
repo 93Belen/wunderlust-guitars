@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import CardFav from "../components/CardFav";
 import FavoritesSvg from "../components/favoritesSVG";
+import { AnimatePresence, motion } from 'framer-motion'
+import { Product } from "components/types/storeTypes";
 
 
 export default function Favorites(){
@@ -72,11 +74,15 @@ export default function Favorites(){
             <FavoritesSvg />
           </div>
           </section>
-          {favorites.map((guitar) => (
-            <section onClick={getFavorites} className='p-5 md:px-12 flex justify-center'>
-                <CardFav guitar={guitar} />
-            </section>
-          ))}
+          <motion.section layout className='h-fit w-screen box-border flex flex-col gap-y-20 md:gap-y-20 pb-20'>
+          <AnimatePresence>
+        {favorites.length > 0 && favorites.map((guitar: Product) => (
+          <motion.section key={guitar.id} exit={{ opacity: 0 }} onClick={getFavorites} className='p-5 md:px-12 flex justify-center'>
+            <CardFav key={guitar.name} guitar={guitar} />
+          </motion.section>
+        ))}
+      </AnimatePresence>
+          </motion.section>
         </main>
     )
 }

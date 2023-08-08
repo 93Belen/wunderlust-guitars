@@ -9,3 +9,66 @@
   }
   
 @tailwind utilities;
+
+
+
+.hover {
+  color: #0000;
+  background: 
+    linear-gradient(90deg,#CD6DEA 50%, #F1F1F1 0) 
+    var(--_p,100%)/200% no-repeat;
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: .4s;
+}
+.hover:hover {
+  --_p: 0%;
+}
+.hoverlink {
+  color: #0000;
+  background: 
+    linear-gradient(90deg,#F1F1F1 50%, #CD6DEA 0) 
+    var(--_p,100%)/200% no-repeat;
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: .4s;
+}
+.hoverlink:hover {
+  --_p: 0%;
+}
+
+/* Add this CSS to your stylesheet or style block */
+#fav-link:hover svg path{
+  fill: #ED596E;
+}
+#fav-link:hover svg mask path{
+  fill: #ED596E;
+}
+
+
+/* styles.css */
+
+/* For WebKit (Chrome, Safari, Edge) */
+#shop-mobile-nav::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+#shop-mobile-nav::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+/* For Firefox */
+#shop-mobile-nav {
+  scrollbar-width: none;
+}
+
+/* For IE and Edge */
+#shop-mobile-nav {
+  -ms-overflow-style: none;
+}
+
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

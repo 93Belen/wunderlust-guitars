@@ -3,6 +3,7 @@ import { useWebStore } from "components/store"
 import FavoritesSvg from "../components/favoritesSVG"
 import CardCart from "../components/CardCart"
 import Checkout from "../components/Checkout"
+import { AnimatePresence, motion } from 'framer-motion'
 
 
 export default function Cart(){
@@ -22,14 +23,24 @@ export default function Cart(){
             <FavoritesSvg />
           </div>
           </section>
-          {cart.map((guitar) => (
-            <section className='p-5 md:px-12 flex justify-center'>
-                <CardCart guitar={guitar} />
-            </section>
-))}
-          <section className='w-[90%] flex justify-end p-5'>
+          <motion.section layout className='h-fit w-screen box-border flex flex-col gap-y-20 md:gap-y-20'>
+          <AnimatePresence>
+        {cart.length > 0 && cart.map((guitar) => (
+          <motion.section key={guitar.id} exit={{ opacity: 0 }} className='p-5 md:px-12 flex justify-center'>
+            <CardCart guitar={guitar} />
+          </motion.section>
+        ))}
+      </AnimatePresence>
+          </motion.section>
+          {cart.length > 0 && (
+            <section className='w-[90%] flex justify-end p-5 pb-20' >
               <Checkout lineItems={cart} />
-          </section>
+            </section>
+          )}
+          {cart.length === 0 && (
+            <p className='font-mono text-white mx-auto'>Your Cart is empty...</p>
+          )}
+          
         </main>
     )
 }

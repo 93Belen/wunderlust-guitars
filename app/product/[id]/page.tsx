@@ -11,7 +11,8 @@ import myImageLoader from "components/util/loader";
 import formatPrice from "components/util/PriceFormat";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 export default function Product({searchParams}: ProductProps){
     const store = useWebStore()
@@ -19,6 +20,8 @@ export default function Product({searchParams}: ProductProps){
     // Parse the data query parameter back to an object
     const parsedData: Product = searchParams.data ? JSON.parse(decodeURIComponent(searchParams.data)) : null;
     const [data, setData] = useState(parsedData.description)
+    const [tab, setTab] = useState("description")
+
 
     // similar styles functionality
     const similarStyles: Product[] = allGuitars.filter((guitar) => {
@@ -37,12 +40,15 @@ export default function Product({searchParams}: ProductProps){
     const changeTab = (tab: string) => {
         if(tab === 'description'){
             setData(parsedData.description)
+            setTab("description")
         }
         else if(tab === 'specs'){
             setData(parsedData.metadata.specs)
+            setTab("specs")
         }
         else if(tab === 'backgroundStory'){
             setData(parsedData.metadata.backgroundStory)
+            setTab("backgroundStory")
         }
         else {
             setData(parsedData.description)
@@ -112,13 +118,13 @@ export default function Product({searchParams}: ProductProps){
                 </div>
                 <div className='flex gap-5'>
                     <AddToCart guitar={parsedData} />
-                    <AddToFavorites id={""} />
+                    <AddToFavorites id={parsedData.id} />
                 </div>
                 <div>
                 <div className='w-full text-white flex justify-between'>
-                    <p className='cursor-pointer' onClick={() => {changeTab("description")}}>Description</p>
-                    <p className='cursor-pointer' onClick={() => {changeTab("specs")}}>Specs</p>
-                    <p className='cursor-pointer' onClick={() => {changeTab("backgroundStory")}}>Bakground Story</p>
+                    <p className={`cursor-pointer ${tab === 'description' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("description")}}>Description</p>
+                    <p className={`cursor-pointer ${tab === 'specs' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("specs")}}>Specs</p>
+                    <p className={`cursor-pointer ${tab === 'backgroundStory' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("backgroundStory")}}>Bakground Story</p>
 
                 </div>
                 <GuitarInfo data={data as string} />
