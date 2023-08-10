@@ -37,7 +37,6 @@ export default function Favorites(){
                   })
         
                 const myfavorites = await getfavs.json();
-                console.log(myfavorites)
                 setFavorites(myfavorites)
                 
               } catch {
@@ -77,7 +76,7 @@ export default function Favorites(){
           <motion.section layout className='h-fit w-screen box-border flex flex-col gap-y-20 md:gap-y-20 pb-20'>
           <AnimatePresence>
         {favorites.length > 0 && favorites.map((guitar: Product) => (
-          <motion.section key={guitar.id} exit={{ opacity: 0 }} onClick={getFavorites} className='p-5 md:px-12 flex justify-center'>
+          <motion.section key={guitar.id} exit={{ opacity: 0 }} onClick={() => (getFavorites())} className='p-5 md:px-12 flex justify-center'>
             <CardFav key={guitar.name} guitar={guitar} />
           </motion.section>
         ))}
