@@ -25,7 +25,7 @@ export const getOneProduct = async (id: string) => {
     // Handle the error if product is not found
     if (
       error instanceof Stripe.errors.StripeInvalidRequestError &&
-      error.raw.code === "resource_missing"
+      error.code === "resource_missing"
     ) {
       console.log("Product not found:");
       return null;
