@@ -7,7 +7,6 @@ import GuitarInfo from "components/app/components/GuitarInfo";
 import { useWebStore } from "components/store";
 import { ProductProps } from "components/types/ProductPropsType";
 import { Product } from "components/types/storeTypes";
-import myImageLoader from "components/util/loader";
 import formatPrice from "components/util/PriceFormat";
 import Image from "next/image";
 import Link from "next/link";
@@ -83,7 +82,6 @@ export default function Product({searchParams}: ProductProps){
                     alt="guitar"
                     height={2500}
                     className='rounded-lg w-[50%] h-auto'
-                    loader={myImageLoader}
                     />
                     <Image
                     src={parsedData.metadata.imageclose}
