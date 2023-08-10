@@ -15,6 +15,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [checkStatus, setCheckStatus] = useState<boolean>(false)
 
     const store = useWebStore()
 
@@ -40,9 +41,11 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
     }
 
     useEffect(() => {
-        checkLoginStatus();
         store.addAllGuitars(allGuitars)
     },[]);
+    useEffect(() => {
+        checkLoginStatus();
+    }, [checkStatus])
 
 
     const logout = async (): Promise<void> => {
@@ -58,7 +61,9 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
         }
     };
 
-
+    const toggleStatus = () => {
+        setCheckStatus((state) => !state)
+    }
 
 
     return (
@@ -77,7 +82,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
                     <FaRegHeart className='text-white text-[23px] hover:text-red duration-[0.4s]' />
                 </Link>
                 <AnimatePresence>
-                <motion.div className="has-tooltip">
+                <motion.div onMouseOver={toggleStatus} className="has-tooltip">
                     <RiAccountCircleLine className='text-white text-[25px]' />
                     <motion.span className="tooltip text-white font-mono w-fit py-2 px-4 ml-[-25px]  bg-gray rounded-lg">
                     {isLoggedIn  && (
@@ -123,7 +128,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             </div>
             <AnimatePresence>
             {isOpen && (
-                <motion.div layout initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} className='absolute top-[4rem] left-0 text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black h-screen backdrop-blur-md'>
+                <motion.div onTouchEnd={toggleStatus} layout initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} className='absolute top-[4rem] left-0 text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black h-screen backdrop-blur-md'>
                    <div className='flex flex-col items-start gap-[2.25rem] p-14'>
                     <Link onTouchEnd={closeMenu} className='hover:text-pink active:text-pink' href='/services'>Services</Link>
                     <Link onTouchEnd={closeMenu}  className='hover:text-pink active:text-pink' href='/shop'>All Guitars</Link>
