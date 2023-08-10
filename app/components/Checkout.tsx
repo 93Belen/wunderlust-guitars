@@ -4,6 +4,7 @@ import { Product } from "components/types/storeTypes"
 import { checkOut } from "components/stripe/checkOut"
 
 export default function Checkout({lineItems}: {lineItems: Product[]}) {
+    // format items for checkout
     const itemsToCheckout = lineItems.map(item => ({
         price: item.default_price,
         quantity: 1

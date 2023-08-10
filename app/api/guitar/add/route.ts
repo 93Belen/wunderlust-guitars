@@ -4,14 +4,14 @@ import { prisma } from "components/prisma/seed";
 export async function POST(req: Request): Promise<Response>  {
     try{
         const { id }: { id: string } = await req.json();
-        //console.logid)
+
         const responseFromPrisma = await prisma.guitar.create({
             data: {
                 id: id,
                 likes: 0
             }
         })
-        //console.logresponseFromPrisma)
+
     
         return new Response(JSON.stringify(responseFromPrisma));
     }

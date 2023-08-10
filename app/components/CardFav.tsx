@@ -12,9 +12,10 @@ export default function CardFav({guitar}: {guitar: Product}){
     const m : Magic = initializeMagic;
     const queryParams = encodeURIComponent(JSON.stringify(guitar)); // Stringify and encode the data
 
-
+    // remove guitar from favorites
     const removeFromFav = async (): Promise<void> => {
         try {
+            // check if user is logged in
             const loggedIn: boolean = await m.user.isLoggedIn();
             if(loggedIn){
                 const info = await m.user.getMetadata()
@@ -26,8 +27,7 @@ export default function CardFav({guitar}: {guitar: Product}){
 
                 const jsonUser = await user.json()
                 const userId = jsonUser.id
-                // //console.logjsonUser)
-                // //console.loguserId)
+
                 const response = await fetch("/api/user/unlikeguitar", {
                     method: "POST",
                     body: JSON.stringify({
@@ -39,7 +39,7 @@ export default function CardFav({guitar}: {guitar: Product}){
             }
             }
             catch (error) {
-            //console.logerror);
+            console.log(error);
         }
     };
 

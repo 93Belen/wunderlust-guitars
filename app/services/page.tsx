@@ -80,60 +80,61 @@ export default function Services(){
         </section>
         <section id='personal-shopper' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
-            <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Personal</h3>
-            <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Shopper</h4>
+                <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Personal</h3>
+                <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Shopper</h4>
             </div>
-                <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>I have a lot of guitars, but I have seen more, and I can hunt down what you are looking for. </h5>
-                <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
-                    Over the years I have met many guitar enthusiasts and people in the industry, so I've got a network of contacts all over the world. Let me know what guitar you are looking for and I will find it for you. 
-                    Hey! Don’t worry, you don’t pay anything until I find it. And once I do, you pay for the guitar, no extra fee.
-                    But listen, if for some reason your guitar has disappeared off the face of the Earth, let me come out with some ideas, I could have something else that might interest you.
-                </p>
-                <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
-                    Pay just for the guitar after I find it and If you are still interested on it. Not payment upfront, not contract signed. Settle your decision after I get what you need.
-                </p>
-                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true} >Contact me</Link>
+            <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>I have a lot of guitars, but I have seen more, and I can hunt down what you are looking for. </h5>
+            <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
+                Over the years I have met many guitar enthusiasts and people in the industry, so I've got a network of contacts all over the world. Let me know what guitar you are looking for and I will find it for you. 
+                Hey! Don’t worry, you don’t pay anything until I find it. And once I do, you pay for the guitar, no extra fee.
+                But listen, if for some reason your guitar has disappeared off the face of the Earth, let me come out with some ideas, I could have something else that might interest you.
+            </p>
+            <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
+                Pay just for the guitar after I find it and If you are still interested in it. Not payment upfront, no contract signed. Settle your decision after I get what you need.
+            </p>
+            <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true} >Contact me</Link>
         </section>
+
         <section id='collection-curator' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
                 <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Collection</h3>
                 <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Curator</h4>
             </div>
-                <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>Listen, guitar enthusiasts usually know what they want.</h5>
-                <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
-                    Although… maybe life is going well and you have some money to spend 
-                    but aren’t sure what your next acquisition can be… Or you are not a guitar enthusiast, 
-                    but your partner is, and you don’t know what to buy for your guitar’s maniac’s birthday. 
-                    Talk to me, and together we will see what makes sense for you to buy, we might have something here for you.
-                </p>
-                <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
-                    Pay jus for what you buy, and if you decide to buy it somewhere else... hey! no hard feelings
-                </p>
-                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true}>Contact me</Link>
-
+            <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>Listen, guitar enthusiasts usually know what they want.</h5>
+            <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
+                Although… maybe life is going well and you have some money to spend but aren’t sure what your next acquisition can be… Or you are not a guitar enthusiast, 
+                but your partner is, and you don’t know what to buy for your guitar’s maniac’s birthday. 
+                Talk to me, and together we will see what makes sense for you to buy, we might have something here for you.
+            </p>
+            <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
+                Pay just for what you buy, and if you decide to buy it somewhere else... hey! no hard feelings
+            </p>
+            <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true}>Contact me</Link>
         </section>
+
         <section id='appraisals' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
-                <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Appraissals</h3>
+                <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Appraisals</h3>
                 <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>Today you are not here to buy, you are here to sell and make some money</h5>
             </div>
-                <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
-                    If you are not sure how much your guitar is worth… Let me have a look, I will give you a free estimate. Then you can sell it on your own.
-                    Of course, you already know, if your guitar catches my eye, I will make you an offer.
-                </p>
-                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form'  smooth={true}>Contact me</Link>
+            <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
+                If you are not sure how much your guitar is worth… Let me have a look, I will give you a free estimate. Then you can sell it on your own.
+                Of course, you already know, if your guitar catches my eye, I will make you an offer.
+            </p>
+            <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form'  smooth={true}>Contact me</Link>
         </section>
+
         <section id='hand-delivery' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
             <div>
                 <h3 className='font-sans text-[3.7rem] font-[700] leading-[3.1875rem] lg:leading-[7rem] md:leading-[7rem] text-gray tracking-[-0.20rem] md:tracking-[-0.11rem] md:text-[7rem] lg:text-[10rem] lg:mr-10'>Hand</h3>
                 <h4 className='text-pink font-mono text-[1.7rem] font-[700] mt-[-1rem] pl-4 leading-[2.35625rem] lg:leading-[-2rem] tracking-[-0.10rem] md:tracking-[-0.05rem] lg:text-[3rem]'>Delivery</h4>
             </div>
-                <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>From my private collection to your door.</h5>
-                <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
-                    You just bought a really expensive guitar, and you want to get it hand delivered and intact, no carrier service, no third party involved.
-                    Traveling by plane, car, or boat, not matter how, your guitar will remain next to me. Believe, I won’t lose sight of your precious new acquisition. 
-                </p>
-                <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true} >Contact me</Link>
+            <h5 className='text-white font-[700] font-mono text-[1.5rem] md:text-[2rem] leading-[140%] p-2'>From my private collection to your door.</h5>
+            <p className='font-mono text-white text-[1.5em] p-2 md:w-[60vw]'>
+                You just bought a really expensive guitar, and you want to get it hand delivered and intact, no carrier service, no third party involved.
+                Traveling by plane, car, or boat, no matter how, your guitar will remain next to me. Believe me, I won’t lose sight of your precious new acquisition. 
+            </p>
+            <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true} >Contact me</Link>
         </section>
         <section id='contact-form' className='flex justify-center pb-20'>
             <ContactForm />

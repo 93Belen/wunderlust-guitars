@@ -15,18 +15,13 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const [path, setPath] = useState(window.location.pathname)
+    const [checkStatus, setCheckStatus] = useState<boolean>(false)
 
     const store = useWebStore()
-    //console.logallGuitars)
 
     // check that user is logged in
     // If user is logged in it will display the log-out button
     // If user is not logged in, it will display the link to the log-in page
-    useEffect(() => {
-        checkLoginStatus();
-        store.addAllGuitars(allGuitars)
-    }, []);
 
     const toggleMenu = () => {
         setIsOpen((state) => !state)
@@ -36,6 +31,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             const loggedIn: boolean = await m.user.isLoggedIn();
             setIsLoggedIn(loggedIn);
         } catch (error) {
+            console.log(error)
         }
     };
     const closeMenu = () => {
@@ -43,6 +39,13 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             setIsOpen(false)
         }
     }
+
+    useEffect(() => {
+        store.addAllGuitars(allGuitars)
+    },[]);
+    useEffect(() => {
+        checkLoginStatus();
+    }, [checkStatus])
 
 
     const logout = async (): Promise<void> => {
@@ -54,8 +57,14 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
                 closeMenu()
             }
         } catch (error) {
+            console.log(error)
         }
     };
+
+    const toggleStatus = () => {
+        setCheckStatus((state) => !state)
+    }
+
 
     return (
         <div className="h-fit w-[99%] md:py-4 pb-1 md:px-4 p-2 justify-between items-center flex bg-black">
@@ -72,16 +81,19 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
                 <Link href="/favorites">
                     <FaRegHeart className='text-white text-[23px] hover:text-red duration-[0.4s]' />
                 </Link>
-                <div className="has-tooltip">
+                <AnimatePresence>
+                <motion.div onMouseOver={toggleStatus} className="has-tooltip">
                     <RiAccountCircleLine className='text-white text-[25px]' />
-                    <span className="tooltip text-white font-mono w-fit py-2 px-4 ml-[-25px]  bg-gray rounded-lg">
-                    {isLoggedIn ? (
-                        <button onClick={logout}>Log out</button>
-                    ) : (
-                            <Link href="/login">Log in</Link>
+                    <motion.span className="tooltip text-white font-mono w-fit py-2 px-4 ml-[-25px]  bg-gray rounded-lg">
+                    {isLoggedIn  && (
+                        <motion.button onClick={logout}>Log out</motion.button>
                     )}
-                    </span>
-                </div>
+                    {!isLoggedIn && (
+                        <Link href="/login">Log in</Link>
+                    )}
+                    </motion.span>
+                </motion.div>
+                </AnimatePresence>
                 <Link className='' href="/cart">
                     <BsBag className='text-white text-[22px] hover:text-pink duration-[0.4s]' />
                 </Link>
@@ -116,7 +128,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             </div>
             <AnimatePresence>
             {isOpen && (
-                <motion.div layout initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} className='absolute top-[4rem] left-0 text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black h-screen backdrop-blur-md'>
+                <motion.div onTouchEnd={toggleStatus} layout initial={{opacity: 0}} exit={{opacity: 0}} animate={{opacity: 1}} className='absolute top-[4rem] left-0 text-white text-[1.5rem] font-sans font-normal z-60 w-screen bg-black h-screen backdrop-blur-md'>
                    <div className='flex flex-col items-start gap-[2.25rem] p-14'>
                     <Link onTouchEnd={closeMenu} className='hover:text-pink active:text-pink' href='/services'>Services</Link>
                     <Link onTouchEnd={closeMenu}  className='hover:text-pink active:text-pink' href='/shop'>All Guitars</Link>
