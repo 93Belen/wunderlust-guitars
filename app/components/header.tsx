@@ -15,18 +15,12 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const [path, setPath] = useState(window.location.pathname)
 
     const store = useWebStore()
-    //console.logallGuitars)
 
     // check that user is logged in
     // If user is logged in it will display the log-out button
     // If user is not logged in, it will display the link to the log-in page
-    useEffect(() => {
-        checkLoginStatus();
-        store.addAllGuitars(allGuitars)
-    }, []);
 
     const toggleMenu = () => {
         setIsOpen((state) => !state)
@@ -36,6 +30,7 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             const loggedIn: boolean = await m.user.isLoggedIn();
             setIsLoggedIn(loggedIn);
         } catch (error) {
+            console.log(error)
         }
     };
     const closeMenu = () => {
@@ -43,6 +38,11 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             setIsOpen(false)
         }
     }
+
+    useEffect(() => {
+        checkLoginStatus();
+        store.addAllGuitars(allGuitars)
+    },[]);
 
 
     const logout = async (): Promise<void> => {
@@ -54,8 +54,12 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
                 closeMenu()
             }
         } catch (error) {
+            console.log(error)
         }
     };
+
+
+
 
     return (
         <div className="h-fit w-[99%] md:py-4 pb-1 md:px-4 p-2 justify-between items-center flex bg-black">
@@ -72,16 +76,19 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
                 <Link href="/favorites">
                     <FaRegHeart className='text-white text-[23px] hover:text-red duration-[0.4s]' />
                 </Link>
-                <div className="has-tooltip">
+                <AnimatePresence>
+                <motion.div className="has-tooltip">
                     <RiAccountCircleLine className='text-white text-[25px]' />
-                    <span className="tooltip text-white font-mono w-fit py-2 px-4 ml-[-25px]  bg-gray rounded-lg">
-                    {isLoggedIn ? (
-                        <button onClick={logout}>Log out</button>
-                    ) : (
-                            <Link href="/login">Log in</Link>
+                    <motion.span className="tooltip text-white font-mono w-fit py-2 px-4 ml-[-25px]  bg-gray rounded-lg">
+                    {isLoggedIn  && (
+                        <motion.button onClick={logout}>Log out</motion.button>
                     )}
-                    </span>
-                </div>
+                    {!isLoggedIn && (
+                        <Link href="/login">Log in</Link>
+                    )}
+                    </motion.span>
+                </motion.div>
+                </AnimatePresence>
                 <Link className='' href="/cart">
                     <BsBag className='text-white text-[22px] hover:text-pink duration-[0.4s]' />
                 </Link>
