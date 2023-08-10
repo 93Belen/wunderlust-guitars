@@ -80,6 +80,9 @@ export default function Favorites(){
             <CardFav key={guitar.name} guitar={guitar} />
           </motion.section>
         ))}
+        {favorites.length === 0 && (
+           <p className='font-mono text-white mx-auto'>Your don't have Favorites right now...</p>
+        )}
       </AnimatePresence>
           </motion.section>
         </main>
