@@ -10,7 +10,7 @@ import { Product } from "components/types/storeTypes";
 import formatPrice from "components/util/PriceFormat";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 
 export default function Product({searchParams}: ProductProps){
