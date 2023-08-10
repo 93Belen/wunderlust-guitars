@@ -15,7 +15,7 @@ export default function Favorites(){
   const { push } = useRouter()
   const m: Magic = initializeMagic
 
-
+// Get user's favorites for display
     const getFavorites = async (): Promise<void> => {
       try {
           const loggedIn: boolean = await m.user.isLoggedIn();
@@ -45,6 +45,7 @@ export default function Favorites(){
 
              
           }
+          // if user isnt logged in, go to log in page
           else {
               push("/login")
           }
