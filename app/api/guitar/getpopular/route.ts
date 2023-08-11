@@ -12,22 +12,25 @@ export async function GET(): Promise<Response> {
         const onlyInStock: Product[] = [];
 
         // Use Promise.all to concurrently fetch product details from Stripe for all favorites
-        await Promise.all(
-          responseFromPrisma.map(async (guitar : {id: string, likes: number}) => {
+        for (const guitar of responseFromPrisma) {
+          try {
             const product = await getOneProduct(guitar.id);
+    
             if (product) {
               onlyInStock.push(product as Product);
             } else {
-                // If product is not in stock, delete it from favorites
-                await prisma.guitar.deleteMany({
-                  where: {
-                    id: guitar.id
-                  },
-                });
-              }
-          })
-        );
-          if(onlyInStock.length > 4){
+              // If product is not in stock, delete it from guitars
+              await prisma.guitar.deleteMany({
+                where: {
+                  id: guitar.id,
+                },
+              });
+            }
+          } catch (error) {
+            console.error("Error fetching product:", error);
+          }
+        }
+        if(onlyInStock.length > 4){
             // return max 4 guitars to fit design
             return new Response(JSON.stringify([onlyInStock[0], onlyInStock[1], onlyInStock[2], onlyInStock[3]]));
           }
