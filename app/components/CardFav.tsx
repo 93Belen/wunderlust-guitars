@@ -8,40 +8,40 @@ import Link from "next/link";
 import { Product } from "components/types/storeTypes";
 import { motion } from "framer-motion"
 
-export default function CardFav({guitar}: {guitar: Product}){
+export default function CardFav({ guitar, onDelete }: { guitar: Product, onDelete: (guitarId: string) => Promise<void> }){
     const m : Magic = initializeMagic;
     const queryParams = encodeURIComponent(JSON.stringify(guitar)); // Stringify and encode the data
 
-    // remove guitar from favorites
-    const removeFromFav = async (): Promise<void> => {
-        try {
-            // check if user is logged in
-            const loggedIn: boolean = await m.user.isLoggedIn();
-            if(loggedIn){
-                const info = await m.user.getMetadata()
-                const email = info.email
-                const user = await fetch("/api/user/finduser", {
-                    method: "POST",
-                    body: JSON.stringify({email})
-                })
+    // // remove guitar from favorites
+    // const removeFromFav = async (): Promise<void> => {
+    //     try {
+    //         // check if user is logged in
+    //         const loggedIn: boolean = await m.user.isLoggedIn();
+    //         if(loggedIn){
+    //             const info = await m.user.getMetadata()
+    //             const email = info.email
+    //             const user = await fetch("/api/user/finduser", {
+    //                 method: "POST",
+    //                 body: JSON.stringify({email})
+    //             })
 
-                const jsonUser = await user.json()
-                const userId = jsonUser.id
+    //             const jsonUser = await user.json()
+    //             const userId = jsonUser.id
 
-                const response = await fetch("/api/user/unlikeguitar", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        userId: userId,
-                        guitarId: guitar.id
-                    })
-                })
+    //             const response = await fetch("/api/user/unlikeguitar", {
+    //                 method: "POST",
+    //                 body: JSON.stringify({
+    //                     userId: userId,
+    //                     guitarId: guitar.id
+    //                 })
+    //             })
                
-            }
-            }
-            catch (error) {
-            console.log(error);
-        }
-    };
+    //         }
+    //         }
+    //         catch (error) {
+    //         console.log(error);
+    //     }
+    // };
 
     return (
         <motion.div
@@ -60,7 +60,7 @@ export default function CardFav({guitar}: {guitar: Product}){
                     <motion.p className='text-[0.75rem] hidden md:block'>Color: {guitar.metadata.color}</motion.p>
                     <motion.p className='text-[0.75rem] hidden md:block'>Weight: {guitar.metadata.weight}</motion.p>
                     <motion.p className='text-[0.75rem] hidden md:block'>{formatPrice(guitar.unit_amount as number)}</motion.p>
-                    <motion.button onClick={removeFromFav} className='cursor-pointer md:hidden text-left'>Remove</motion.button>
+                    <motion.button onClick={() => (onDelete(guitar.id))} className='cursor-pointer md:hidden text-left'>Remove</motion.button>
                     <motion.div layout className='text-white font-mono md:hidden grid grid-rows-2 gap-x-0 text-left'>
                         <div className='self-end row-span-2'>
                             <AddToCart guitar={guitar} />
@@ -69,7 +69,7 @@ export default function CardFav({guitar}: {guitar: Product}){
                 </motion.div>
             <motion.p className='text-white font-mono hidden md:block'>IN STOCK</motion.p>
             <motion.div className='text-white font-mono md:flex flex-col justify-between hidden'>
-                <motion.button onClick={removeFromFav} className='cursor-pointer'>Remove</motion.button>
+                <motion.button onClick={() => (onDelete(guitar.id))} className='cursor-pointer'>Remove</motion.button>
                 <AddToCart key={guitar.name + guitar.id} guitar={guitar} />
             </motion.div>
         </motion.div>

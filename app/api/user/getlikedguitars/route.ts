@@ -11,9 +11,6 @@ export async function POST(req: Request): Promise<Response> {
         const responseFromPrisma = await prisma.userFavorites.findMany({
             where: {
                 userId: userId
-            },
-            orderBy: {
-              guitarId: "desc"
             }
         })
         

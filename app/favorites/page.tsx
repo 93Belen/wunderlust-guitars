@@ -14,6 +14,38 @@ export default function Favorites(){
   const [favorites, setFavorites] = useState([])
   const { push } = useRouter()
   const m: Magic = initializeMagic
+  const [render, setRender] = useState(false)
+
+  const removeFromFav = async (guitarId: string): Promise<void> => {
+    try {
+        // check if user is logged in
+        const loggedIn: boolean = await m.user.isLoggedIn();
+        if(loggedIn){
+            const info = await m.user.getMetadata()
+            const email = info.email
+            const user = await fetch("/api/user/finduser", {
+                method: "POST",
+                body: JSON.stringify({email})
+            })
+
+            const jsonUser = await user.json()
+            const userId = jsonUser.id
+
+            const response = await fetch("/api/user/unlikeguitar", {
+                method: "POST",
+                body: JSON.stringify({
+                    userId: userId,
+                    guitarId: guitarId
+                })
+            }).then(() => setRender((state) => !state))
+           
+        }
+        }
+        catch (error) {
+        console.log(error);
+    }
+};
+
 
 // Get user's favorites for display
     const getFavorites = async (): Promise<void> => {
@@ -51,7 +83,7 @@ export default function Favorites(){
           }
           }
           catch (error) {
-          //console.logerror);
+          console.log(error);
       }
   };
 
@@ -59,6 +91,9 @@ export default function Favorites(){
     useEffect(() => {
         getFavorites()
     }, [])
+    useEffect(() => {
+      getFavorites()
+  }, [render])
 
 
 
@@ -77,8 +112,8 @@ export default function Favorites(){
           <motion.section layout className='h-fit w-screen box-border flex flex-col gap-y-20 md:gap-y-20 pb-20'>
           <AnimatePresence>
         {favorites.length > 0 && favorites.map((guitar: Product) => (
-          <motion.section key={guitar.id} exit={{ opacity: 0 }} onClick={() => (getFavorites())} className='p-5 md:px-12 flex justify-center'>
-            <CardFav key={guitar.name} guitar={guitar} />
+          <motion.section key={guitar.id} exit={{ opacity: 0 }} className='p-5 md:px-12 flex justify-center'>
+            <CardFav onDelete={removeFromFav} key={guitar.name} guitar={guitar} />
           </motion.section>
         ))}
         {favorites.length === 0 && (
