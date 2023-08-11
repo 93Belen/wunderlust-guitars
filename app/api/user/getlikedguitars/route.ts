@@ -11,31 +11,30 @@ export async function POST(req: Request): Promise<Response> {
         const responseFromPrisma = await prisma.userFavorites.findMany({
             where: {
                 userId: userId
-            },
-            orderBy: {
-              guitarId: "desc"
             }
         })
         
         const onlyInStock: Product[] = [];
 
-        // Use Promise.all to concurrently fetch product details from Stripe for all favorites
-        await Promise.all(
-          responseFromPrisma.map(async (guitar : {guitarId: string, userId: string}) => {
+        for (const guitar of responseFromPrisma) {
+          try {
             const product = await getOneProduct(guitar.guitarId);
+    
             if (product) {
               onlyInStock.push(product as Product);
             } else {
-                // If product is not in stock, delete it from favorites
-                await prisma.userFavorites.deleteMany({
-                  where: {
-                    guitarId: guitar.guitarId,
-                    userId: guitar.userId
-                  },
-                });
-              }
-          })
-        );
+              // If product is not in stock, delete it from favorites
+              await prisma.userFavorites.deleteMany({
+                where: {
+                  guitarId: guitar.guitarId,
+                  userId: guitar.userId,
+                },
+              });
+            }
+          } catch (error) {
+            console.error("Error fetching product:", error);
+          }
+        }
 
         return new Response(JSON.stringify(onlyInStock));
     }
