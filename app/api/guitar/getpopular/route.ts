@@ -2,8 +2,6 @@ import { prisma } from "components/prisma/seed";
 import { getOneProduct } from "components/stripe/getOneProduct";
 import { Product } from "components/types/storeTypes";
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 export async function GET(): Promise<Response> {
   try {
     const responseFromPrisma = await prisma.guitar.findMany({
@@ -14,10 +12,23 @@ export async function GET(): Promise<Response> {
 
     const onlyInStock: Product[] = [];
 
-    for (const guitar of responseFromPrisma) {
-      try {
-        const product = await getOneProduct(guitar.id);
+    // Define rate limiting parameters
+    const maxRequestsPerSecond = 15;
+    const requestInterval = 1000 / maxRequestsPerSecond;
+    let lastRequestTime = 0;
 
+    // Use Promise.all to fetch product details from Stripe with rate limiting
+    await Promise.all(
+      responseFromPrisma.map(async (guitar: { id: string, likes: number }) => {
+        const currentTime = Date.now();
+        const timeSinceLastRequest = currentTime - lastRequestTime;
+
+        if (timeSinceLastRequest < requestInterval) {
+          // Wait to ensure rate limit compliance
+          await new Promise(resolve => setTimeout(resolve, requestInterval - timeSinceLastRequest));
+        }
+
+        const product = await getOneProduct(guitar.id);
         if (product) {
           onlyInStock.push(product as Product);
         } else {
@@ -29,12 +40,9 @@ export async function GET(): Promise<Response> {
           });
         }
 
-        // Add a delay of 40 milliseconds to achieve approximately 25 calls per second
-        await delay(40);
-      } catch (error) {
-        console.error("Error fetching product:", error);
-      }
-    }
+        lastRequestTime = Date.now();
+      })
+    );
 
     if (onlyInStock.length > 4) {
       // Return a maximum of 4 guitars to fit the design
