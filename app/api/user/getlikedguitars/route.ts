@@ -34,7 +34,7 @@ export async function POST(req: Request): Promise<Response> {
         }
 
         // Add a delay of 40 milliseconds to achieve approximately 25 calls per second
-        await delay(40);
+        await delay(66);
       } catch (error) {
         console.error("Error fetching product:", error);
       }

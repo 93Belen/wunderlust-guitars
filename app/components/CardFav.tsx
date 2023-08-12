@@ -60,7 +60,7 @@ export default function CardFav({ guitar, onDelete }: { guitar: Product, onDelet
                     <motion.p className='text-[0.75rem] hidden md:block'>Color: {guitar.metadata.color}</motion.p>
                     <motion.p className='text-[0.75rem] hidden md:block'>Weight: {guitar.metadata.weight}</motion.p>
                     <motion.p className='text-[0.75rem] hidden md:block'>{formatPrice(guitar.unit_amount as number)}</motion.p>
-                    <motion.button onClick={() => (onDelete(guitar.id))} className='cursor-pointer md:hidden text-left'>Remove</motion.button>
+                    <motion.button onClick={() => (onDelete(guitar.id))} className='cursor-pointer md:hidden text-left active:text-red'>Remove</motion.button>
                     <motion.div layout className='text-white font-mono md:hidden grid grid-rows-2 gap-x-0 text-left'>
                         <div className='self-end row-span-2'>
                             <AddToCart guitar={guitar} />
@@ -69,7 +69,7 @@ export default function CardFav({ guitar, onDelete }: { guitar: Product, onDelet
                 </motion.div>
             <motion.p className='text-white font-mono hidden md:block'>IN STOCK</motion.p>
             <motion.div className='text-white font-mono md:flex flex-col justify-between hidden'>
-                <motion.button onClick={() => (onDelete(guitar.id))} className='cursor-pointer'>Remove</motion.button>
+                <motion.button onClick={() => (onDelete(guitar.id))} className='cursor-pointer active:text-red'>Remove</motion.button>
                 <AddToCart key={guitar.name + guitar.id} guitar={guitar} />
             </motion.div>
         </motion.div>
