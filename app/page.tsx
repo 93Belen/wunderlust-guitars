@@ -40,7 +40,7 @@ export default function Home() {
         </div>
         <div className='hidden md:grid m-auto pt-4 md:mt-8 md:grid-cols-2 lg:grid-cols-4 md:w-fit md:max-w-[500px] lg:max-w-[1400px] w-[100%] gap-[1rem] md:gap-[3rem] justify-center'>
         <AnimatePresence>
-        {popular.map((guitar) => (
+        {popular.length > 0 && popular.map((guitar) => (
                 <div className='h-[15rem] lg:h-[22rem]'>
                 <Card data={guitar} />
             </div>

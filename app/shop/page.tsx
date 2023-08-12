@@ -21,7 +21,7 @@ export default function Popular(){
 
     return (
         <section className='w-full max-w-[550px] md:max-w-none grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:w-[100%] lg:max-w-[1250px]'>
-            {popular.map((guitar) => (
+            {popular.length > 0 && popular.map((guitar) => (
                 <div className='h-[15rem] lg:h-[22rem]'>
                 <Card data={guitar} />
             </div>

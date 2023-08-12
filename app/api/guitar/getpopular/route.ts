@@ -12,22 +12,9 @@ export async function GET(): Promise<Response> {
 
     const onlyInStock: Product[] = [];
 
-    // Define rate limiting parameters
-    const maxRequestsPerSecond = 15;
-    const requestInterval = 1000 / maxRequestsPerSecond;
-    let lastRequestTime = 0;
-
     // Use Promise.all to fetch product details from Stripe with rate limiting
     await Promise.all(
       responseFromPrisma.map(async (guitar: { id: string, likes: number }) => {
-        const currentTime = Date.now();
-        const timeSinceLastRequest = currentTime - lastRequestTime;
-
-        if (timeSinceLastRequest < requestInterval) {
-          // Wait to ensure rate limit compliance
-          await new Promise(resolve => setTimeout(resolve, requestInterval - timeSinceLastRequest));
-        }
-
         const product = await getOneProduct(guitar.id);
         if (product) {
           onlyInStock.push(product as Product);
@@ -40,7 +27,6 @@ export async function GET(): Promise<Response> {
           });
         }
 
-        lastRequestTime = Date.now();
       })
     );
 

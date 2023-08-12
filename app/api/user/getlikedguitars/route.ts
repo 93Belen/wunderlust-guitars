@@ -2,8 +2,6 @@ import { prisma } from "components/prisma/seed";
 import { getOneProduct } from "components/stripe/getOneProduct";
 import { Product } from "components/types/storeTypes";
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 // Get user's favorite guitars
 export async function POST(req: Request): Promise<Response> {
   const { userId }: { userId: string } = await req.json();
@@ -32,9 +30,6 @@ export async function POST(req: Request): Promise<Response> {
             },
           });
         }
-
-        // Add a delay of 40 milliseconds to achieve approximately 25 calls per second
-        await delay(66);
       } catch (error) {
         console.error("Error fetching product:", error);
       }
