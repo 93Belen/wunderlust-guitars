@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npx prisma generate && next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -37,6 +37,7 @@
     "zustand": "^4.3.3"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.39.3-appdir.0",
     "@types/react-scroll": "^1.8.7",
     "autoprefixer": "^10.4.14",
     "daisyui": "^3.5.0",
