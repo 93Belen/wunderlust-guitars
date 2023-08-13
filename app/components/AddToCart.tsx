@@ -2,7 +2,6 @@
 
 import { useWebStore } from "components/store";
 import { Product } from "components/types/storeTypes";
-import { usePathname } from 'next/navigation';
 
 export default function AddToCart({ guitar }: { guitar: Product }) {
   const store = useWebStore();

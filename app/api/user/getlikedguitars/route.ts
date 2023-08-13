@@ -1,7 +1,5 @@
-import GuitarInfo from "components/app/components/GuitarInfo";
 import { prisma } from "components/prisma/seed";
 import { Product } from "components/types/storeTypes";
-import { getDefaultHighWaterMark } from "stream";
 
 // Get user's favorite guitars
 export async function POST(req: Request): Promise<Response> {

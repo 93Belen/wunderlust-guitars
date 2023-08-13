@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 
 export default function Shop(
     {
@@ -15,10 +14,7 @@ export default function Shop(
     const changeLocation = (tab: string) => {
       setCurrentPath(() => tab)
      }
-     useEffect(()=> {
-      const windowPathname = usePathname();
-        setCurrentPath(windowPathname)
-     }, [])
+
 
     return (
       <main className='h-fit min-h-screen px-4 md:px-8 w-screen md:overflow-x-hidden box-border pt-10 md:pt-20'>
