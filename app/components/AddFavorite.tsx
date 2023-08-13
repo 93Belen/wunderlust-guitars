@@ -6,9 +6,10 @@ import { FaRegHeart }from 'react-icons/fa'
 import { useEffect, useState } from "react";
 import { FaHeart} from 'react-icons/fa'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Product } from "components/types/storeTypes";
 
 
-export default function AddToFavorites({ id }: { id: string }) {
+export default function AddToFavorites({ id, guitar }: { id: string, guitar: Product }) {
     const m: Magic = initializeMagic;
     const guitarId = id;
     const { push } = useRouter();
@@ -87,6 +88,7 @@ export default function AddToFavorites({ id }: { id: string }) {
               body: JSON.stringify({
                 userId: userId,
                 guitarId: guitarId,
+                guitar: guitar
               }),
             });
             setIsInFav(true); // Set isInFav to true as the guitar is now liked

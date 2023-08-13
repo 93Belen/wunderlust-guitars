@@ -14,6 +14,12 @@ datasource db {
 model Guitar {
   id     String  @id
   likes  Int @default(0)
+  description    String?
+  images          String
+  metadata       Json
+  name           String
+  unit_amount    Int?
+  default_price  String
 }
 
 model User {
@@ -29,3 +35,7 @@ model UserFavorites {
 
   @@id([userId, guitarId], name: "userandguitar")
 }
+
+
+
+  

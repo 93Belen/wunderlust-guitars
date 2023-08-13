@@ -13,7 +13,7 @@ export const getProduct = async() => {
                 name: product.name,
                 metadata: product.metadata,
                 unit_amount: prices.data[0].unit_amount,
-                images: product.images,
+                images: product.images[0],
                 currency: prices.data[0].currency,
                 description: product.description,
                 default_price: product.default_price as string

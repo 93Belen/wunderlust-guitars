@@ -10,39 +10,39 @@ export async function GET(): Promise<Response> {
       },
     });
 
-    const onlyInStock: Product[] = [];
+    // const onlyInStock: Product[] = [];
 
     // Use Promise.all to fetch product details from Stripe with rate limiting
-    await Promise.all(
-      responseFromPrisma.map(async (guitar: { id: string, likes: number }) => {
-        const product = await getOneProduct(guitar.id);
-        if (product) {
-          onlyInStock.push(product as Product);
-        } else {
-          // If product is not in stock, delete it from guitars
-          await prisma.guitar.deleteMany({
-            where: {
-              id: guitar.id,
-            },
-          });
-        }
+    // await Promise.all(
+    //   responseFromPrisma.map(async (guitar: { id: string, likes: number }) => {
+    //     const product = await getOneProduct(guitar.id);
+    //     if (product) {
+    //       onlyInStock.push(product);
+    //     } else {
+    //       // If product is not in stock, delete it from guitars
+    //       await prisma.guitar.deleteMany({
+    //         where: {
+    //           id: guitar.id,
+    //         },
+    //       });
+    //     }
 
-      })
-    );
+    //   })
+    // );
 
-    if (onlyInStock.length > 4) {
+    if (responseFromPrisma.length > 4) {
       // Return a maximum of 4 guitars to fit the design
       return new Response(
         JSON.stringify([
-          onlyInStock[0],
-          onlyInStock[1],
-          onlyInStock[2],
-          onlyInStock[3],
+          responseFromPrisma[0],
+          responseFromPrisma[1],
+          responseFromPrisma[2],
+          responseFromPrisma[3],
         ])
       );
     }
 
-    return new Response(JSON.stringify(onlyInStock));
+    return new Response(JSON.stringify(responseFromPrisma));
   } catch (error) {
     return new Response(JSON.stringify({ error: "Internal Server Error" }), {
       status: 500,

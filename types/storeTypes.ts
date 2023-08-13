@@ -11,7 +11,7 @@ export type WebStore = {
 export type Product = {
     description?: string | null
     id: string;
-    images: string[];
+    images: string;
     metadata: {
       [key: string]: string;
     };
@@ -19,4 +19,6 @@ export type Product = {
     unit_amount: number | null;
     default_price: string
   }
+ 
+  
   

@@ -1,8 +1,9 @@
 import { prisma } from "components/prisma/seed";
+import { Product } from "components/types/storeTypes";
   
 // Add favorite guitar to this user in db
 export async function POST(req: Request): Promise<Response> {
-    const { userId, guitarId }: { userId: string; guitarId: string } = await req.json();
+    const { userId, guitarId, guitar }: { userId: string; guitarId: string, guitar: Product } = await req.json();
 
     try {
       const responseFromPrisma = await prisma.userFavorites.create({
@@ -22,7 +23,13 @@ export async function POST(req: Request): Promise<Response> {
         },
         create: {
           id: guitarId,
-          likes: 1
+          likes: 1,
+          description:guitar.description,
+          default_price: guitar.default_price,
+          images: guitar.images,
+          metadata: guitar.metadata,
+          name: guitar.name,
+          unit_amount: guitar.unit_amount
         }
         
       });
