@@ -18,12 +18,8 @@ export default function AddToCart({ guitar }: { guitar: Product }) {
     // if it inst in the cart, add it
     if (!existingGuitar) {
       store.addToCart(guitar);
-    } else {
-      // if guitar is in cart already, alert
-    //   if(typeof window !== 'undefined')
-    //   window.alert("This guitar is already in your cart");
-    // }
-  };
+    }
+  }
 
   return (
     <button
