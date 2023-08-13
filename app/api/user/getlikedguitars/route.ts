@@ -1,6 +1,5 @@
 import GuitarInfo from "components/app/components/GuitarInfo";
 import { prisma } from "components/prisma/seed";
-import { getOneProduct } from "components/stripe/getOneProduct";
 import { Product } from "components/types/storeTypes";
 import { getDefaultHighWaterMark } from "stream";
 
@@ -19,19 +18,6 @@ export async function POST(req: Request): Promise<Response> {
 
     for (const guitar of responseFromPrisma) {
       try {
-        // const product = await getOneProduct(guitar.guitarId);
-
-        // if (product) {
-        //   onlyInStock.push(product as Product);
-        // } else {
-        //   // If product is not in stock, delete it from favorites
-        //   await prisma.userFavorites.deleteMany({
-        //     where: {
-        //       guitarId: guitar.guitarId,
-        //       userId: guitar.userId,
-        //     },
-        //   });
-        // }
         const guitarInfo = await prisma.guitar.findUnique({
           where:{
             id: guitar.guitarId

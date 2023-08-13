@@ -10,8 +10,9 @@ import { useWebStore } from 'components/store';
 import { Product } from 'components/types/storeTypes';
 import {FaRegHeart }from 'react-icons/fa'
 import { motion, AnimatePresence} from 'framer-motion'
+import { getProduct } from 'components/stripe/getProduct';
 
-export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Element {
+export default function Header(): JSX.Element {
     const m: Magic = initializeMagic
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -39,9 +40,14 @@ export default function Header({allGuitars}: {allGuitars: Product[]}): JSX.Eleme
             setIsOpen(false)
         }
     }
+    const getProductFromStripe = async() => {
+        const response = await getProduct();
+        store.addAllGuitars(response)
+    
+    }
 
     useEffect(() => {
-        store.addAllGuitars(allGuitars)
+        getProductFromStripe()
     },[]);
     useEffect(() => {
         checkLoginStatus();
