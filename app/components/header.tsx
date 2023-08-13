@@ -41,6 +41,7 @@ export default function Header(): JSX.Element {
     }
     const getProductFromStripe = async() => {
         const response = await getProduct();
+        console.log(response)
         store.addAllGuitars(response)
     
     }

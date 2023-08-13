@@ -7,7 +7,7 @@ export async function GET(): Promise<Response> {
         likes: "asc",
       },
     });
-
+    
     if (responseFromPrisma.length > 4) {
       // Return a maximum of 4 guitars to fit the design
       return new Response(
