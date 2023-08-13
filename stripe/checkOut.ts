@@ -1,3 +1,5 @@
+"use client"
+
 import { loadStripe, Stripe } from "@stripe/stripe-js";
 
 // Define the interface for line items

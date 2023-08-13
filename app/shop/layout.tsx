@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Shop(
     {
@@ -11,11 +12,12 @@ export default function Shop(
       }
 ){
     const [currentPath, setCurrentPath] = useState<String>();
+    const windowPathname = usePathname();
     const changeLocation = (tab: string) => {
       setCurrentPath(() => tab)
      }
      useEffect(()=> {
-         setCurrentPath(window.location.pathname)
+        setCurrentPath(windowPathname)
      }, [])
      console.log(currentPath)
 
