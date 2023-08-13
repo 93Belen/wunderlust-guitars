@@ -1,5 +1,3 @@
-"use client"
-
 import { loadStripe, Stripe } from "@stripe/stripe-js";
 
 // Define the interface for line items
@@ -33,7 +31,7 @@ console.log(lineItems)
     shippingAddressCollection: { allowedCountries: ['US', 'CA'] },
     mode: 'payment',
     lineItems: lineItems,
-    successUrl: `${window.location.origin}/success`,
-    cancelUrl: `${window.location.origin}`
+    successUrl: `http://localhost:3000/success`,
+    cancelUrl: `http://localhost:3000`
   });
 }
