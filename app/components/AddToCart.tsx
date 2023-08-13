@@ -1,3 +1,5 @@
+"use client"
+
 import { useWebStore } from "components/store";
 import { Product } from "components/types/storeTypes";
 
@@ -16,6 +18,7 @@ export default function AddToCart({ guitar }: { guitar: Product }) {
       store.addToCart(guitar);
     } else {
       // if guitar is in cart already, alert
+      if(typeof window !== 'undefined')
       window.alert("This guitar is already in your cart");
     }
   };

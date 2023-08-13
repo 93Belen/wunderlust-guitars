@@ -7,7 +7,6 @@ import { Magic } from 'magic-sdk';
 import Logo from './Logo';
 import {BsBag} from 'react-icons/bs'
 import { useWebStore } from 'components/store';
-import { Product } from 'components/types/storeTypes';
 import {FaRegHeart }from 'react-icons/fa'
 import { motion, AnimatePresence} from 'framer-motion'
 import { getProduct } from 'components/stripe/getProduct';
