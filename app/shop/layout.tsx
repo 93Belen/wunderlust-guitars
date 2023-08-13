@@ -14,6 +14,9 @@ export default function Shop(
     const changeLocation = (tab: string) => {
       setCurrentPath(() => tab)
      }
+     useEffect(() => {
+      setCurrentPath(window.location.pathname)
+     }, [])
 
 
     return (
