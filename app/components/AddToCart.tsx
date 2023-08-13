@@ -1,8 +1,11 @@
+'use client'
+
 import { useWebStore } from "components/store";
 import { Product } from "components/types/storeTypes";
 
 export default function AddToCart({ guitar }: { guitar: Product }) {
   const store = useWebStore();
+
 
   // ad guitar to cart
   const addGuitarToCart = () => {
@@ -14,11 +17,8 @@ export default function AddToCart({ guitar }: { guitar: Product }) {
     // if it inst in the cart, add it
     if (!existingGuitar) {
       store.addToCart(guitar);
-    } else {
-      // if guitar is in cart already, alert
-      window.alert("This guitar is already in your cart");
     }
-  };
+  }
 
   return (
     <button

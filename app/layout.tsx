@@ -3,7 +3,6 @@ import Hydrate from './components/Hydrate'
 import './globals.css'
 import { Goldman, Play, Gruppo } from "@next/font/google"
 import Footer from './components/Footer'
-import { getProduct } from 'components/stripe/getProduct'
 
 
 export const metadata = {
@@ -36,22 +35,17 @@ const gruppo = Gruppo({
 
 
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
- 
-  const response = await getProduct();
-  const allGuitars = response
-
-
 
   return (
     <html lang="en" className={`${play.variable}`}>
       <body className={`${goldman.variable} min-h-screen h-fit bg-black w-[100vw] box-border flex flex-col justify-between overflow-x-hidden`}>
         <Hydrate>
-        <Header allGuitars={allGuitars} />
+        <Header />
         <div className={`h-[70%] ${gruppo.variable}`}>
         {children}
         </div>

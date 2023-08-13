@@ -1,4 +1,5 @@
-"use client"
+'use client'
+
 import { initializeMagic } from 'components/magic/initializeMagic';
 import { RPCError, RPCErrorCode } from 'magic-sdk';
 import { useState } from 'react';
@@ -31,19 +32,19 @@ export default function Login(): JSX.Element{
             if (err instanceof RPCError) {
                 switch (err.code) {
                   case RPCErrorCode.MagicLinkFailedVerification:
-                      window.alert("Verification failed")
+                      
                       break;
                   case RPCErrorCode.MagicLinkExpired:
-                    window.alert("Link expired. Plase, try again.")
+                    
                     break;
                   case RPCErrorCode.MagicLinkRateLimited:
-                    window.alert("Magic link rate limited.")
+                    
                     break;
                   case RPCErrorCode.UserAlreadyLoggedIn:
-                    window.alert("You are already logged in.")
+                    
                     break;
                   default:
-                    window.alert("Sorry, something went wrong. Please, try again.")
+                    
                     break;
                 }
               }

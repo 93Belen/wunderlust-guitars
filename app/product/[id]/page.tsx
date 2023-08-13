@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import AddToFavorites from "components/app/components/AddFavorite";
 import AddToCart from "components/app/components/AddToCart";
@@ -57,7 +57,7 @@ export default function Product({searchParams}: ProductProps){
 
     // images for mobile photo-carousel
     const images = [
-        parsedData.images[0],
+        parsedData.images,
         parsedData.metadata.imageangle,
         parsedData.metadata.imagefar,
         parsedData.metadata.imageclose
@@ -68,7 +68,7 @@ export default function Product({searchParams}: ProductProps){
             <section className='hidden md:flex flex-col h-fit gap-y-10 max-w-[600px]'>
                 <div className='rounded-lg h-fit'>
                     <Image
-                    src={parsedData.images[0]}
+                    src={parsedData.images}
                     width={2500}
                     alt="guitar"
                     height={2500}
@@ -116,7 +116,7 @@ export default function Product({searchParams}: ProductProps){
                 </div>
                 <div className='flex gap-5'>
                     <AddToCart guitar={parsedData} />
-                    <AddToFavorites id={parsedData.id} />
+                    <AddToFavorites guitar={parsedData} id={parsedData.id} />
                 </div>
                 <div>
                 <div className='w-full text-white flex justify-between'>
@@ -134,7 +134,7 @@ export default function Product({searchParams}: ProductProps){
                     return (
                 <Link href={{pathname: `/product/${guitar.id}`, query: { data: queryParams }}}>
                     <Image
-                        src={guitar.images[0]}
+                        src={guitar.images}
                         width={2500}
                         alt="guitar"
                         height={2500}

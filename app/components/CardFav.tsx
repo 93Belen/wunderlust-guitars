@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { initializeMagic } from "components/magic/initializeMagic";
 import formatPrice from "components/util/PriceFormat";
 import { Magic } from "magic-sdk";
@@ -11,6 +11,7 @@ import { motion } from "framer-motion"
 export default function CardFav({ guitar, onDelete }: { guitar: Product, onDelete: (guitarId: string) => Promise<void> }){
     const m : Magic = initializeMagic;
     const queryParams = encodeURIComponent(JSON.stringify(guitar)); // Stringify and encode the data
+    console.log(guitar)
 
     // // remove guitar from favorites
     // const removeFromFav = async (): Promise<void> => {
@@ -48,7 +49,7 @@ export default function CardFav({ guitar, onDelete }: { guitar: Product, onDelet
         className='flex justify-between w-[99%] max-w-[900px]'>
             <Link href={{pathname: `/product/${guitar.id}`, query: { data: queryParams }}} className='flex gap-x-4 h-[8.375rem] rounded-lg'>
                 <Image
-                src={guitar.images[0]}
+                src={guitar.images}
                 height={500}
                 width={500}
                 alt="guitar"

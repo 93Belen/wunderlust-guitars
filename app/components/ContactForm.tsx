@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { ChangeEvent, useState } from "react"
 import { useForm } from '@formspree/react'

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { useWebStore } from "components/store"
 import FavoritesSvg from "../components/favoritesSVG"
 import CardCart from "../components/CardCart"

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { Product } from "components/types/storeTypes"
 import { checkOut } from "components/stripe/checkOut"
