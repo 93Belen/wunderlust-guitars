@@ -10,7 +10,7 @@ export default function Shop(
         children: React.ReactNode
       }
 ){
-    const [currentPath, setCurrentPath] = useState<String>();
+    const [currentPath, setCurrentPath] = useState<String>(window.location.pathname);
     const changeLocation = (tab: string) => {
       setCurrentPath(() => tab)
      }
