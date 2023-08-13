@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { Magic } from "magic-sdk";
 import { initializeMagic } from "components/magic/initializeMagic";
 import { useRouter } from "next/navigation";

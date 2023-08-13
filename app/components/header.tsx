@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { useEffect, useState } from 'react';
 import {RiAccountCircleLine} from 'react-icons/ri'
 import Link from 'next/link';

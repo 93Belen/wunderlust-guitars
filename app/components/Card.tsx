@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import AddToFavorites from "./AddFavorite";
 import Link from "next/link";

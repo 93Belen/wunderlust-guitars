@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { initializeMagic } from 'components/magic/initializeMagic';
 import { RPCError, RPCErrorCode } from 'magic-sdk';

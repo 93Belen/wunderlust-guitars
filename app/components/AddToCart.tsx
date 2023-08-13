@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useWebStore } from "components/store";
 import { Product } from "components/types/storeTypes";

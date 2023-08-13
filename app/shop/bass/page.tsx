@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useWebStore } from "components/store";
 import Card from "../../components/Card";

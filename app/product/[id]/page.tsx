@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import AddToFavorites from "components/app/components/AddFavorite";
 import AddToCart from "components/app/components/AddToCart";

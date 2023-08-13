@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import ContactForm from "../components/ContactForm";
 import { Link  } from "react-scroll";

@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import { initializeMagic } from "components/magic/initializeMagic";
 import formatPrice from "components/util/PriceFormat";
 import { Magic } from "magic-sdk";
