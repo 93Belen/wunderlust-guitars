@@ -10,14 +10,14 @@ export default function Shop(
         children: React.ReactNode
       }
 ){
-    const [currentPath, setCurrentPath] = useState<String>(window.location.pathname);
+    const [currentPath, setCurrentPath] = useState<String>();
     const changeLocation = (tab: string) => {
       setCurrentPath(() => tab)
      }
      useEffect(() => {
-      setCurrentPath(window.location.pathname)
       if(currentPath !== '/shop' && currentPath !== '/shop/acoustic' && currentPath !== '/shop/electric' && currentPath !== '/shop/bass' && currentPath !== '/shop/sixstrings'){
-        setCurrentPath("/shop")
+        setCurrentPath(() => window.location.pathname)
+        setCurrentPath(() => window.location.pathname)
       }
      }, [])
     
