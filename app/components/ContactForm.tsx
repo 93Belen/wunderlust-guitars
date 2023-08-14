@@ -35,7 +35,7 @@ export default function ContactForm({reason}: {reason: string | undefined}){
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>NAME</label>
                 <input required name='name' type="text" className='h-[2.5rem] border-[1px] border-white bg-black rounded-lg px-2 text-white font-mono' />
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>EMAIL</label>
-                <input required name='email' type="text" className='h-[2.5rem] border-[1px] border-white bg-black rounded-lg px-2 text-white font-mono' />
+                <input required name='email' type="email" className='h-[2.5rem] border-[1px] border-white bg-black rounded-lg px-2 text-white font-mono' />
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>REASON FOR CONTACT</label>
                 <select
                 name='reason'
@@ -94,7 +94,7 @@ export default function ContactForm({reason}: {reason: string | undefined}){
                     </div>
                 )}
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>MESSAGE</label>
-                <textarea name='message' cols={10} rows={10} className='border-[1px] max-w-[49rem] border-white bg-black rounded-lg p-2 text-white font-mono' />
+                <textarea required name='message' cols={10} rows={10} className='border-[1px] max-w-[49rem] border-white bg-black rounded-lg p-2 text-white font-mono' />
                 <div>
                     <button type='submit' className='py-[0.5rem] px-[1rem] bg-purple font-mono text-white rounded-lg text-[1.125rem] font-normal w-[8rem] active:bg-[#394293]'>Send!</button>
                 </div>
