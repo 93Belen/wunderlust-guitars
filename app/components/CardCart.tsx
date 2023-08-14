@@ -33,12 +33,12 @@ export default function CardCart({guitar}: {guitar: Product}){
                     <p className='text-[0.75rem]'>Weight: {guitar.metadata.weight}</p>
                     <p className='text-[0.75rem]'>{formatPrice(guitar.unit_amount as number)}</p>
                     <div className='text-white font-mono md:hidden'>
-                    <p className='cursor-pointer active:text-red'><span onClick={removeItemFromCart}>Remove</span> | <AddToFavorites id={guitar.id} guitar={guitar} /></p>
+                    <p className='cursor-pointer'><span className="active:text-red hover:text-red duration-[0.4s]" onClick={removeItemFromCart}>Remove</span> | <AddToFavorites id={guitar.id} guitar={guitar} /></p>
                     </div>
                 </div>
             </div>
             <div className='text-white font-mono hidden md:block'>
-                <p className='cursor-pointer flex gap-10 active:text-red'><span onClick={removeItemFromCart}>Remove</span> | <AddToFavorites guitar={guitar} id={guitar.id} /></p>
+                <p className='cursor-pointer flex gap-10'><span className="active:text-red hover:text-red duration-[0.4s]" onClick={removeItemFromCart}>Remove</span> | <AddToFavorites guitar={guitar} id={guitar.id} /></p>
             </div>
         </motion.div>
     )
