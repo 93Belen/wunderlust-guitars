@@ -1,10 +1,16 @@
 'use client'
 
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useState, useEffect } from "react"
 import { useForm } from '@formspree/react'
 
-export default function ContactForm(){
-    const [formType, setFormType] = useState<string>()
+export default function ContactForm({reason}: {reason: string | undefined}){
+    const [formType, setFormType] = useState<string | undefined>()
+
+    useEffect(() => {
+        // Update the formType state with the reason prop after the component mounts
+        setFormType(reason);
+    }, [reason]);
+
 
     const selectFormType = (e: ChangeEvent<HTMLSelectElement>) => {
         const type = e.target.value;
@@ -31,12 +37,17 @@ export default function ContactForm(){
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>EMAIL</label>
                 <input required name='email' type="text" className='h-[2.5rem] border-[1px] border-white bg-black rounded-lg px-2 text-white font-mono' />
                 <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>REASON FOR CONTACT</label>
-                <select name='reason' onChange={selectFormType} className='h-[2.5rem] border-[1px] border-white bg-black appearance-none text-white font-mono p-2 rounded-lg'>
+                <select
+                name='reason'
+                value={formType || "other"}
+                onChange={selectFormType}
+                className='h-[2.5rem] border-[1px] border-white bg-black appearance-none text-white font-mono p-2 rounded-lg'
+                >
                     <option value="other">Other</option>
-                    <option value="personal-shopper">Personal Shopper</option>
-                    <option value="collection-curator">Collection Curator</option>
-                    <option value="appraisals">Appraisals</option>
-                    <option value="hand-delivery">Hand Delivery</option>
+                    <option value="personal-shopper" defaultChecked={formType === "personal-shopper"}>Personal Shopper</option>
+                    <option value="collection-curator" defaultChecked={formType === "collection-curator"}>Collection Curator</option>
+                    <option value="appraisals" defaultChecked={formType === "appraisals"}>Appraisals</option>
+                    <option value="hand-delivery" defaultChecked={formType === "hand-delivery"}>Hand Delivery</option>
                 </select>
                 {/* PERSONAL SHOPPER */}
                 {formType === "personal-shopper" && (

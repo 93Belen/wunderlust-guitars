@@ -2,8 +2,16 @@
 
 import ContactForm from "../components/ContactForm";
 import { Link  } from "react-scroll";
+import { useState } from "react";
 
 export default function Services(){
+    const [contactReason, setContactReason] = useState<String>()
+    const changeContactReason = (reason: string) => {
+        setContactReason((reason))
+    }
+
+
+
     return (
         <main className='h-fit min-h-screen px-4 md:px-8 w-screen overflow-x-hidden box-border flex flex-col gap-y-10 md:gap-y-20'>
             <section  className='text-white font-sans text-[2.25rem] md:text-[4.5rem] font-[700] bg-[url("/servicesmobile.jpg")]  md:bg-[url("/services.png")] w-screen h-[25rem] p-2 md:pl-16 pr-0 md:ml-[-2rem] ml-[-1rem] bg-no-repeat bg-center bg-cover flex items-end'>
@@ -92,7 +100,7 @@ export default function Services(){
             <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
                 Pay just for the guitar after I find it and If you are still interested in it. Not payment upfront, no contract signed. Settle your decision after I get what you need.
             </p>
-            <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true} >Contact me</Link>
+            <Link onClick={() => (changeContactReason("personal-shopper"))} className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true} >Contact me</Link>
         </section>
 
         <section id='collection-curator' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
@@ -109,7 +117,7 @@ export default function Services(){
             <p className='font-mono text-white text-[1.5em] p-2 md:w-[80vw]'>
                 Pay just for what you buy, and if you decide to buy it somewhere else... hey! no hard feelings
             </p>
-            <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true}>Contact me</Link>
+            <Link onClick={() => (changeContactReason("collection-curator"))} className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true}>Contact me</Link>
         </section>
 
         <section id='appraisals' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
@@ -121,7 +129,7 @@ export default function Services(){
                 If you are not sure how much your guitar is worth… Let me have a look, I will give you a free estimate. Then you can sell it on your own.
                 Of course, you already know, if your guitar catches my eye, I will make you an offer.
             </p>
-            <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form'  smooth={true}>Contact me</Link>
+            <Link onClick={() => (changeContactReason("appraisals"))} className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form'  smooth={true}>Contact me</Link>
         </section>
 
         <section id='hand-delivery' className='flex flex-col md:gap-y-5 border-b-white border-b-2 pb-20 md:ml-5'>
@@ -134,10 +142,10 @@ export default function Services(){
                 You just bought a really expensive guitar, and you want to get it hand delivered and intact, no carrier service, no third party involved.
                 Traveling by plane, car, or boat, no matter how, your guitar will remain next to me. Believe me, I won’t lose sight of your precious new acquisition. 
             </p>
-            <Link className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true} >Contact me</Link>
+            <Link onClick={() => (changeContactReason("hand-delivery"))} className='text-pink text-[1.5rem] font-normal font-mono p-2 hoverlink cursor-pointer' to='contact-form' smooth={true} >Contact me</Link>
         </section>
         <section id='contact-form' className='flex justify-center pb-20'>
-            <ContactForm />
+            <ContactForm reason={contactReason as string} />
         </section>
         </main>
     )
