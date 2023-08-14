@@ -25,7 +25,7 @@ export default function About(){
                     />
                 </div>
                 <div className='h-fit w-screen mr-[-1rem] row-start-1 justify-center mt-5 md:col-start-2 p-5'>
-                    <p className='text-white font-mono text-[1.5rem] md:mr-[15%] self-center md:w-[40%] w-[90%] md:p-x-10 px-1'>
+                    <p className='text-white font-mono text-[1.5rem] md:mr-[15%] 2xl:text-[2rem] self-center md:w-[40%] w-[90%] md:p-x-10 px-1'>
                     <span className='text-pink'>Alright, prepare yourselves</span> because we're about to plunge headfirst into the story of Ben 
                     and his obsession with chasing down the best and most unique guitars.
                     Let's rewind the clock and take a trip back to Ben's roots. 
@@ -37,7 +37,7 @@ export default function About(){
             </div>
         </section>
             <section className='h-fit bg-[url("/skypic.jpg")] bg-no-repeat bg-cover p-5 md:p-20 w-screen ml-[-1rem] flex md:ml-[-2rem] justify-center'>
-                <p className='text-white font-mono text-[1.5rem] self-center text-center md:w-[38rem]'>
+                <p className='text-white font-mono text-[1.5rem] self-center text-center md:w-[38rem] 2xl:w-[50rem] 2xl:text-[2rem]'>
                 Fast forward to today, and this OCD-type-of-guy has taken his guitar addiction to a whole new level. 
                 But make no mistake, he ain't no random fool who fell off a Kansas farm truck. No, sir!  
                 <span className='text-pink'>This guy toured through North America, Europe, and the "God-save-the-Queen" UK</span> in 2015 and 2016. 
@@ -54,8 +54,8 @@ export default function About(){
                 </div>
             </div>
             <div className='flex flex-col md:flex-row w-full'>
-                <div className='w-full md:max-w-[650px] md:pl-10 md:pt-16'>
-                    <p className='text-white font-mono text-[1.5rem] self-center px-1' >
+                <div className='w-full md:max-w-[650px] 2xl:max-w-[1000px] md:pl-10 md:pt-16'>
+                    <p className='text-white font-mono text-[1.5rem] self-center px-1 2xl:text-[2rem]' >
                     But wait, there's more! 
                     Ben worked on Denmark Street in London, and if you don't know what that street means, 
                     search it!
@@ -77,7 +77,7 @@ export default function About(){
             <section className='h-fit bg-[url("/skypic.jpg")] bg-no-repeat bg-cover w-screen ml-[-1rem] md:ml-[-2rem] bg-bottom' >
                 <div className='h-fit mb-40 md:grid md:grid-cols-2 md:p-10 md:mt-32 p-4' >
                 <div className='md:col-start-2 flex items-center'>
-                    <p className='text-white font-mono text-[1.5rem] px-1 md:max-w-[38rem]'>
+                    <p className='text-white font-mono text-[1.5rem] px-1 md:max-w-[38rem] 2xl:max-w-[50rem] 2xl:text-[2rem]'>
                     And if you thought that was the end of his story, think again. 
                     When he was 37, Ben married Belen, who shares his love for traveling the world. 
                     That means if you're wondering whether that guitar you've been dreaming about is 
@@ -86,7 +86,7 @@ export default function About(){
                     So, my friends, buckle up, because this ride is about to get crazy. Welcome to Wunderlust guitars.
                     </p>
                 </div>
-                <div className='col-start-1 md:w-[80%] row-start-1 w-full flex justify-center'>
+                <div className='col-start-1 md:w-[80%] 2xl:w-[90%] row-start-1 w-full flex justify-center'>
                 <Image
                     src="/benandbelen.jpg"
                     width={2500}

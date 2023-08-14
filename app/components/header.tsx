@@ -78,7 +78,7 @@ export default function Header(): JSX.Element {
                 <Logo />
             </Link>
             {/* DESKTOP NAV */}
-            <div className='md:flex gap-[2rem] hidden text-white font-sans text-[1.125rem] font-normal'>
+            <div className='md:flex gap-[2rem] hidden text-white font-sans text-[1.125rem] 2xl:text-[1.5rem] font-normal'>
                 <Link className='hover' href='/services'>Services</Link>
                 <Link className='hover' href='/shop'>All Guitars</Link>
                 <Link className='hover' href='/about-us'>About Us</Link>

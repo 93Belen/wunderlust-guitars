@@ -119,7 +119,7 @@ export default function Product({searchParams}: ProductProps){
                     <AddToFavorites guitar={parsedData} id={parsedData.id} />
                 </div>
                 <div>
-                <div className='w-full text-white flex justify-between'>
+                <div className='w-full text-white flex justify-between pb-4'>
                     <p className={`cursor-pointer ${tab === 'description' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("description")}}>Description</p>
                     <p className={`cursor-pointer ${tab === 'specs' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("specs")}}>Specs</p>
                     <p className={`cursor-pointer ${tab === 'backgroundStory' ? "border-b-purple" : "border-b-black"} border-b-2 duration-[0.4s] ease-out`} onClick={() => {changeTab("backgroundStory")}}>Bakground Story</p>
