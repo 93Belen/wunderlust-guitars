@@ -41,7 +41,7 @@ export default function ContactForm({reason}: {reason: string | undefined}){
                 name='reason'
                 value={formType || "other"}
                 onChange={selectFormType}
-                className='h-[2.5rem] border-[1px] border-white bg-black appearance-none text-white font-mono p-2 rounded-lg'
+                className='h-[2.5rem] border-[1px] border-white bg-black text-white font-mono p-2 rounded-lg custom-menu appearance-none'
                 >
                     <option value="other">Other</option>
                     <option value="personal-shopper" defaultChecked={formType === "personal-shopper"}>Personal Shopper</option>
@@ -75,7 +75,7 @@ export default function ContactForm({reason}: {reason: string | undefined}){
                         <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>GUITAR NAME</label>
                         <input name='guitar-name' type="text" className='h-[2.5rem] border-[1px] border-white bg-black rounded-lg px-2 text-white font-mono' />
                         <label htmlFor="" className='text-white font-mono text-[1.5rem] font-semibold'>GUITAR CONDITIONS</label>
-                        <select name='conditions' className='h-[2.5rem] border-[1px] border-white bg-black appearance-none text-white font-mono p-2 rounded-lg'>
+                        <select name='conditions' className='h-[2.5rem] border-[1px] border-white bg-black appearance-none text-white font-mono p-2 rounded-lg custom-menu'>
                             <option value="">Perfect</option>
                             <option value="">Almost perfect</option>
                             <option value="">Very used</option>
