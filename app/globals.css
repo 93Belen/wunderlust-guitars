@@ -72,3 +72,8 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+
+.custom-menu {
+  appearance: textfield;
+}
