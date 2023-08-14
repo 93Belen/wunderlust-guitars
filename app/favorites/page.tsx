@@ -15,6 +15,7 @@ export default function Favorites(){
   const { push } = useRouter()
   const m: Magic = initializeMagic
   const [render, setRender] = useState(false)
+  const [fulfilled, setFulfilled] = useState(false)
 
   const removeFromFav = async (guitarId: string): Promise<void> => {
     try {
@@ -89,7 +90,7 @@ export default function Favorites(){
 
 
     useEffect(() => {
-        getFavorites()
+        getFavorites().then(() =>  setFulfilled(true))
     }, [])
     useEffect(() => {
       getFavorites()
@@ -111,12 +112,15 @@ export default function Favorites(){
           </section>
           <motion.section layout className='h-fit w-screen box-border flex flex-col gap-y-20 md:gap-y-20 pb-20'>
           <AnimatePresence>
-        {favorites.length > 0 && favorites.map((guitar: Product) => (
+            {!fulfilled && (
+               <p className='font-mono text-white mx-auto'>Loading...</p>
+            )}
+        {fulfilled && favorites.length > 0 && favorites.map((guitar: Product) => (
           <motion.section key={guitar.id} exit={{ opacity: 0 }} className='p-5 md:px-12 flex justify-center'>
             <CardFav onDelete={removeFromFav} key={guitar.name} guitar={guitar} />
           </motion.section>
         ))}
-        {favorites.length === 0 && (
+        {fulfilled && favorites.length === 0 && (
            <p className='font-mono text-white mx-auto'>Your don't have Favorites right now...</p>
         )}
       </AnimatePresence>
