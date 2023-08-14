@@ -15,9 +15,12 @@ export default function Shop(
       setCurrentPath(() => tab)
      }
      useEffect(() => {
-      setCurrentPath(window.location.pathname)
+      if(currentPath !== '/shop' && currentPath !== '/shop/acoustic' && currentPath !== '/shop/electric' && currentPath !== '/shop/bass' && currentPath !== '/shop/sixstrings'){
+        setCurrentPath(() => window.location.pathname)
+        setCurrentPath(() => window.location.pathname)
+      }
      }, [])
-
+    
 
     return (
       <main className='h-fit min-h-screen px-4 md:px-8 w-screen md:overflow-x-hidden box-border pt-10 md:pt-20'>

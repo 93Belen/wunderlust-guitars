@@ -18,13 +18,13 @@ export default function Footer(){
                 <Link className='hover' href='/shop'>Shop</Link>
                 <Link className='hover' href='/services'>Services</Link>
                 <Link className='hover' href='/about-us'>About Us</Link>
-                <Link className='hover' href='/services/#contact-form'>Contact</Link>
+                <Link className='hover' href={{pathname: '/services', hash:"contact-form"}} scroll={false} replace>Contact</Link>
             </div>
             <div className='md:flex flex-col gap-6 hidden'>
-                <Link className='hover' href='/services/#personal-shopper'>Personal Shopper</Link>
-                <Link className='hover' href='/services/#hand-delivery'>Hand Delivery</Link>
-                <Link className='hover' href='/services/#appraisals'>Appraisals</Link>
-                <Link className='hover' href='/services/#collection-curator'>Curator</Link>           
+                <Link scroll={false} className='hover' href='/services#personal-shopper'>Personal Shopper</Link>
+                <Link scroll={false} className='hover' href='/services#hand-delivery'>Hand Delivery</Link>
+                <Link scroll={false} className='hover' href='/services#appraisals'>Appraisals</Link>
+                <Link scroll={false} className='hover' href='/services#collection-curator'>Curator</Link>           
             </div>
             <div className='md:flex flex-col gap-6 hidden'>
                 <Link className='hover' href='/login'>Sign In</Link>
