@@ -18,6 +18,9 @@ export default function AddToCart({ guitar }: { guitar: Product }) {
     if (!existingGuitar) {
       store.addToCart(guitar);
     }
+    else {
+      window.alert("This guitar is in your cart")
+    }
   }
 
   return (
