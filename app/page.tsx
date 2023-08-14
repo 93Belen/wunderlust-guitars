@@ -73,7 +73,7 @@ export default function Home() {
           />
           </div>
         <div className='h-fit flex mx-[2%] flex-col w-full'>
-          <p className='text-white font-mono text-[1.5rem] md:p-2 py-4 md:max-w-[40rem] self-end md:mr-[15%]'>
+          <p className='text-white font-mono text-[1.5rem] 2xl:text-[1.8rem] 2xl:mt-[-50px] md:p-2 py-4 md:max-w-[40rem] self-end md:mr-[15%]'>
           This OCD-type-of-guy has taken his guitar addiction to a whole new level.
           But make no mistake, he ain't no random fool who fell off a Kansas farm truck.
           No, sir!  This guy toured through North America, Europe, and the "God-save-the-Queen" UK.
